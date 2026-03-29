@@ -556,13 +556,38 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <div style="flex:1; text-align:left; font-size:12px; color:#ccc; line-height:1.7;">
         <b style="color:#58a6ff;">跨链详情：</b><br>
         · 总跨链: <b style="color:#fcd34d;">3,702 ETH</b> (3,717 - 15 残留)<br>
-        · 每次跨链: 20 ETH / 笔 · ~185 笔
+        · 每次跨链: 20 ETH / 笔 · ~185 笔<br>
+        · 时间: 2024年4-6月集中操作
       </div>
       <div style="flex:1; text-align:left; font-size:12px; color:#ccc; line-height:1.7;">
-        <b style="color:#58a6ff;">Arbitrum 侧去向：</b><br>
-        · 充入 <b style="color:#fbbf24;">MEXC</b> 和 <b style="color:#fbbf24;">Gate</b><br>
-        · MEXC: 0x122f628...528a3c / 0xf2532ea...4071a6<br>
-        · Gate: 0xbb872...577800 等5个
+        <b style="color:#58a6ff;">Arbitrum 洗钱流水线：</b><br>
+        · TC提现地址 → 桥接Arbitrum (10×20 ETH)<br>
+        · → 中间地址拆分 (~1 ETH/笔)<br>
+        · → <b style="color:#fbbf24;">Layerswap</b> (<span class="addr" style="font-size:9px;">0x2Fc617E933a52713247CE25730f6695920B3befe</span>)<br>
+        · → 充入 MEXC / Gate CEX账户
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <!-- Arbitrum残留 -->
+  <div style="background:#0d1b0d; border:2px solid #22c55e; border-radius:14px; padding:16px 20px; width:1400px; margin:0 auto;">
+    <div style="font-size:14px; font-weight:700; color:#4ade80; margin-bottom:10px;">💰 Arbitrum 链上残留（新发现 · 可追回）</div>
+    <div style="display:flex; gap:20px;">
+      <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
+        <b style="color:#4ade80;">中间钱包残留 ETH：</b><br>
+        · <span class="addr" style="font-size:9px;">0xbE7f87...</span> — <b style="color:#fcd34d;">~960 ETH (~$1.9M)</b> · 汇集地址<br>
+        · <span class="addr" style="font-size:9px;">0x5aF391...</span> — <b style="color:#fcd34d;">~174.5 ETH (~$348K)</b><br>
+        · <span class="addr" style="font-size:9px;">0xBe4afE...</span> — <b style="color:#fcd34d;">~37.3 ETH (~$74K)</b><br>
+        · 合计: <b style="color:#fcd34d; font-size:13px;">~1,172 ETH (~$2.3M)</b>
+      </div>
+      <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
+        <b style="color:#4ade80;">追踪线索：</b><br>
+        · <b>Layerswap</b> 是关键中转站 — 联系可获取CEX账户信息<br>
+        · 地址#9 (0x096f) 额外汇集~1,200 ETH，是consolidation point<br>
+        · ETH主网18地址各残留 ~0.8-0.98 ETH (合计~15 ETH)<br><br>
+        <b style="color:#fbbf24;">建议行动：</b> 联系Layerswap协查 + 冻结Arbitrum残留地址
       </div>
     </div>
   </div>
@@ -762,8 +787,13 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     <div class="l">已冻结 (Tether TRON)<br>Claim in process</div>
   </div>
   <div class="sum" style="background:#1c1708; border:1.5px solid #f59e0b;">
-    <div class="n" style="color:#fcd34d;">~$350K+</div>
-    <div class="l">链上已确认残留<br>bc2e: 5.957 ETH · e8F9: 0.782 ETH · 0x4542: 51.21 ETH<br>0x376a: 74.43 ETH · 0xB529: 41.71 ETH<br>8C16: 56.83 ETH · 3a54: 13.14 ETH<br><b style="color:#4ade80;">e8F9: 3,518 REP + 35,436 DAI (从未转出)</b></div>
+    <div class="n" style="color:#fcd34d;">~$3M+</div>
+    <div class="l">链上已确认残留<br>
+    <b style="color:#4ade80;">Arbitrum残留(新发现):</b> ~1,172 ETH (~$2.3M)<br>
+    ETH主网: bc2e 5.957 · e8F9 0.782 · 0x4542 51.21 · 0x376a 74.43 · 0xB529 41.71 · 8C16 56.83 · 3a54 13.14 ETH<br>
+    TC提现地址: 18×~0.9 ETH (~15 ETH)<br>
+    <b style="color:#4ade80;">e8F9: 3,518 REP + 35,436 DAI (从未转出)</b><br>
+    <b style="color:#4ade80;">0295: 148,364 USDC (可追回)</b></div>
   </div>
   <div class="sum b-blue">
     <div class="n" style="color:#60a5fa;">~15 ETH (~$30K)</div>
