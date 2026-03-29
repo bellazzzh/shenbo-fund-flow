@@ -894,27 +894,33 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     </table>
   </div>
 
-  <!-- 交易所内 -->
-  <div style="background:#1a0a0a; border:2px solid #ef4444; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#fca5a5; margin-bottom:10px;">🔴 交易所内 · 去向待查 · ~$3.7M+</div>
-    <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
-      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:120px;">交易所</td><td style="width:100px;">流入金额</td><td style="width:100px;">已知余额</td><td>提币去向</td><td style="width:140px;">状态</td></tr>
-      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">HTX</td><td style="color:#fcd34d;">~$2.7M</td><td style="color:#8b949e;">未知</td><td>内部交易/提现 · 去向待查</td><td style="color:#fbbf24;">已发协查函 · 等回复</td></tr>
-      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">WhiteBIT</td><td style="color:#fcd34d;">~$1M</td><td style="color:#8b949e;">未知</td><td>LQTY→ETH→USDT充值 · 提币去向不明</td><td style="color:#fbbf24;">交易所未回复</td></tr>
-      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">MEXC</td><td style="color:#fcd34d;">$11M+</td><td>$11,476</td><td>大部分→XMR · 部分ETH/USDT待查</td><td style="color:#8b949e;">已冻结时几乎清空</td></tr>
-    </table>
-  </div>
-
-  <!-- 不可追踪 -->
-  <div style="background:#161b22; border:2px solid #484f58; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#8b949e; margin-bottom:10px;">⬛ 不可追踪 · ~$13M+</div>
-    <table style="width:100%; font-size:12px; color:#8b949e; border-collapse:collapse;">
-      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">渠道</td><td style="width:100px;">金额</td><td style="width:120px;">形式</td><td>原因</td></tr>
-      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">MEXC → XMR提现</td><td>~$11M+</td><td>Monero (XMR)</td><td>XMR隐私币 · 链上完全不可追踪</td></tr>
-      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">Gate → 疑XMR提现</td><td>~$1.85M</td><td>可能 XMR</td><td>Gate $5.8M中扣除已追踪部分的缺口</td></tr>
-      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">FixedFloat → XMR</td><td>~$692K</td><td>Monero (XMR)</td><td>18笔完成的ETH→XMR兑换</td></tr>
-      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">ChangeNow → BTC</td><td>~$70K</td><td>BTC</td><td>非托管兑换 · 无KYC · BTC去向不明</td></tr>
-      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">TC未识别提现</td><td>未知</td><td>ETH (150+地址)</td><td>~29,700 ETH出金仅识别11% · 需Chainalysis demix</td></tr>
+  <!-- 交易所/平台完整流水 -->
+  <div style="background:#0d1117; border:2px solid #6e7681; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#c9d1d9; margin-bottom:10px;">📊 交易所 / 混币平台完整流水 · ~$40M+ 流入</div>
+    <table style="width:100%; font-size:11px; color:#ccc; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:10px;"><td style="padding:4px 8px; width:110px;">平台</td><td style="width:80px;">类型</td><td style="width:120px;">流入金额</td><td style="width:120px;">流入来源</td><td>提币去向</td><td style="width:130px;">当前状态</td></tr>
+      <!-- MEXC -->
+      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">MEXC</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">$11M+</td><td>Arbitrum Layerswap<br>(TC→18地址→跨链)</td><td style="color:#fca5a5;">大部分 → <b>XMR (不可追踪)</b></td><td style="color:#8b949e;">冻结时仅剩 $11,476</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td colspan="2" style="font-size:10px; color:#8b949e; padding:3px 8px;">账户1 UID 07333942 · 账户2 UID 96969020 · KYC: 乌克兰(疑伪造) · IP: 乌克兰</td><td style="font-size:10px; color:#8b949e;">部分ETH/USDT提现待查</td><td></td></tr>
+      <!-- Gate -->
+      <tr style="border-top:2px solid #3b82f644;"><td style="padding:5px 8px; color:#60a5fa; font-weight:700;" rowspan="2">Gate</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">$5.8M</td><td>Arbitrum Layerswap<br>(TC→18地址→跨链)</td><td><span style="color:#4ade80;">$1.245M → TBzBuv → <b>Tether冻结 ✅</b></span><br><span style="color:#60a5fa;">$2.7M → TBzBuv+TMYBusk → HTX</span></td><td style="color:#fbbf24;">~$1.85M缺口<br>疑Gate内XMR提现</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">TRON路径: Gate → TBzBuv(冻结$1.25M) + TMYBusk(残留8,371 USDT) → TB7Mtn → HTX热钱包 · 每次9,000 USDT</td></tr>
+      <!-- HTX -->
+      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi)</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.7M</td><td>Gate TRON提现<br>(TBzBuv+TMYBusk)</td><td>内部交易/提现 · 去向待查</td><td style="color:#fbbf24;">已发协查函 · 等回复</td></tr>
+      <!-- WhiteBIT -->
+      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M</td><td>e8F9 LQTY→swap→<br>ETH→USDT充值</td><td>提币去向不明</td><td style="color:#fbbf24;">交易所未回复<br>⚠ 待Deke发保全函</td></tr>
+      <!-- ChangeNow -->
+      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow</td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>BTC: 线索中断 · 无KYC<br>USDT → 提款至 <b>8C16</b> (56.83 ETH)</td><td style="color:#8b949e;">塞舌尔注册<br>⚠ 待Deke发保全函</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 另有96K USDC → 3a54 (ChangeNOW)</td></tr>
+      <!-- n.exchange -->
+      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">n.exchange</td><td>非托管兑换</td><td style="color:#fcd34d;">152,673 USDT</td><td>mKt2 TRON<br>(被盗后3小时)</td><td>提款至 <b>0295</b><br><span style="color:#4ade80;">148,364 USDC 仍在 · 可追回</span></td><td style="color:#4ade80;">nonce=0 从未转出</td></tr>
+      <!-- SideShift -->
+      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift</td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>提款至 <b>3a54</b> (59.3 ETH + 399K USDC)<br><span style="color:#fca5a5;">→ 1inch swap → 200 ETH → TC</span></td><td style="color:#fca5a5;">残留13.14 ETH<br>2025-10仍活跃!</td></tr>
+      <!-- FixedFloat -->
+      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~492 ETH<br>(~$742K)</td><td>TC提现地址<br>(20个来源地址)</td><td>→ <b>~4,360 XMR</b> (18笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#8b949e;">同一IP · 同一XMR地址<br>2小时21分钟完成</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 来源地址仅有部分42位完整地址</td></tr>
+      <!-- 合计 -->
+      <tr style="border-top:2px solid #c9d1d9;"><td colspan="2" style="padding:6px 8px; color:#c9d1d9; font-weight:800; font-size:12px;">合计 7 个平台</td><td style="color:#fcd34d; font-weight:800; font-size:12px;">~$40M+</td><td colspan="3" style="font-size:11px; color:#8b949e;">→ XMR不可追踪 ~$13M+ · 交易所内待查 ~$3.7M · 已冻结 $1.30M · 链上残留可追回 ~$157K</td></tr>
     </table>
   </div>
 
@@ -931,6 +937,10 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     <div style="background:#131a2e; border:1.5px solid #3b82f6; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#60a5fa;">~$720K</div>
       <div style="font-size:11px; color:#93c5fd;">链上残留 (ETH+DAI+REP)</div>
+    </div>
+    <div style="background:#0d1117; border:1.5px solid #6e7681; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#c9d1d9;">~$40M+</div>
+      <div style="font-size:11px; color:#8b949e;">流入7个平台</div>
     </div>
     <div style="background:#1a0a0a; border:1.5px solid #ef4444; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#fca5a5;">~$3.7M</div>
