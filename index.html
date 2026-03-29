@@ -308,10 +308,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     <div class="bubble b-amber">
       <b>WhiteBIT 交易所</b> <span class="wtype wtype-cex">交易所</span><br>
       <div style="font-size:11px; color:#ccc; margin-top:4px; line-height:1.7;">
-        充值: ~$1M USDT<br>
+        充值: ~$1M USDT (LQTY → ETH → USDT)<br>
         KYC: <span style="color:#fca5a5;">未知</span><br>
+        <b style="color:#fca5a5;">提币去向：待查</b><br>
         <b style="color:#fbbf24;">⚠ 待 Deke 发保全函</b><br>
-        <span style="font-size:10px; color:#8b949e;">总部: 立陶宛维尔纽斯</span>
+        <span style="font-size:10px; color:#8b949e;">总部: 立陶宛维尔纽斯 · 交易所未回复</span>
       </div>
     </div>
   </div>
@@ -506,8 +507,34 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
   </table>
 </div>
 
+<!-- TC 未识别提现 -->
+<div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:1400px; margin:12px auto 0;">
+  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~150+ 个地址 · ~29,700 ETH · ~$59M）</div>
+  <div style="display:flex; gap:20px;">
+    <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
+      <b style="color:#fca5a5;">规模：</b>总存入 ~16,565 ETH，已识别仅 3,717 ETH (11%)<br>
+      <b style="color:#fca5a5;">未识别：</b>~12,848 ETH 提现去向不明 (~89%)<br>
+      <b style="color:#fca5a5;">可能去向：</b><br>
+      · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
+      · FixedFloat 等即时兑换 → XMR<br>
+      · 其他交易所（Binance、OKX、Bybit等）<br>
+      · 仍在TC未提取（可能性较低）
+    </div>
+    <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
+      <b style="color:#fbbf24;">追踪障碍：</b><br>
+      · Tornado Cash混币后地址断联，需专业demix工具<br>
+      · Tay/Tayvano仅识别11%，Chainalysis/TRM可能更高<br>
+      · 2024年4-6月集中提现，可能已全部流入交易所<br><br>
+      <b style="color:#4ade80;">建议行动：</b><br>
+      · 委托Chainalysis或TRM Labs进行完整demix<br>
+      · 向更多交易所发送协查函（附TC存入txhash）<br>
+      · 监控已知黑客地址的新活动
+    </div>
+  </div>
+</div>
+
 <div class="flow">
-  <div class="arrow">↓ 每次 20 ETH 跨链</div>
+  <div class="arrow">↓ 已识别18地址 · 每次 20 ETH 跨链</div>
 
   <!-- Arbitrum bridge -->
   <div class="bubble b-blue" style="width:1400px; padding:18px 24px;">
@@ -550,7 +577,12 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
         存入 $2.1M · 提取 $2.07M · 余额 $11,476<br>
         <b>账户2</b> UID 96969020 · 创建 2024-02-23<br>
         存入 $1M · 提取 $1.25M · 余额 $0.04<br>
-        KYC: <span style="color:#fca5a5;">乌克兰 (疑伪造)</span>
+        KYC: <span style="color:#fca5a5;">乌克兰 (疑伪造)</span><br><br>
+        <b style="color:#fca5a5;">提币去向：</b><br>
+        · 大部分 → <b>XMR (门罗币)</b> · 不可追踪<br>
+        · 部分 → ETH/USDT 提现 · 去向待查<br>
+        · IP: 188.191.102.126 / 79.142.197.235 (乌克兰)<br>
+        · IP: 46.211.64.202 / 46.211.116.39 (乌克兰)
       </div>
     </div>
   </div>
@@ -564,7 +596,10 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
         <span class="addr">0x8e5dc...2b12c $600K</span><br>
         <span class="addr">0xe3a27...b7182 $605K</span><br>
         <span class="addr">0x752cd...e7b1f $1M</span><br><br>
-        提现 USDT → TRON
+        <b style="color:#fca5a5;">提币去向：</b><br>
+        · $1.25M USDT → TRON → <b>Tether冻结 ✅</b><br>
+        · $2.7M+ USDT → TRON → TB7Mtn → <b>HTX (Huobi)</b><br>
+        · 剩余 → 待查
       </div>
     </div>
     <div class="arrow">↓</div>
@@ -591,7 +626,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <div style="font-size:12px; margin-top:6px;">
         <b>$2.7M+ 确认流入</b><br>
         热钱包: <span class="addr">TFTWNg...jLu</span> (HTX 4)<br>
-        <span style="color:#8b949e;">2024年5月 · 来自Gate TRON提现</span>
+        <span style="color:#8b949e;">2024年5月 · 来自Gate TRON提现</span><br><br>
+        <b style="color:#fca5a5;">提币去向：</b><br>
+        · 内部交易/提现 · 去向待查<br>
+        · 需HTX配合提供交易记录<br>
+        · 已发协查函 · 等待回复
       </div>
     </div>
   </div>
