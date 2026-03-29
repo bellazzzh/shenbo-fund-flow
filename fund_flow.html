@@ -853,6 +853,96 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
   </div>
 </div>
 
+<!-- ═══════════════════ 资金现状总览 ═══════════════════ -->
+<div class="divider" style="border-top-color:#22c55e;">── 资金现状总览 · 截至 2026-03-29 ──</div>
+<div style="max-width:1200px; margin:0 auto;">
+
+  <!-- 已冻结 -->
+  <div style="background:#0d2818; border:2px solid #22c55e; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#4ade80; margin-bottom:10px;">✅ 已冻结资金 · ~$1.30M</div>
+    <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">资产</td><td style="width:100px;">金额</td><td style="width:80px;">链</td><td style="width:80px;">形式</td><td>钱包地址</td><td style="width:120px;">冻结方</td></tr>
+      <tr style="border-top:1px solid #22c55e44;"><td style="padding:4px 8px; color:#4ade80; font-weight:600;">USDT</td><td style="color:#fcd34d; font-weight:700;">$1,245,249</td><td>TRON</td><td>TRC-20</td><td class="addr" style="font-size:10px;">TBzBuvAGejw1vgmFYE6owFZyZ8c2LGEb5Q</td><td style="color:#4ade80;">Tether 黑名单</td></tr>
+      <tr style="border-top:1px solid #22c55e44;"><td style="padding:4px 8px; color:#4ade80; font-weight:600;">XMR</td><td style="color:#fcd34d;">~$50K</td><td>Monero</td><td>交易所扣押</td><td style="font-size:10px; color:#8b949e;">FixedFloat 订单 FE9NXV + FK3TZA</td><td style="color:#4ade80;">FixedFloat</td></tr>
+    </table>
+  </div>
+
+  <!-- 可追回 -->
+  <div style="background:#1c1708; border:2px solid #f59e0b; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$157K</div>
+    <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">资产</td><td style="width:100px;">金额</td><td style="width:80px;">链</td><td style="width:80px;">形式</td><td>钱包地址</td><td style="width:120px;">状态</td></tr>
+      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDC</td><td style="color:#fcd34d; font-weight:700;">148,364</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td style="color:#fbbf24;">nonce=0 从未转出</td></tr>
+      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDT</td><td style="color:#fcd34d;">~8,371</td><td>TRON</td><td>TRC-20</td><td class="addr" style="font-size:10px;">TMYBuskAXEtScBBcK6s9BfAfKHmW8p5pYn</td><td style="color:#fbbf24;">未冻结 · 可请求Tether冻结</td></tr>
+    </table>
+  </div>
+
+  <!-- 链上残留 (黑客钱包) -->
+  <div style="background:#131a2e; border:2px solid #3b82f6; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#60a5fa; margin-bottom:10px;">🔵 链上残留 (黑客钱包) · ~$720K</div>
+    <table style="width:100%; font-size:11px; color:#ccc; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:10px;"><td style="padding:3px 6px; width:180px;">钱包简称</td><td style="width:80px;">余额</td><td style="width:70px;">链</td><td style="width:70px;">形式</td><td>完整地址</td><td style="width:140px;">状态</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x4542 (TC存入中转)</td><td style="color:#fcd34d;">51.21 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x454249291af33ad5681ed07dfd5165c1cb1aa625</td><td style="font-size:10px;">nonce=104 · 已停止</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x376a (via 9055→TC)</td><td style="color:#fcd34d;">74.43 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x376a02550be2a6a39803fb17afa550cab5b820ca</td><td style="font-size:10px;">nonce=63 · 已停止</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">8C16 (ChangeNow提款)</td><td style="color:#fcd34d;">56.83 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td style="font-size:10px;">nonce=0 · 休眠1235天</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0xB529 (via ee73→TC)</td><td style="color:#fcd34d;">41.71 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0xB529ba5dae11cb5d452128129664def1d568ecbe</td><td style="font-size:10px;">nonce=20 · 已停止</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x096f (Arbitrum残留)</td><td style="color:#fcd34d;">~100 ETH</td><td>Arbitrum</td><td>EOA</td><td class="addr" style="font-size:9px;">0x096f01765c705067c4a21fccd2ac2a0837ae99ad</td><td style="font-size:10px;">nonce=19 · 部分未洗</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">3a54 (SideShift提款)</td><td style="color:#fcd34d;">13.14 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td style="font-size:10px; color:#fca5a5;">2025-10还在活动!</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">bc2e (第一跳中转)</td><td style="color:#fcd34d;">5.957 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x24B93EED37e6FfE948A9bdF365d750B52AdCBC2e</td><td style="font-size:10px;">nonce=16 · 已清空</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">e8F9 (第一跳中转)</td><td style="color:#fcd34d;">0.78 ETH<br>+ 35,436 DAI<br>+ 3,518 REP</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4aC9CA41EFE0eA19b8f3493a91d8a5F706e1e8F9</td><td style="font-size:10px; color:#4ade80;">DAI+REP从未转出</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">TC提现18地址合计</td><td style="color:#fcd34d;">~15 ETH</td><td>ETH 主网</td><td>EOA ×18</td><td style="font-size:10px; color:#8b949e;">见上方18地址表</td><td style="font-size:10px;">每个~0.8 ETH dust</td></tr>
+    </table>
+  </div>
+
+  <!-- 交易所内 -->
+  <div style="background:#1a0a0a; border:2px solid #ef4444; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#fca5a5; margin-bottom:10px;">🔴 交易所内 · 去向待查 · ~$3.7M+</div>
+    <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:120px;">交易所</td><td style="width:100px;">流入金额</td><td style="width:100px;">已知余额</td><td>提币去向</td><td style="width:140px;">状态</td></tr>
+      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">HTX</td><td style="color:#fcd34d;">~$2.7M</td><td style="color:#8b949e;">未知</td><td>内部交易/提现 · 去向待查</td><td style="color:#fbbf24;">已发协查函 · 等回复</td></tr>
+      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">WhiteBIT</td><td style="color:#fcd34d;">~$1M</td><td style="color:#8b949e;">未知</td><td>LQTY→ETH→USDT充值 · 提币去向不明</td><td style="color:#fbbf24;">交易所未回复</td></tr>
+      <tr style="border-top:1px solid #ef444444;"><td style="padding:4px 8px; color:#fca5a5; font-weight:600;">MEXC</td><td style="color:#fcd34d;">$11M+</td><td>$11,476</td><td>大部分→XMR · 部分ETH/USDT待查</td><td style="color:#8b949e;">已冻结时几乎清空</td></tr>
+    </table>
+  </div>
+
+  <!-- 不可追踪 -->
+  <div style="background:#161b22; border:2px solid #484f58; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
+    <div style="font-size:15px; font-weight:800; color:#8b949e; margin-bottom:10px;">⬛ 不可追踪 · ~$13M+</div>
+    <table style="width:100%; font-size:12px; color:#8b949e; border-collapse:collapse;">
+      <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">渠道</td><td style="width:100px;">金额</td><td style="width:120px;">形式</td><td>原因</td></tr>
+      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">MEXC → XMR提现</td><td>~$11M+</td><td>Monero (XMR)</td><td>XMR隐私币 · 链上完全不可追踪</td></tr>
+      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">Gate → 疑XMR提现</td><td>~$1.85M</td><td>可能 XMR</td><td>Gate $5.8M中扣除已追踪部分的缺口</td></tr>
+      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">FixedFloat → XMR</td><td>~$692K</td><td>Monero (XMR)</td><td>18笔完成的ETH→XMR兑换</td></tr>
+      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">ChangeNow → BTC</td><td>~$70K</td><td>BTC</td><td>非托管兑换 · 无KYC · BTC去向不明</td></tr>
+      <tr style="border-top:1px solid #30363d;"><td style="padding:4px 8px;">TC未识别提现</td><td>未知</td><td>ETH (150+地址)</td><td>~29,700 ETH出金仅识别11% · 需Chainalysis demix</td></tr>
+    </table>
+  </div>
+
+  <!-- 汇总条 -->
+  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
+    <div style="background:#0d2818; border:1.5px solid #22c55e; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#4ade80;">$1.30M</div>
+      <div style="font-size:11px; color:#86efac;">已冻结</div>
+    </div>
+    <div style="background:#1c1708; border:1.5px solid #f59e0b; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#fbbf24;">$157K</div>
+      <div style="font-size:11px; color:#fcd34d;">未冻结可追回</div>
+    </div>
+    <div style="background:#131a2e; border:1.5px solid #3b82f6; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#60a5fa;">~$720K</div>
+      <div style="font-size:11px; color:#93c5fd;">链上残留 (ETH+DAI+REP)</div>
+    </div>
+    <div style="background:#1a0a0a; border:1.5px solid #ef4444; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#fca5a5;">~$3.7M</div>
+      <div style="font-size:11px; color:#fca5a5;">交易所内待查</div>
+    </div>
+    <div style="background:#161b22; border:1.5px solid #484f58; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
+      <div style="font-size:22px; font-weight:900; color:#8b949e;">~$13M+</div>
+      <div style="font-size:11px; color:#6e7681;">不可追踪 (XMR等)</div>
+    </div>
+  </div>
+</div>
+
 <div class="footer">沈波被盗案调查组 · 所有余额数据截至 2026-03-29 · 时间均为纽约时间 (EST/EDT)</div>
 
 </div><!-- end main-content -->
