@@ -105,7 +105,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
 
 <div id="main-content" class="content-hidden">
 <h1>沈波 $42M 被盗案 — 完整资金流向图</h1>
-<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-03-29</div>
+<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-03-30</div>
 
 <!-- Legend -->
 <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:8px auto 18px; max-width:1200px;">
@@ -275,7 +275,8 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <b>黑客中间 e8F9</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr">0x4aC9CA41EFE0eA19b8f3493a91d8a5F706e1e8F9</div>
       <div style="font-size:11px; color:#8b949e;">00:48~01:02 EST 分5笔收到 · nonce=10</div>
-      <div style="font-size:11px; color:#fcd34d;">残留: 0.782 ETH + <b style="color:#4ade80;">3,518 REP (~$3K) + 35,436 DAI (~$35K) 从未转出</b></div>
+      <div style="font-size:11px; color:#fcd34d;">残留: 0.782 ETH + <b style="color:#4ade80;">3,519 REP (~$3K) + 35,436 DAI (~$35K)</b></div>
+      <div style="font-size:10px; color:#8b949e;">80K USDT→1inch→80K DAI · 999 UNI→MetaMask→5.2K DAI · REP无流动性未卖</div>
     </div>
     <div class="arrow">↓</div>
 
@@ -300,31 +301,40 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     </div>
     <div class="arrow" style="margin-top:16px;">── 路径 2b ──</div>
 
-    <!-- 2b: LQTY → WhiteBIT -->
-    <div class="bubble b-gray">
-      <div class="tag">路径 2b · 557K LQTY · ~$1M · 2.4%</div>
-      <b>e8F9 LQTY 兑换</b> <span class="wtype wtype-eoa">EOA</span><br>
-      <div style="font-size:11px; color:#8b949e;">收到 557,088 LQTY (~$1M)</div>
+    <!-- 2b: LQTY → 0x1D43 → TC (VERIFIED 2026-03-30) -->
+    <div class="bubble b-purple" style="border-color:#a855f7;">
+      <div class="tag">路径 2b · 557,140 LQTY → 717 ETH → TC 612 ETH · ✅已验证</div>
+      <b>e8F9 → 0x1D43 (LQTY中转)</b> <span class="wtype wtype-eoa">EOA</span><br>
+      <div class="addr">0x1D43f19852FfA9ca5F2343E89f408BcbFA698a7E</div>
+      <div style="font-size:11px; color:#8b949e;">nonce=21 · 残留 0.444 ETH</div>
     </div>
     <div class="arrow">↓</div>
     <div class="section-box" style="background:#161b22;">
       <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse;">
         <tr style="color:#8b949e;"><td style="padding:2px 4px;">步骤</td><td>纽约时间</td><td>操作</td><td style="text-align:right;">金额</td></tr>
-        <tr><td style="padding:2px 4px;">A</td><td>2023-04-15 12:19 EDT</td><td>Transfer 0.1 ETH</td><td style="text-align:right; color:#8b949e;">gas</td></tr>
-        <tr><td style="padding:2px 4px;">B</td><td>2023-04-15 12:20 EDT</td><td>LQTY → swap → ETH</td><td style="text-align:right; color:#fcd34d;">~650 ETH</td></tr>
-        <tr><td style="padding:2px 4px;">C</td><td>—</td><td>ETH → USDT → WhiteBIT</td><td style="text-align:right; color:#fcd34d;">~$1M</td></tr>
+        <tr><td style="padding:2px 4px;">A</td><td>2023-04-15 12:19 EDT</td><td>e8F9 → 0x1D43 gas</td><td style="text-align:right; color:#8b949e;">0.1 ETH</td></tr>
+        <tr><td style="padding:2px 4px;">B</td><td>2023-04-15 12:20 EDT</td><td>e8F9 → 0x1D43 LQTY</td><td style="text-align:right; color:#fcd34d;">557,140 LQTY</td></tr>
+        <tr><td style="padding:2px 4px;">C</td><td>2023-04-15 12:20 EDT</td><td>12笔swap via Uniswap V3 + 1inch</td><td style="text-align:right; color:#fcd34d;">→ 717 ETH</td></tr>
+        <tr><td style="padding:2px 4px;"></td><td colspan="2" style="color:#fca5a5; font-size:9px;">MEV bot sandwich损失 ~105 ETH</td><td></td></tr>
+        <tr style="border-top:1px solid #21262d;"><td style="padding:2px 4px;">D</td><td>2023-12-01 10:55 EST</td><td>6笔 × 100 ETH → TC Router</td><td style="text-align:right; color:#fcd34d;">600 ETH</td></tr>
+        <tr><td style="padding:2px 4px;">E</td><td>2024-06-09 18:38 EDT</td><td>12笔 × 1 ETH → TC Router</td><td style="text-align:right; color:#fcd34d;">12 ETH</td></tr>
+        <tr style="border-top:1px solid #a855f766;"><td colspan="2" style="color:#c084fc; font-weight:600;">合计存入TC</td><td style="color:#c084fc; font-weight:600;">612 ETH</td><td></td></tr>
       </table>
     </div>
     <div class="arrow">↓</div>
-    <div class="bubble b-amber">
-      <b>WhiteBIT 交易所</b> <span class="wtype wtype-cex">交易所</span><br>
-      <div style="font-size:11px; color:#ccc; margin-top:4px; line-height:1.7;">
-        充值: ~$1M USDT (LQTY → ETH → USDT)<br>
-        KYC: <span style="color:#fca5a5;">未知</span><br>
-        <b style="color:#fca5a5;">提币去向：待查</b><br>
-        <b style="color:#fbbf24;">⚠ 待 Deke 发保全函</b><br>
-        <span style="font-size:10px; color:#8b949e;">总部: 立陶宛维尔纽斯 · 交易所未回复</span>
-      </div>
+    <div class="bubble b-purple">
+      <b>→ Tornado Cash</b> <span class="wtype wtype-contract">合约</span><br>
+      <div style="font-size:10px; color:#8b949e;">612 ETH 存入TC · 100 ETH池(6笔) + 1 ETH池(12笔)</div>
+    </div>
+
+    <div class="arrow" style="margin-top:16px;">── 路径 2c ──</div>
+    <!-- 2c: e8F9 冷钱包 -->
+    <div class="bubble b-green" style="margin-top:4px;">
+      <div class="tag">路径 2c · 50K DAI · 冷钱包 · 可追回</div>
+      <b>e8F9冷钱包</b> <span class="wtype wtype-eoa">EOA</span><br>
+      <div class="addr">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</div>
+      <div style="font-size:11px; color:#4ade80;"><b>50,000 DAI 仍在 · nonce=0 · 从未转出 · 可追回</b></div>
+      <div style="font-size:10px; color:#8b949e;">2024-07-02从e8F9转入 · 附0.1 ETH gas</div>
     </div>
   </div>
 
@@ -470,12 +480,14 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <div style="flex:1; text-align:left;">
         <div style="font-size:13px; font-weight:700; color:#c084fc; margin-bottom:6px;">存入统计</div>
         <div style="font-size:12px; color:#ccc; line-height:1.8;">
-          确认存入: <b style="color:#fcd34d;">~16,565 ETH</b><br>
-          · 路径1A (0x4542): ~9,300 ETH (104笔)<br>
-          · 路径1B (bc2e): 1,600 ETH (16笔)<br>
-          · 路径2A (e8F9): ~65 ETH<br>
-          · 路径1D (0x376a via 9055): ~2,500 ETH (63笔)<br>
-          · 路径1E (0xB529 via ee73): ~3,100 ETH (20笔)
+          确认存入: <b style="color:#fcd34d;">~13,491 ETH</b><br>
+          · 路径1A (0x4542 via d642): ~9,014 ETH (104笔) <span style="color:#8b949e;">· d642占93%</span><br>
+          · 路径1B (bc2e直存): 1,600 ETH (16笔)<br>
+          · 路径1E (0xB529 via ee73): ~1,800 ETH (20笔)<br>
+          · 路径2b (0x1D43 via LQTY): 612 ETH<br>
+          · 路径2A (e8F9直存): ~65 ETH<br>
+          · 3a54 (SideShift→TC): 200 ETH<br>
+          <span style="color:#8b949e; font-size:10px;">注: 0x376a TC存入量计入0x4542 · FixedFloat 582 ETH从0x376a直发不经TC</span>
         </div>
       </div>
       <div style="flex:1; text-align:left;">
@@ -511,7 +523,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     <tr><td style="padding:3px 6px;">12</td><td style="color:#93c5fd;">0x2d466e477627b3c5abf9b1df94c34d8d700d8d21</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-30 14:29 / 05-30 14:34</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">13</td><td style="color:#93c5fd;">0xc58bdb9c2841506f006f27c41c1e34518bc8e95a</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-10 14:30 / 05-10 14:33</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>14</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
     <tr><td style="padding:3px 6px;">14</td><td style="color:#93c5fd;">0xad9894a0464f8ba578b128fd81bbb75084ba2a43</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-08 18:50 / 05-08 18:52</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">15</td><td style="color:#93c5fd;">0x008fe4b2f0f268426ca383a9cb58a06fe0255540</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 18:05 / 04-29 18:08</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">15</td><td style="color:#93c5fd;">0x008fe4b2f0f268426ca383a9cb58a06fe0255540</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 18:05 / 04-29 18:08</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ → Arb → Layerswap → <b>Gate.io</b> (0x0D0707)</td></tr>
     <tr><td style="padding:3px 6px;">16</td><td style="color:#93c5fd;">0xa60aa3658d5fae44a227e0e9bc971671df265783</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 05:19 / 04-29 08:03</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">17</td><td style="color:#93c5fd;">0xe38acbb345105c1d29ecb4b6e732f4bd79284432</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-12 03:55 / 06-12 03:59</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
     <tr><td style="padding:3px 6px;">18</td><td style="color:#93c5fd;">0x9a8f33d554ef0bf4a89f64a501cec6567fbff454</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-11 14:50 / 06-11 14:53</td><td style="text-align:right; color:#fcd34d;">317</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px;">→ Arbitrum → MEXC/Gate</td></tr>
@@ -521,11 +533,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
 
 <!-- TC 未识别提现 -->
 <div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:12px auto 0;">
-  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~150+ 个地址 · ~29,700 ETH · ~$59M）</div>
+  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~100+ 个地址 · ~9,274 ETH · ~$18.5M）</div>
   <div style="display:flex; gap:20px;">
     <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
-      <b style="color:#fca5a5;">规模：</b>总存入 ~16,565 ETH，已识别仅 3,717 ETH (11%)<br>
-      <b style="color:#fca5a5;">未识别：</b>~12,848 ETH 提现去向不明 (~89%)<br>
+      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH，已追踪出口 4,217 ETH (31%)<br>
+      <b style="color:#fca5a5;">未识别：</b>~9,274 ETH 提现去向不明 (~69%)<br>
       <b style="color:#fca5a5;">可能去向：</b><br>
       · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
       · FixedFloat 等即时兑换 → XMR<br>
@@ -681,38 +693,42 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
 <div class="divider">── FixedFloat · ETH → XMR 洗币 (2023-01-28) ──</div>
 <div class="flow">
   <div class="section-box" style="width:100%; max-width:1100px; margin:0 auto 20px;">
-    <div style="font-size:12px; color:#c9d1d9; margin-bottom:6px; text-align:center; font-weight:700;">FixedFloat 即时兑换 · 20笔订单 · 同一IP · 同一XMR地址</div>
+    <div style="font-size:12px; color:#c9d1d9; margin-bottom:6px; text-align:center; font-weight:700;">FixedFloat 即时兑换 · <b style="color:#4ade80;">23笔</b>订单 · 同一IP · 同一XMR地址 · ✅已验证</div>
     <div style="font-size:11px; color:#8b949e; margin-bottom:8px; text-align:center;">
-      IP: <b style="color:#fca5a5;">212.58.103.221</b> · 日期: 2023-01-28 · 全部 ETH → XMR<br>
+      IP: <b style="color:#fca5a5;">212.58.103.221</b> · 日期: 2023-01-28 · 全部 ETH → XMR · 总计 ~582 ETH<br>
+      <b style="color:#58a6ff;">来源: 全部23笔均来自 0x376a</b> (ae14→0x9055→1inch swap→0x376a→FixedFloat)<br>
       XMR目标地址: <span class="addr" style="font-size:9px;">89AKpDCviqjYtBtpqQRb9UXNX6Rf3zmRWAYuLbXqfNToP15pm41Nxx7Uqgt...</span>
     </div>
     <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse;">
       <tr style="color:#8b949e;"><td style="padding:2px 4px;">#</td><td>订单ID</td><td>时间 (UTC)</td><td>ETH来源地址</td><td style="text-align:right;">ETH</td><td style="text-align:right;">XMR</td><td>状态</td></tr>
-      <tr><td style="padding:2px 4px;">1</td><td>GA33J5</td><td>00:14</td><td class="addr" style="font-size:9px;">0xd07bb675...08fa1afb</td><td style="text-align:right; color:#fcd34d;">29</td><td style="text-align:right;">253.89</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">2</td><td>NE641F</td><td>00:21</td><td class="addr" style="font-size:9px;">0x5d7116eb...1445bc0</td><td style="text-align:right; color:#fcd34d;">24</td><td style="text-align:right;">210.67</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">3</td><td>3EP1AK</td><td>00:28</td><td class="addr" style="font-size:9px;">0x5c29015b...c3a8587</td><td style="text-align:right; color:#fcd34d;">28</td><td style="text-align:right;">246.04</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">4</td><td>VZHZST</td><td>00:32</td><td class="addr" style="font-size:9px;">0x5c102686...bd5e99b</td><td style="text-align:right; color:#fcd34d;">22</td><td style="text-align:right;">192.92</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">5</td><td>PEJRE2</td><td>00:35</td><td class="addr" style="font-size:9px;">0xf50473a9...a9d3b</td><td style="text-align:right; color:#fcd34d;">27</td><td style="text-align:right;">236.91</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">6</td><td>Z8MYJD</td><td>00:37</td><td class="addr" style="font-size:9px;">0xced344d7...c56d</td><td style="text-align:right; color:#fcd34d;">27</td><td style="text-align:right;">236.42</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">7</td><td>WS3QMS</td><td>00:42</td><td class="addr" style="font-size:9px;">0xe64e3f96...dfbf6</td><td style="text-align:right; color:#fcd34d;">28</td><td style="text-align:right;">245.33</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">8</td><td>9US9BW</td><td>00:45</td><td class="addr" style="font-size:9px;">0xda981f94...4fae</td><td style="text-align:right; color:#fcd34d;">22</td><td style="text-align:right;">192.83</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">9</td><td>CDJHXT</td><td>00:47</td><td class="addr" style="font-size:9px;">0x36db9a3d...7738</td><td style="text-align:right; color:#fcd34d;">22</td><td style="text-align:right;">192.79</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">10</td><td>JJEX8A</td><td>00:54</td><td class="addr" style="font-size:9px;">0x73ed17cf...db18</td><td style="text-align:right; color:#fcd34d;">22</td><td style="text-align:right;">192.78</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">11</td><td>P45DBD</td><td>00:57</td><td class="addr" style="font-size:9px;">0xc75a37bc...30e8</td><td style="text-align:right; color:#fcd34d;">25</td><td style="text-align:right;">218.77</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">12</td><td>V745MB</td><td>01:05</td><td class="addr" style="font-size:9px;">0x59ebcd9d...a519b</td><td style="text-align:right; color:#fcd34d;">23</td><td style="text-align:right;">201.00</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">13</td><td>45UMDU</td><td>01:40</td><td class="addr" style="font-size:9px;">0x1b7e9967...3e98</td><td style="text-align:right; color:#fcd34d;">23</td><td style="text-align:right;">201.19</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">14</td><td>AWVPGW</td><td>01:43</td><td class="addr" style="font-size:9px;">0xa600e46d...e8fc</td><td style="text-align:right; color:#fcd34d;">23</td><td style="text-align:right;">201.18</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">15</td><td>ZKAM8W</td><td>01:46</td><td class="addr" style="font-size:9px;">0xa862d969...8fce</td><td style="text-align:right; color:#fcd34d;">26</td><td style="text-align:right;">226.91</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">16</td><td>7SS121</td><td>01:49</td><td class="addr" style="font-size:9px;">0x9f83550d...f1ad</td><td style="text-align:right; color:#fcd34d;">27</td><td style="text-align:right;">235.28</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">17</td><td>A79MX5</td><td>01:59</td><td class="addr" style="font-size:9px;">0xb968b3a1...8671</td><td style="text-align:right; color:#fcd34d;">26</td><td style="text-align:right;">226.50</td><td>✅</td></tr>
-      <tr><td style="padding:2px 4px;">18</td><td>HRRSK6</td><td>02:06</td><td class="addr" style="font-size:9px;">0x3b8e5629...61a9</td><td style="text-align:right; color:#fcd34d;">28</td><td style="text-align:right;">243.65</td><td>✅</td></tr>
-      <tr style="border-top:2px solid #ef4444;"><td style="padding:2px 4px;">19</td><td><b style="color:#fca5a5;">FE9NXV</b></td><td>02:14</td><td class="addr" style="font-size:9px;">0xad0bf095...9727</td><td style="text-align:right; color:#fcd34d;">29</td><td style="text-align:right;">254.19</td><td style="color:#ef4444; font-weight:700;">❄ 冻结</td></tr>
-      <tr><td style="padding:2px 4px;">20</td><td><b style="color:#fca5a5;">FK3TZA</b></td><td>02:35</td><td class="addr" style="font-size:9px;">0xb4eb7520...f341</td><td style="text-align:right; color:#fcd34d;">21</td><td style="text-align:right;">184.55</td><td style="color:#ef4444; font-weight:700;">❄ 冻结</td></tr>
-      <tr style="border-top:1px solid #c084fc;"><td colspan="4" style="padding:4px 6px; color:#c084fc; font-weight:700;">合计 20 笔 · 2小时21分钟内完成</td><td style="text-align:right; color:#fcd34d; font-weight:700;">492 ETH</td><td style="text-align:right; color:#fcd34d; font-weight:700;">~4,360 XMR</td><td style="color:#8b949e;">18完成 · 2冻结</td></tr>
+      <tr><td style="padding:2px 4px;">1</td><td>GA33J5</td><td>00:25</td><td class="addr" style="font-size:8px;">0xd07bb6759411555cf05510da6ab02c3f08fa1afb</td><td style="text-align:right; color:#fcd34d;">29.0</td><td style="text-align:right;">253.89</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">2</td><td>NE641F</td><td>00:30</td><td class="addr" style="font-size:8px;">0x5d7116eb41af2df751a9241460519fe9a1445bc0</td><td style="text-align:right; color:#fcd34d;">24.0</td><td style="text-align:right;">210.67</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">3</td><td>3EP1AK</td><td>00:37</td><td class="addr" style="font-size:8px;">0x5c29015b0de2b497d6abb3db08d6facfac1f3587</td><td style="text-align:right; color:#fcd34d;">28.0</td><td style="text-align:right;">246.04</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">4</td><td>VZHZST</td><td>00:46</td><td class="addr" style="font-size:8px;">0xced344d71dc09d02661010e64020cb878546c56d</td><td style="text-align:right; color:#fcd34d;">27.0</td><td style="text-align:right;">236.42</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">5</td><td>PEJRE2</td><td>00:46</td><td class="addr" style="font-size:8px;">0xf50473a992b6866cd95bdc232218fd68af4a9d3b</td><td style="text-align:right; color:#fcd34d;">27.0</td><td style="text-align:right;">236.91</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">6</td><td>—</td><td>00:49</td><td class="addr" style="font-size:8px;">0x5c102686665973a20efb1386dddb4b3e4bd5e99b</td><td style="text-align:right; color:#fcd34d;">22.0</td><td style="text-align:right;">192.92</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">7</td><td>WS3QMS</td><td>00:50</td><td class="addr" style="font-size:8px;">0xe64e3f96e42774c887e915c47e98bfe08eedfbf6</td><td style="text-align:right; color:#fcd34d;">28.0</td><td style="text-align:right;">245.33</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">8</td><td>9US9BW</td><td>00:52</td><td class="addr" style="font-size:8px;">0xda981f941a6bff3648287d55b051696f493e4fae</td><td style="text-align:right; color:#fcd34d;">22.0</td><td style="text-align:right;">192.83</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">9</td><td>CDJHXT</td><td>00:53</td><td class="addr" style="font-size:8px;">0x36db9a3d5fb84862ca34036887026f0d961a7738</td><td style="text-align:right; color:#fcd34d;">22.0</td><td style="text-align:right;">192.79</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">10</td><td>JJEX8A</td><td>01:08</td><td class="addr" style="font-size:8px;">0x73ed17cfea0389feab9e0a76689dde60b15bdb18</td><td style="text-align:right; color:#fcd34d;">22.0</td><td style="text-align:right;">192.78</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">11</td><td>P45DBD</td><td>01:10</td><td class="addr" style="font-size:8px;">0xc75a37bc1c0dbdd79617ac1a2ff01c9bf17730e8</td><td style="text-align:right; color:#fcd34d;">25.0</td><td style="text-align:right;">218.77</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">12</td><td>V745MB</td><td>01:14</td><td class="addr" style="font-size:8px;">0x59ebcd9d40086b8bb777bd895620e0326ca9519b</td><td style="text-align:right; color:#fcd34d;">23.0</td><td style="text-align:right;">201.00</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">13</td><td>45UMDU</td><td>01:48</td><td class="addr" style="font-size:8px;">0x1b7e99672f876e43cbb81c9195b4baec530a3e98</td><td style="text-align:right; color:#fcd34d;">23.0</td><td style="text-align:right;">201.19</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">14</td><td>7SS121</td><td>01:51</td><td class="addr" style="font-size:8px;">0x9f83550dc640b8e3e9f6297d319e3774be00f1ad</td><td style="text-align:right; color:#fcd34d;">27.0</td><td style="text-align:right;">235.28</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">15</td><td>AWVPGW</td><td>01:59</td><td class="addr" style="font-size:8px;">0xa600e46d931fba9bc6d2fd2a88bb869e7c33e8fc</td><td style="text-align:right; color:#fcd34d;">23.0</td><td style="text-align:right;">201.18</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">16</td><td>ZKAM8W</td><td>02:01</td><td class="addr" style="font-size:8px;">0xa862d9695d811f81f1bc9f4885c0a677a2e98fce</td><td style="text-align:right; color:#fcd34d;">26.0</td><td style="text-align:right;">226.91</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">17</td><td>A79MX5</td><td>02:10</td><td class="addr" style="font-size:8px;">0xb968b3a1e4441012acf046d6592aa2c1bee48671</td><td style="text-align:right; color:#fcd34d;">26.0</td><td style="text-align:right;">226.50</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">18</td><td>HRRSK6</td><td>02:15</td><td class="addr" style="font-size:8px;">0x3b8e5629b55f850011b70a8bd0b2bf8e3fcf61a9</td><td style="text-align:right; color:#fcd34d;">28.0</td><td style="text-align:right;">243.65</td><td>✅</td></tr>
+      <tr style="border-top:2px solid #ef4444;"><td style="padding:2px 4px;">19</td><td><b style="color:#fca5a5;">FE9NXV</b></td><td>02:23</td><td class="addr" style="font-size:8px;">0xad0bf09515843650f30dd99a9eda4086d04b9727</td><td style="text-align:right; color:#fcd34d;">29.0</td><td style="text-align:right;">254.19</td><td style="color:#ef4444; font-weight:700;">❄ 冻结</td></tr>
+      <tr><td style="padding:2px 4px;">20</td><td><b style="color:#fca5a5;">FK3TZA</b></td><td>02:46</td><td class="addr" style="font-size:8px;">0xb4eb7520328944bfb4d88069490d10cd890bf341</td><td style="text-align:right; color:#fcd34d;">21.0</td><td style="text-align:right;">184.55</td><td style="color:#ef4444; font-weight:700;">❄ 冻结</td></tr>
+      <tr style="border-top:1px solid #58a6ff;"><td style="padding:2px 4px;">21</td><td>—</td><td>08:57</td><td class="addr" style="font-size:8px;">0x3457befcb38f91105db54d1631b54c004efea5a0</td><td style="text-align:right; color:#fcd34d;">25.0</td><td style="text-align:right;">—</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">22</td><td>—</td><td>09:07</td><td class="addr" style="font-size:8px;">0xfdd1c3e0fa1b6afd81d592792560abeeac87fc82</td><td style="text-align:right; color:#fcd34d;">25.0</td><td style="text-align:right;">—</td><td>✅</td></tr>
+      <tr><td style="padding:2px 4px;">23</td><td>—</td><td>09:11</td><td class="addr" style="font-size:8px;">0xf8fa3f864edbb20b194b55a796186e070d90cd2b</td><td style="text-align:right; color:#fcd34d;">30.0</td><td style="text-align:right;">—</td><td>✅</td></tr>
+      <tr style="border-top:1px solid #c084fc;"><td colspan="4" style="padding:4px 6px; color:#c084fc; font-weight:700;">合计 23 笔 · 两批 (00:25~02:46 + 08:57~09:11)</td><td style="text-align:right; color:#fcd34d; font-weight:700;">~582 ETH</td><td style="text-align:right; color:#fcd34d; font-weight:700;">~5,100 XMR</td><td style="color:#8b949e;">21完成 · 2冻结</td></tr>
     </table>
     <div style="margin-top:8px; font-size:10px; color:#8b949e;">
       所有订单发往同一XMR地址 · 最后2笔XMR转出被FixedFloat冻结 (~439 XMR · ~$50K)<br>
-      ETH来源: TC提现地址 (Tay demix确认) → LayerSwap跨链 → FixedFloat
+      <b style="color:#58a6ff;">ETH来源已验证: 0x376a → 23个一次性地址 → FixedFloat (每个地址仅一笔TX)</b>
     </div>
   </div>
   <div class="arrow">↓</div>
@@ -815,19 +831,19 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       MEXC: $11M+ → 大部分转 XMR (不可追踪) · 冻结时仅剩 $11,476<br>
       Gate: ~$6.3M → $1.245M 被冻结 + $2.7M → HTX + TC→Stargate新路径 ~$475K<br>
       HTX: ~$2.74M → 配合极差(Europol批评) · 需法院命令<br>
-      <b style="color:#fcd34d;">Bybit: ~$200K (⚡新发现) → TC→Stargate→Arb→ETH→Bybit热钱包</b><br>
-      WhiteBIT: ~$1M LQTY → 交易所未回复<br>
+      <b style="color:#fcd34d;">Bybit: ~$150K (~75 ETH) → TC→Stargate→Arb→ETH→Bybit热钱包</b><br>
+      WhiteBIT: ~$1M → 来源待验证 · 交易所未回复<br>
       ChangeNow: 4.13 BTC + 100K USDT · 提款至8C16 (56.8 ETH)<br>
       n.exchange: 152,673 USDT · 提款至0295 (148K USDC)<br>
       SideShift: 386K USDT → 3a54 (59 ETH + 399K USDC → 200ETH入TC)<br>
-      FixedFloat: ~492 ETH → ~4,360 XMR (18笔完成 + 2笔冻结)
+      FixedFloat: ~582 ETH → ~5,100 XMR (21笔完成 + 2笔冻结)
     </div>
   </div>
 </div>
 
 <!-- Appendix -->
 <div class="appendix">
-  <h2>附录：关键地址清单（链上已验证 · 2026-03-29）</h2>
+  <h2>附录：关键地址清单（链上已验证 · 2026-03-30）</h2>
   <div class="appendix-box" style="max-width:1200px;">
     <table class="info-table">
       <tr><th>角色</th><th>完整地址</th><th>类型</th><th>当前余额</th><th>Nonce</th><th>状态</th></tr>
@@ -855,17 +871,21 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <tr><td style="color:#a78bfa;">TC出金中转 0x7A21</td><td class="mono">0x7A2102d5b82c4d27c8ef0b828a8563a7e937a1f3</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td>TC→此处→0xe74b</td></tr>
       <tr><td style="color:#a78bfa;">Stargate中转 0xe74b</td><td class="mono">0xe74b43d4ae5aaaf8b88600bda0d7d884f7f6bbeb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.001 ETH</td><td>5</td><td>300ETH→Stargate→Arb</td></tr>
       <tr><td style="color:#a78bfa;">Arb中转 0xcab22c</td><td class="mono">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0 (dust)</td><td>—</td><td>Arb · 300ETH全部分配完毕</td></tr>
-      <tr><td style="color:#a78bfa;">ETH中转 0xaeae</td><td class="mono">0xaeae1bed342a712c05cf835237eacec298453fa1</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>32</td><td>200ETH分→Bybit+Gate</td></tr>
-      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~138 ETH→Bybit Hot Wallet</td></tr>
+      <tr><td style="color:#a78bfa;">ETH中转 0xaeae</td><td class="mono">0xaeae1bed342a712c05cf835237eacec298453fa1</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>32</td><td>~75 ETH→Bybit + ~80 ETH→Gate</td></tr>
+      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~75 ETH→Bybit Hot Wallet</td></tr>
       <tr><td style="color:#60a5fa;">Gate入金 0x37ad</td><td class="mono">0x37ade0bbc5a1e9277c7d463c0a37857f1d8bfd31</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>16</td><td>~80 ETH→Gate Deposit</td></tr>
       <tr><td style="color:#fbbf24;">Bybit Hot Wallet</td><td class="mono">0xf89d7b9c864f589bbf53a82105107622b35eaa40</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>4,832 ETH</td><td>—</td><td style="color:#fbbf24;">Etherscan标签确认</td></tr>
-      <tr><td style="color:#60a5fa;">Gate Deposit</td><td class="mono">0x0D0707963952f2fBA59dD06f2b425ace40b492Fe</td><td><span class="wtype wtype-cex">CEX Deposit</span></td><td>10,385 ETH</td><td>—</td><td style="color:#60a5fa;">Etherscan标签确认</td></tr>
+      <tr><td style="color:#60a5fa;">Gate Deposit</td><td class="mono">0x0D0707963952f2fBA59dD06f2b425ace40b492Fe</td><td><span class="wtype wtype-cex">CEX Deposit</span></td><td>10,385 ETH</td><td>—</td><td style="color:#60a5fa;">Etherscan标签确认 (Stargate路径+Arb路径双验证)</td></tr>
+      <tr style="border-top:2px solid #22c55e; background:#0d1b0d66;"><td colspan="6" style="padding:6px 8px; color:#86efac; font-weight:700; font-size:12px;">▼ 新增已验证地址 (2026-03-30)</td></tr>
+      <tr><td style="color:#86efac;">e8F9冷钱包</td><td class="mono">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="color:#4ade80;">50,000 DAI</td><td>0</td><td style="color:#4ade80;">nonce=0 从未转出 · 可追回</td></tr>
+      <tr><td style="color:#86efac;">LQTY中转 0x1D43</td><td class="mono">0x1D43f19852FfA9ca5F2343E89f408BcbFA698a7E</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td>e8F9→LQTY→717 ETH→612 ETH入TC</td></tr>
+      <tr><td style="color:#86efac;">Layerswap (Arb)</td><td class="mono">0x2Fc617E933a52713247CE25730f6695920B3befe</td><td><span class="wtype wtype-cex">中转站</span></td><td>~213 ETH</td><td>—</td><td>18个demix地址→Layerswap→CEX · 可发传票查KYC</td></tr>
     </table>
   </div>
 </div>
 
 <!-- ═══════════════════ 资金现状总览 ═══════════════════ -->
-<div class="divider" style="border-top-color:#22c55e;">── 资金现状总览 · 截至 2026-03-29 ──</div>
+<div class="divider" style="border-top-color:#22c55e;">── 资金现状总览 · 截至 2026-03-30 ──</div>
 <div style="max-width:1200px; margin:0 auto;">
 
   <!-- 已冻结 -->
@@ -880,10 +900,12 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
 
   <!-- 可追回 -->
   <div style="background:#1c1708; border:2px solid #f59e0b; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$157K</div>
+    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$215K</div>
     <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
       <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">资产</td><td style="width:100px;">金额</td><td style="width:80px;">链</td><td style="width:80px;">形式</td><td>钱包地址</td><td style="width:120px;">状态</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDC</td><td style="color:#fcd34d; font-weight:700;">148,364</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td style="color:#fbbf24;">nonce=0 从未转出</td></tr>
+      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">DAI</td><td style="color:#fcd34d; font-weight:700;">50,000</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</td><td style="color:#fbbf24;">e8F9冷钱包 · nonce=0 从未转出</td></tr>
+      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">DAI</td><td style="color:#fcd34d;">8,803</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0xd64210ef74ea5fabbd07ce0d0274e33f7e2b0fd6</td><td style="color:#fbbf24;">0xd642 · 未卖出被盗DAI</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDT</td><td style="color:#fcd34d;">~8,371</td><td>TRON</td><td>TRC-20</td><td class="addr" style="font-size:10px;">TMYBuskAXEtScBBcK6s9BfAfKHmW8p5pYn</td><td style="color:#fbbf24;">未冻结 · 可请求Tether冻结</td></tr>
     </table>
   </div>
@@ -920,9 +942,9 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <!-- HTX -->
       <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi)</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.74M</td><td>Gate TRON提现<br>+ TC→Stargate→Arb (22 ETH)</td><td>内部交易/提现 · 去向待查</td><td style="color:#fca5a5;">配合极差(Europol批评)<br>需法院命令</td></tr>
       <!-- Bybit (NEW) -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit ⚡新</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$200K<br>(~100 ETH)</td><td>TC→Stargate跨链<br>ETH→Arb→ETH→Bybit</td><td style="color:#fca5a5;">交易所内 · 可能已提现</td><td style="color:#fbbf24;">新发现 · 待冻结请求<br>Etherscan标签确认</td></tr>
+      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$150K<br>(~75 ETH)</td><td>TC→Stargate跨链<br>ETH→Arb→ETH→Bybit</td><td style="color:#fca5a5;">交易所内 · 可能已提现</td><td style="color:#fbbf24;">待冻结请求<br>Etherscan标签确认</td></tr>
       <!-- WhiteBIT -->
-      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M</td><td>e8F9 LQTY→swap→<br>ETH→USDT充值</td><td>提币去向不明</td><td style="color:#fbbf24;">交易所未回复<br>⚠ 待Deke发保全函</td></tr>
+      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M<br><span style="color:#fca5a5; font-size:9px;">⚠来源待验证</span></td><td>原报告称LQTY路径<br><span style="color:#fca5a5;">已证伪: LQTY→TC非WhiteBIT</span></td><td>提币去向不明</td><td style="color:#fbbf24;">交易所未回复<br>⚠ 来源需重新确认</td></tr>
       <!-- ChangeNow -->
       <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow</td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>BTC: 线索中断 · 无KYC<br>USDT → 提款至 <b>8C16</b> (56.83 ETH)</td><td style="color:#8b949e;">塞舌尔注册<br>⚠ 待Deke发保全函</td></tr>
       <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 另有96K USDC → 3a54 (ChangeNOW)</td></tr>
@@ -931,8 +953,8 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <!-- SideShift -->
       <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift</td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>提款至 <b>3a54</b> (59.3 ETH + 399K USDC)<br><span style="color:#fca5a5;">→ 1inch swap → 200 ETH → TC</span></td><td style="color:#fca5a5;">残留13.14 ETH<br>2025-10仍活跃!</td></tr>
       <!-- FixedFloat -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~492 ETH<br>(~$742K)</td><td>TC提现地址<br>(20个来源地址)</td><td>→ <b>~4,360 XMR</b> (18笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#8b949e;">同一IP · 同一XMR地址<br>2小时21分钟完成</td></tr>
-      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 来源地址仅有部分42位完整地址</td></tr>
+      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~582 ETH<br>(~$742K)</td><td>0x376a直发<br>(23个来源地址 · 全部已确认)</td><td>→ <b>~5,100 XMR</b> (21笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#8b949e;">同一IP · 同一XMR地址<br>2小时21分钟完成</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 全部23个完整42位来源地址已验证 · 来源: ae14→9055→1inch→0x376a→FixedFloat</td></tr>
       <!-- 合计 -->
       <tr style="border-top:2px solid #c9d1d9;"><td colspan="2" style="padding:6px 8px; color:#c9d1d9; font-weight:800; font-size:12px;">合计 8 个平台</td><td style="color:#fcd34d; font-weight:800; font-size:12px;">~$40M+</td><td colspan="3" style="font-size:11px; color:#8b949e;">→ XMR不可追踪 ~$13M+ · 交易所内待查 ~$3.9M · 已冻结 $1.30M · 链上残留可追回 ~$420K</td></tr>
     </table>
@@ -967,7 +989,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
   </div>
 </div>
 
-<div class="footer">沈波被盗案调查组 · 所有余额数据截至 2026-03-29 · 时间均为纽约时间 (EST/EDT)</div>
+<div class="footer">沈波被盗案调查组 · 所有余额数据截至 2026-03-30 · 时间均为纽约时间 (EST/EDT)</div>
 
 </div><!-- end main-content -->
 
