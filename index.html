@@ -815,7 +815,8 @@ function setZoom(v) {
   document.documentElement.style.width = (4800 * zoomLevel / 100) + 'px';
   document.documentElement.style.height = (document.body.scrollHeight * zoomLevel / 100) + 'px';
 }
-setZoom(40);
+// Don't apply zoom until password is entered — otherwise it shrinks the password gate
+if (!document.getElementById('pw-gate')) setZoom(40);
 document.addEventListener('wheel', function(e) {
   if (e.ctrlKey || e.metaKey) {
     e.preventDefault();
