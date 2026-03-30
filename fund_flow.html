@@ -282,32 +282,6 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   <a href="#appendix">关键地址附录</a>
 </div>
 
-<div class="verify-panel">
-  <div class="verify-title">反复核验记录</div>
-  <div class="verify-grid">
-    <div class="verify-item">
-      <div class="evidence-badge verified">链上已核验</div>
-      <div><b>主路径已反复核对</b><br>受害者地址在 2022-11-10 05:46:35 UTC 将 <b>38,233,180 USDC</b> 转至 <b>bc2e</b>，05:48:47 UTC 又将 <b>1,606 ETH</b> 转至同地址；05:55:35 UTC 完成换币后，链上可直接解出 <b>38,100,000 DAI</b> 到 <b>ae14</b>。</div>
-    </div>
-    <div class="verify-item">
-      <div class="evidence-badge verified">链上已核验</div>
-      <div><b>第二层 ETH 出口已被内部调用锁定</b><br><b>9055 -> 1inch -> 0x376a</b>、<b>d642 -> 1inch -> 0x4542</b>、<b>ee73 -> 1inch -> 0xB529</b> 均已在交易内部调用或输入数据中被反复确认，且当前残留与图中数值匹配。</div>
-    </div>
-    <div class="verify-item">
-      <div class="evidence-badge verified">样本已核验</div>
-      <div><b>TC 后的 Stargate / 交易所样本继续被补强</b><br>已复核 <b>0xaeae</b> 于 <b>2024-09-14 10:57:59 UTC</b> 向 <b>0x689b</b> 发送 <b>100 ETH</b>（哈希 <b>0x378139d9...</b>）；<b>0x689b</b> 又在 <b>2024-09-18 ~ 2024-10-14</b> 分批向 <b>0x37ad</b> 发送 <b>10 / 19 / 20 / 24 / 25.886 ETH</b>，而 <b>0x37ad</b> 随后把对应金额继续转入 <b>0x0D0707...92Fe</b>（Gate 充值地址标签）。同一时期，<b>0xaeae</b> 还在 <b>2024-09-14</b> 至 <b>2024-10-07</b> 间多次向 <b>0x6d4f</b> 分批发送 <b>10 / 20 / 19.7 / 25 / 25.035 ETH</b>，而 <b>0x6d4f</b> 则把对应金额继续转入 <b>0xf89d...aa40</b>（Bybit 热钱包标签）。</div>
-    </div>
-    <div class="verify-item">
-      <div class="evidence-badge verified">样本已核验</div>
-      <div><b>Arbitrum Address 3 → Gate 的 ETH 主网接力样本已被链上重放</b><br><b>0x15626</b> 在 <b>2024-05-08</b> 连续向 <b>0xfB2B</b> 发送多笔 <b>2 ETH</b>（如 <b>0x670f7e9b...</b>、<b>0x71ce2d11...</b>）；<b>0xfB2B</b> 随后把近似同额 ETH 转给 <b>0xe3a2</b>（如 <b>0x5017817f...</b>、<b>0xefc95d3d...</b>），而 <b>0xe3a2</b> 再将聚合后的 <b>~2 / ~4 / ~6 ETH</b> 批次转入 <b>0x0D0707...92Fe</b>（Gate 充值地址）。这与本地 <b>arbitrum_3addr_trace_20260330.md</b> 的 Address 3 结论一致。</div>
-    </div>
-    <div class="verify-item">
-      <div class="evidence-badge verified">复核通过</div>
-      <div><b>原始法律与追踪文案在 UNI 项上目前仍成立</b><br>重新核对交易 <b>0x5ebc1324...</b> 的输入数据与 Ethplorer 代币转账记录后，受害者到 <b>e8F9</b> 的 UNI 首跳金额确认为 <b>999.3 UNI</b>。</div>
-    </div>
-  </div>
-</div>
-
 <!-- Legend -->
 <div class="legend-wrap">
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:linear-gradient(135deg,#cc0000,#991100);"></div><span style="font-size:11px; color:#8b949e;">受害者钱包</span></div>
