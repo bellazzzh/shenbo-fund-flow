@@ -18,64 +18,79 @@
 </style>
 <style>
 :root {
-  --bg:#0b0e14;
-  --panel:#111827;
-  --panel-2:#0f172a;
-  --line:#30363d;
-  --text:#e6edf3;
-  --muted:#8b949e;
-  --blue:#58a6ff;
-  --green:#4ade80;
-  --amber:#fbbf24;
-  --red:#f87171;
-  --purple:#c084fc;
+  --bg:#07111c;
+  --bg-2:#0d1b2c;
+  --panel:#0f1b2d;
+  --panel-2:#11233a;
+  --panel-3:#152b45;
+  --line:#28415d;
+  --line-soft:#1a3149;
+  --text:#f4f8fb;
+  --muted:#9fb3c8;
+  --blue:#7cc7ff;
+  --green:#5ee6a8;
+  --amber:#ffcc6e;
+  --red:#ff7b72;
+  --purple:#b79dff;
+  --shadow:0 20px 60px rgba(2, 8, 18, 0.45);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { overflow:auto; }
-body { background:radial-gradient(circle at top, rgba(88,166,255,0.12), transparent 24%), radial-gradient(circle at 20% 20%, rgba(192,132,252,0.08), transparent 22%), var(--bg); color:#fff; font-family:-apple-system,'Segoe UI',Arial,sans-serif; padding:0 30px 40px; max-width:2200px; margin:0 auto; }
-#zoom-ctrl { position:fixed; bottom:20px; right:20px; z-index:9999; background:rgba(30,35,45,0.95); border:1px solid #30363d; border-radius:12px; padding:8px 14px; display:flex; align-items:center; gap:8px; backdrop-filter:blur(8px); box-shadow:0 4px 20px rgba(0,0,0,0.5); }
-#zoom-ctrl button { width:32px; height:32px; border:1px solid #484f58; border-radius:8px; background:#161b22; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-#zoom-ctrl button:hover { background:#21262d; border-color:#58a6ff; }
-#zoom-ctrl span { color:#8b949e; font-size:12px; min-width:40px; text-align:center; font-family:monospace; }
-#zoom-ctrl input[type=range] { width:100px; accent-color:#58a6ff; }
-h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
-.sub { text-align:center; font-size:14px; color:#6e7681; margin-bottom:24px; }
-.bubble { border-radius:16px; padding:14px 18px; text-align:center; font-size:13px; line-height:1.6; transition:box-shadow 0.2s; }
-.bubble .tag { font-size:10px; letter-spacing:1px; text-transform:uppercase; opacity:0.6; margin-bottom:4px; }
-.bubble .addr { font-family:'SF Mono','Menlo',monospace; font-size:10px; color:rgba(255,255,255,0.55); word-break:break-all; }
+body { background:
+  radial-gradient(circle at top, rgba(124,199,255,0.18), transparent 24%),
+  radial-gradient(circle at 14% 22%, rgba(183,157,255,0.11), transparent 18%),
+  linear-gradient(180deg, rgba(255,255,255,0.02), transparent 20%),
+  linear-gradient(180deg, var(--bg-2), var(--bg) 22%, #050c16 100%);
+  color:var(--text);
+  font-family:"Avenir Next","Segoe UI",-apple-system,Arial,sans-serif;
+  padding:0 30px 40px;
+  max-width:2200px;
+  margin:0 auto;
+}
+#zoom-ctrl { position:fixed; bottom:20px; right:20px; z-index:9999; background:rgba(9,18,31,0.94); border:1px solid var(--line); border-radius:14px; padding:8px 14px; display:flex; align-items:center; gap:8px; backdrop-filter:blur(12px); box-shadow:var(--shadow); }
+#zoom-ctrl button { width:32px; height:32px; border:1px solid #3d5877; border-radius:8px; background:#10233a; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+#zoom-ctrl button:hover { background:#173252; border-color:var(--blue); }
+#zoom-ctrl span { color:var(--muted); font-size:12px; min-width:40px; text-align:center; font-family:monospace; }
+#zoom-ctrl input[type=range] { width:100px; accent-color:var(--blue); }
+h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; font-weight:900; line-height:1.2; }
+.sub { text-align:center; font-size:14px; color:var(--muted); margin-bottom:24px; }
+.bubble { border-radius:18px; padding:16px 18px; text-align:center; font-size:13px; line-height:1.65; transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s; backdrop-filter:blur(8px); box-shadow:var(--shadow); }
+.bubble:hover { transform:translateY(-1px); }
+.bubble .tag { font-size:10px; letter-spacing:1.2px; text-transform:uppercase; opacity:0.82; margin-bottom:6px; font-weight:700; }
+.bubble .addr { font-family:'SF Mono','Menlo',monospace; font-size:10px; color:rgba(223,236,247,0.72); word-break:break-all; }
 .bubble b { font-weight:700; }
-.b-red { background:linear-gradient(135deg,#cc0000,#991100); box-shadow:0 0 60px rgba(204,0,0,0.4),0 0 120px rgba(204,0,0,0.15); }
-.b-blue { background:#131a2e; border:1.5px solid #3b82f6; box-shadow:0 0 15px rgba(59,130,246,0.15); }
-.b-green { background:#0d2818; border:1.5px solid #22c55e; box-shadow:0 0 15px rgba(34,197,94,0.15); }
-.b-purple { background:#1a1035; border:1.5px solid #8b5cf6; box-shadow:0 0 15px rgba(139,92,246,0.15); }
-.b-gray { background:#161b22; border:1.5px solid #484f58; }
-.b-amber { background:#1c1708; border:1.5px solid #f59e0b; }
-.b-darkred { background:#1a0a0a; border:1.5px solid #ef4444; box-shadow:0 0 15px rgba(239,68,68,0.1); }
+.b-red { background:linear-gradient(155deg, rgba(111,21,25,0.96), rgba(52,8,12,0.96)); border:1.5px solid rgba(255,123,114,0.5); box-shadow:0 0 60px rgba(161,44,52,0.28), var(--shadow); }
+.b-blue { background:linear-gradient(165deg, rgba(17,35,58,0.96), rgba(10,24,40,0.96)); border:1.5px solid rgba(124,199,255,0.48); box-shadow:0 0 22px rgba(124,199,255,0.12), var(--shadow); }
+.b-green { background:linear-gradient(165deg, rgba(8,53,37,0.96), rgba(7,31,23,0.96)); border:1.5px solid rgba(94,230,168,0.45); box-shadow:0 0 22px rgba(94,230,168,0.12), var(--shadow); }
+.b-purple { background:linear-gradient(165deg, rgba(32,24,64,0.96), rgba(18,14,38,0.96)); border:1.5px solid rgba(183,157,255,0.42); box-shadow:0 0 22px rgba(183,157,255,0.12), var(--shadow); }
+.b-gray { background:linear-gradient(165deg, rgba(17,27,40,0.96), rgba(11,18,28,0.96)); border:1.5px solid #4c6077; }
+.b-amber { background:linear-gradient(165deg, rgba(62,43,11,0.96), rgba(34,25,8,0.96)); border:1.5px solid rgba(255,204,110,0.5); }
+.b-darkred { background:linear-gradient(165deg, rgba(52,16,18,0.96), rgba(22,8,10,0.96)); border:1.5px solid rgba(255,123,114,0.4); box-shadow:0 0 18px rgba(255,123,114,0.08), var(--shadow); }
 .wtype { display:inline-block; font-size:9px; padding:1px 7px; border-radius:6px; font-weight:600; letter-spacing:0.5px; margin-left:4px; vertical-align:middle; }
 .wtype-eoa { background:#1a2744; color:#60a5fa; border:1px solid #2563eb44; }
 .wtype-contract { background:#1a0f2e; color:#a78bfa; border:1px solid #7c3aed44; }
 .wtype-cex { background:#2a1a08; color:#fbbf24; border:1px solid #d9770644; }
 .wtype-victim { background:#2a0808; color:#f87171; border:1px solid #dc262644; }
 .flow { display:flex; flex-direction:column; align-items:center; gap:0; }
-.arrow { text-align:center; color:#58a6ff; font-size:20px; padding:10px 0; line-height:1; font-weight:300; }
-.arrow-label { text-align:center; font-size:11px; color:#8b949e; padding:4px 0; background:rgba(88,166,255,0.05); border-radius:6px; margin:2px 0; }
+.arrow { text-align:center; color:var(--blue); font-size:22px; padding:12px 0; line-height:1; font-weight:500; text-shadow:0 0 18px rgba(124,199,255,0.24); }
+.arrow-label { text-align:center; font-size:11px; color:#c6d8ea; padding:7px 10px; background:rgba(124,199,255,0.08); border:1px solid rgba(124,199,255,0.14); border-radius:8px; margin:4px 0; }
 .row { display:flex; gap:16px; justify-content:center; align-items:flex-start; flex-wrap:wrap; }
 .col { display:flex; flex-direction:column; align-items:center; gap:0; }
-.divider { text-align:center; font-size:15px; color:#58a6ff; letter-spacing:3px; margin:40px 0 24px; text-transform:uppercase; border-top:2px solid #21262d; padding-top:20px; font-weight:700; }
+.divider { text-align:center; font-size:15px; color:var(--blue); letter-spacing:3px; margin:46px 0 26px; text-transform:uppercase; border-top:2px solid var(--line-soft); padding-top:24px; font-weight:800; }
 .sum-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
 .sum { border-radius:16px; padding:18px 24px; text-align:center; min-width:220px; }
 .sum .n { font-size:22px; font-weight:800; }
 .sum .l { font-size:11px; color:#8b949e; margin-top:4px; line-height:1.6; }
 .info-table { width:100%; border-collapse:collapse; margin-top:8px; }
-.info-table th { font-size:11px; color:#6e7681; text-align:left; padding:6px 10px; border-bottom:1px solid #21262d; }
-.info-table td { font-size:12px; color:#ccc; padding:6px 10px; border-bottom:1px solid #161b22; }
+.info-table th { font-size:11px; color:var(--muted); text-align:left; padding:8px 10px; border-bottom:1px solid var(--line-soft); background:rgba(255,255,255,0.02); }
+.info-table td { font-size:12px; color:#dde8f1; padding:7px 10px; border-bottom:1px solid rgba(26,49,73,0.66); }
 .info-table td.mono { font-family:'SF Mono',monospace; font-size:10px; color:#93c5fd; }
 .info-table td.status-green { color:#4ade80; }
 .appendix { margin-top:30px; border-top:1px solid #21262d; padding-top:24px; }
 .appendix h2 { font-size:18px; color:#c4b5fd; margin-bottom:14px; text-align:center; }
-.appendix-box { background:#12101f; border:1px solid #5b21b6; border-radius:16px; padding:20px 28px; max-width:1200px; margin:0 auto; }
-.footer { text-align:center; margin-top:20px; font-size:12px; color:#30363d; padding-bottom:20px; }
-.section-box { background:#0d1b2a; border:1px solid #30363d; border-radius:12px; padding:12px 16px; }
+.appendix-box { background:linear-gradient(165deg, rgba(24,18,43,0.96), rgba(11,18,30,0.96)); border:1px solid rgba(183,157,255,0.34); border-radius:18px; padding:22px 28px; max-width:1200px; margin:0 auto; box-shadow:var(--shadow); }
+.footer { text-align:center; margin-top:20px; font-size:12px; color:#5c7087; padding-bottom:20px; }
+.section-box { background:linear-gradient(165deg, rgba(14,28,45,0.98), rgba(10,21,34,0.98)); border:1px solid var(--line); border-radius:14px; padding:14px 16px; box-shadow:var(--shadow); }
 
 /* Four-column grid */
 .grid-4col {
@@ -94,50 +109,87 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   border-radius:16px;
   padding:18px 14px;
 }
-.path-col-1 { background:rgba(59,130,246,0.06); border:1.5px solid rgba(59,130,246,0.25); }
-.path-col-2 { background:rgba(139,92,246,0.06); border:1.5px solid rgba(139,92,246,0.25); }
-.path-col-3 { background:rgba(107,114,128,0.08); border:1.5px solid rgba(107,114,128,0.25); }
-.path-col-4 { background:rgba(168,85,247,0.06); border:1.5px solid rgba(168,85,247,0.25); }
-.path-col .col-title { font-size:15px; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; font-weight:800; padding:8px 18px; border-radius:10px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); }
+.path-col-1 { background:linear-gradient(180deg, rgba(124,199,255,0.1), rgba(14,28,45,0.76)); border:1.5px solid rgba(124,199,255,0.28); }
+.path-col-2 { background:linear-gradient(180deg, rgba(183,157,255,0.1), rgba(18,14,38,0.76)); border:1.5px solid rgba(183,157,255,0.28); }
+.path-col-3 { background:linear-gradient(180deg, rgba(160,172,190,0.08), rgba(12,18,28,0.78)); border:1.5px solid rgba(124,145,167,0.24); }
+.path-col-4 { background:linear-gradient(180deg, rgba(168,85,247,0.08), rgba(22,14,34,0.78)); border:1.5px solid rgba(168,85,247,0.24); }
+.path-col .col-title { font-size:15px; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; font-weight:900; padding:10px 18px; border-radius:12px; background:rgba(4,10,18,0.58); border:1px solid rgba(255,255,255,0.08); box-shadow:inset 0 1px 0 rgba(255,255,255,0.04); }
 .path-col .bubble { width:100%; }
 .path-col .section-box { width:100%; }
 .path-col .row { width:100%; }
-.topbar { position:sticky; top:0; z-index:1000; margin:0 -30px 18px; padding:12px 30px; background:rgba(11,14,20,0.88); backdrop-filter:blur(12px); border-bottom:1px solid rgba(88,166,255,0.12); }
+.path-summary { width:100%; margin:0 0 14px; padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); box-shadow:var(--shadow); }
+.path-summary .kicker { font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); font-weight:800; margin-bottom:6px; }
+.path-summary .headline { font-size:13px; font-weight:900; color:#edf5fb; line-height:1.5; }
+.path-summary .note { font-size:11px; color:#c7d7e5; line-height:1.7; margin-top:4px; }
+.topbar { position:sticky; top:0; z-index:1000; margin:0 -30px 18px; padding:14px 30px; background:rgba(7,17,28,0.82); backdrop-filter:blur(14px); border-bottom:1px solid rgba(124,199,255,0.16); box-shadow:0 8px 30px rgba(2,8,18,0.32); }
 .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:2200px; margin:0 auto; }
-.topbar-brand { font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#c9d1d9; font-weight:700; }
+.topbar-brand { font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#e8f2fa; font-weight:800; }
 .topbar-meta { font-size:11px; color:var(--muted); text-align:right; }
 .quick-nav { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:18px auto 24px; max-width:1400px; }
-.quick-nav a { color:#c9d1d9; text-decoration:none; font-size:12px; padding:10px 14px; border:1px solid rgba(88,166,255,0.18); border-radius:999px; background:rgba(19,26,46,0.62); transition:all 0.2s ease; }
-.quick-nav a:hover { border-color:rgba(88,166,255,0.55); background:rgba(19,26,46,0.96); transform:translateY(-1px); }
-.hero-panel { max-width:1500px; margin:0 auto 18px; padding:24px 28px; border:1px solid rgba(88,166,255,0.14); border-radius:24px; background:linear-gradient(160deg, rgba(19,26,46,0.94), rgba(11,14,20,0.94)); box-shadow:0 18px 60px rgba(0,0,0,0.26); }
-.hero-kicker { text-align:center; color:#93c5fd; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
-.hero-summary { max-width:1150px; margin:16px auto 0; color:#c9d1d9; font-size:14px; line-height:1.8; text-align:center; }
+.quick-nav a { color:#dbebf7; text-decoration:none; font-size:12px; padding:10px 14px; border:1px solid rgba(124,199,255,0.2); border-radius:999px; background:rgba(15,31,50,0.72); transition:all 0.2s ease; box-shadow:0 8px 24px rgba(2,8,18,0.18); }
+.quick-nav a:hover { border-color:rgba(124,199,255,0.55); background:rgba(19,42,68,0.96); transform:translateY(-1px); }
+.hero-panel { max-width:1500px; margin:0 auto 22px; padding:30px 32px; border:1px solid rgba(124,199,255,0.16); border-radius:28px; background:linear-gradient(160deg, rgba(17,35,58,0.95), rgba(8,18,31,0.95)); box-shadow:var(--shadow); }
+.hero-kicker { text-align:center; color:#b8dcff; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800; }
+.hero-summary { max-width:1150px; margin:18px auto 0; color:#d4e4ef; font-size:14px; line-height:1.9; text-align:center; }
 .hero-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; margin-top:20px; }
-.hero-card { border-radius:18px; padding:16px 18px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); min-height:112px; }
-.hero-card .eyebrow { font-size:10px; letter-spacing:1.3px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.hero-card { border-radius:20px; padding:18px 18px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); min-height:112px; box-shadow:var(--shadow); }
+.hero-card .eyebrow { font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:#c0d3e6; margin-bottom:10px; font-weight:700; }
 .hero-card .value { font-size:24px; font-weight:900; line-height:1.1; }
-.hero-card .desc { margin-top:8px; font-size:12px; color:#c9d1d9; line-height:1.6; }
+.hero-card .desc { margin-top:8px; font-size:12px; color:#d6e3ee; line-height:1.6; }
 .hero-card.red { background:linear-gradient(160deg, rgba(127,29,29,0.42), rgba(26,10,10,0.88)); }
 .hero-card.green { background:linear-gradient(160deg, rgba(6,78,59,0.3), rgba(13,40,24,0.88)); }
 .hero-card.amber { background:linear-gradient(160deg, rgba(120,53,15,0.3), rgba(28,23,8,0.88)); }
 .hero-card.blue { background:linear-gradient(160deg, rgba(30,58,138,0.26), rgba(19,26,46,0.88)); }
-.legend-wrap { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:8px auto 18px; max-width:1200px; }
-.verify-panel { max-width:1500px; margin:0 auto 22px; padding:16px 18px; border:1px solid rgba(74,222,128,0.22); border-radius:18px; background:linear-gradient(160deg, rgba(6,78,59,0.18), rgba(11,14,20,0.88)); }
-.verify-title { text-align:center; font-size:13px; letter-spacing:1.6px; text-transform:uppercase; color:#86efac; font-weight:800; margin-bottom:12px; }
+.legend-wrap { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:12px auto 22px; max-width:1280px; padding:14px 18px; border:1px solid rgba(124,199,255,0.14); border-radius:18px; background:rgba(10,22,36,0.58); box-shadow:var(--shadow); }
+.verify-panel { max-width:1500px; margin:0 auto 24px; padding:18px 20px; border:1px solid rgba(94,230,168,0.22); border-radius:20px; background:linear-gradient(160deg, rgba(8,53,37,0.24), rgba(8,18,31,0.94)); box-shadow:var(--shadow); }
+.verify-title { text-align:center; font-size:13px; letter-spacing:1.6px; text-transform:uppercase; color:#b6f1d3; font-weight:900; margin-bottom:14px; }
 .verify-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }
-.verify-item { border-radius:14px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); }
-.verify-item div { font-size:12px; line-height:1.7; color:#c9d1d9; }
+.verify-item { border-radius:16px; padding:15px 16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); box-shadow:inset 0 1px 0 rgba(255,255,255,0.03); }
+.verify-item div { font-size:12px; line-height:1.72; color:#d8e6ef; }
 .verify-item b { color:#e6edf3; }
+.evidence-badge { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border-radius:999px; font-size:10px; font-weight:900; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+.evidence-badge.verified { background:rgba(94,230,168,0.12); color:#bdf2d8; border:1px solid rgba(94,230,168,0.26); }
+.evidence-badge.partial { background:rgba(255,204,110,0.12); color:#ffe1a8; border:1px solid rgba(255,204,110,0.24); }
+.evidence-badge.inferred { background:rgba(183,157,255,0.12); color:#ddd1ff; border:1px solid rgba(183,157,255,0.24); }
+.evidence-inline { display:inline-flex; align-items:center; gap:5px; padding:2px 8px; border-radius:999px; font-size:9px; font-weight:900; letter-spacing:0.8px; text-transform:uppercase; vertical-align:middle; }
+.evidence-inline.verified { background:rgba(94,230,168,0.1); color:#bdf2d8; border:1px solid rgba(94,230,168,0.22); }
+.evidence-inline.partial { background:rgba(255,204,110,0.1); color:#ffe1a8; border:1px solid rgba(255,204,110,0.22); }
+.evidence-inline.inferred { background:rgba(183,157,255,0.1); color:#ddd1ff; border:1px solid rgba(183,157,255,0.22); }
+.status-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin:18px auto 0; max-width:1500px; }
+.status-card { border-radius:20px; padding:18px 18px 16px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.08); }
+.status-card h3 { font-size:14px; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:10px; }
+.status-card p { font-size:12px; line-height:1.7; color:#d8e6ef; }
+.status-card.green { background:linear-gradient(165deg, rgba(8,53,37,0.96), rgba(7,31,23,0.96)); border-color:rgba(94,230,168,0.34); }
+.status-card.amber { background:linear-gradient(165deg, rgba(62,43,11,0.96), rgba(34,25,8,0.96)); border-color:rgba(255,204,110,0.34); }
+.status-card.red { background:linear-gradient(165deg, rgba(52,16,18,0.96), rgba(22,8,10,0.96)); border-color:rgba(255,123,114,0.28); }
+.status-chip { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+.status-chip.green { background:rgba(94,230,168,0.12); color:#b6f1d3; border:1px solid rgba(94,230,168,0.24); }
+.status-chip.amber { background:rgba(255,204,110,0.12); color:#ffe1a8; border:1px solid rgba(255,204,110,0.24); }
+.status-chip.red { background:rgba(255,123,114,0.12); color:#ffc0bb; border:1px solid rgba(255,123,114,0.22); }
+.table-panel { background:linear-gradient(165deg, rgba(11,20,31,0.98), rgba(8,16,26,0.98)); border:1px solid var(--line); border-radius:18px; padding:18px 20px; box-shadow:var(--shadow); }
+.table-panel-header { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:12px; }
+.table-panel-title { font-size:16px; font-weight:900; color:#e9f3fb; }
+.table-panel-desc { font-size:11px; color:var(--muted); line-height:1.6; max-width:700px; }
+.table-clean { width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; }
+.table-clean tr:first-child td, .table-clean tr:first-child th { border-top:none !important; }
+.table-clean th { background:rgba(124,199,255,0.08); color:#cfe4f6; font-size:10px; letter-spacing:0.8px; text-transform:uppercase; padding:9px 8px; border-top:1px solid rgba(124,199,255,0.18); }
+.table-clean td { padding:8px 8px; border-top:1px solid rgba(40,65,93,0.7); color:#d7e4ee; }
+.table-clean tr:nth-child(even) td { background:rgba(255,255,255,0.02); }
+.table-clean tr:hover td { background:rgba(124,199,255,0.05); }
+.risk-row-high td { background:rgba(255,123,114,0.05); }
+.risk-row-watch td { background:rgba(255,204,110,0.04); }
+.risk-row-good td { background:rgba(94,230,168,0.04); }
 @media (max-width: 1200px) {
   .hero-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .grid-4col { grid-template-columns:1fr 1fr; }
+  .status-grid { grid-template-columns:1fr; }
 }
 @media (max-width: 860px) {
   body { padding:0 14px 24px; }
   .topbar { margin:0 -14px 14px; padding:12px 14px; }
   .topbar-inner { flex-direction:column; align-items:flex-start; }
   .topbar-meta { text-align:left; }
-  h1 { font-size:24px; line-height:1.3; }
+  h1 { font-size:26px; line-height:1.3; }
   .sub { font-size:12px; margin-bottom:16px; }
   .hero-panel { padding:18px 16px; border-radius:18px; }
   .hero-summary { font-size:13px; text-align:left; }
@@ -148,6 +200,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   .sum-row { flex-direction:column; }
   .sum, .sum-row .b-darkred { min-width:0 !important; width:100%; }
   #zoom-ctrl { right:10px; bottom:10px; transform:scale(0.92); transform-origin:bottom right; }
+  .legend-wrap { padding:12px 12px; }
 }
 </style>
 </head>
@@ -160,18 +213,19 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
     <br>
     <button class="pw-btn" onclick="checkPw()">进入</button>
     <div class="pw-err" id="pw-err">密码错误</div>
+    <div style="color:#8b949e; font-size:13px; margin-top:12px;">首次输入后，这台浏览器会记住已解锁状态。</div>
   </div>
 </div>
 
 <div id="main-content" class="content-hidden">
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-brand">Bo Shen Case Map</div>
+    <div class="topbar-brand">沈波案件图谱</div>
     <div class="topbar-meta">交互版案件网站 · 资金流、平台去向、可追回资产总览</div>
   </div>
 </div>
 <div class="hero-panel">
-  <div class="hero-kicker">Interactive Investigation Dashboard</div>
+  <div class="hero-kicker">交互式调查看板</div>
 <h1>沈波 $42M 被盗案 — 完整资金流向图</h1>
 <div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-03-30</div>
 <div class="hero-summary">
@@ -212,22 +266,27 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
 </div>
 
 <div class="verify-panel">
-  <div class="verify-title">Repeated Verification Notes</div>
+  <div class="verify-title">反复核验记录</div>
   <div class="verify-grid">
     <div class="verify-item">
+      <div class="evidence-badge verified">链上已核验</div>
       <div><b>主路径已反复核对</b><br>受害者地址在 2022-11-10 05:46:35 UTC 将 <b>38,233,180 USDC</b> 转至 <b>bc2e</b>，05:48:47 UTC 又将 <b>1,606 ETH</b> 转至同地址；05:55:35 UTC 完成换币后，链上可直接解出 <b>38,100,000 DAI</b> 到 <b>ae14</b>。</div>
     </div>
     <div class="verify-item">
+      <div class="evidence-badge verified">链上已核验</div>
       <div><b>第二层 ETH 出口已被内部调用锁定</b><br><b>9055 -> 1inch -> 0x376a</b>、<b>d642 -> 1inch -> 0x4542</b>、<b>ee73 -> 1inch -> 0xB529</b> 均已在交易内部调用或输入数据中被反复确认，且当前残留与图中数值匹配。</div>
     </div>
     <div class="verify-item">
-      <div><b>TC 后的 Stargate / 交易所样本继续被补强</b><br>已复核 <b>0xaeae</b> 于 <b>2024-09-14 10:57:59 UTC</b> 向 <b>0x689b</b> 发送 <b>100 ETH</b>（哈希 <b>0x378139d9...</b>）；<b>0x689b</b> 又在 <b>2024-09-18 ~ 2024-10-14</b> 分批向 <b>0x37ad</b> 发送 <b>10 / 19 / 20 / 24 / 25.886 ETH</b>，而 <b>0x37ad</b> 随后把对应金额继续转入 <b>0x0D0707...92Fe</b>（Gate Deposit 标签）。同一时期，<b>0xaeae</b> 还在 <b>2024-09-14</b> 至 <b>2024-10-07</b> 间多次向 <b>0x6d4f</b> 分批发送 <b>10 / 20 / 19.7 / 25 / 25.035 ETH</b>，而 <b>0x6d4f</b> 则把对应金额继续转入 <b>0xf89d...aa40</b>（Bybit 热钱包标签）。</div>
+      <div class="evidence-badge verified">样本已核验</div>
+      <div><b>TC 后的 Stargate / 交易所样本继续被补强</b><br>已复核 <b>0xaeae</b> 于 <b>2024-09-14 10:57:59 UTC</b> 向 <b>0x689b</b> 发送 <b>100 ETH</b>（哈希 <b>0x378139d9...</b>）；<b>0x689b</b> 又在 <b>2024-09-18 ~ 2024-10-14</b> 分批向 <b>0x37ad</b> 发送 <b>10 / 19 / 20 / 24 / 25.886 ETH</b>，而 <b>0x37ad</b> 随后把对应金额继续转入 <b>0x0D0707...92Fe</b>（Gate 充值地址标签）。同一时期，<b>0xaeae</b> 还在 <b>2024-09-14</b> 至 <b>2024-10-07</b> 间多次向 <b>0x6d4f</b> 分批发送 <b>10 / 20 / 19.7 / 25 / 25.035 ETH</b>，而 <b>0x6d4f</b> 则把对应金额继续转入 <b>0xf89d...aa40</b>（Bybit 热钱包标签）。</div>
     </div>
     <div class="verify-item">
-      <div><b>Arbitrum Address 3 → Gate 的 ETH 主网接力样本已被链上重放</b><br><b>0x15626</b> 在 <b>2024-05-08</b> 连续向 <b>0xfB2B</b> 发送多笔 <b>2 ETH</b>（如 <b>0x670f7e9b...</b>、<b>0x71ce2d11...</b>）；<b>0xfB2B</b> 随后把近似同额 ETH 转给 <b>0xe3a2</b>（如 <b>0x5017817f...</b>、<b>0xefc95d3d...</b>），而 <b>0xe3a2</b> 再将聚合后的 <b>~2 / ~4 / ~6 ETH</b> 批次转入 <b>0x0D0707...92Fe</b>（Gate Deposit）。这与本地 <b>arbitrum_3addr_trace_20260330.md</b> 的 Address 3 结论一致。</div>
+      <div class="evidence-badge verified">样本已核验</div>
+      <div><b>Arbitrum Address 3 → Gate 的 ETH 主网接力样本已被链上重放</b><br><b>0x15626</b> 在 <b>2024-05-08</b> 连续向 <b>0xfB2B</b> 发送多笔 <b>2 ETH</b>（如 <b>0x670f7e9b...</b>、<b>0x71ce2d11...</b>）；<b>0xfB2B</b> 随后把近似同额 ETH 转给 <b>0xe3a2</b>（如 <b>0x5017817f...</b>、<b>0xefc95d3d...</b>），而 <b>0xe3a2</b> 再将聚合后的 <b>~2 / ~4 / ~6 ETH</b> 批次转入 <b>0x0D0707...92Fe</b>（Gate 充值地址）。这与本地 <b>arbitrum_3addr_trace_20260330.md</b> 的 Address 3 结论一致。</div>
     </div>
     <div class="verify-item">
-      <div><b>原始法律与追踪文案在 UNI 项上目前仍成立</b><br>重新核对交易 <b>0x5ebc1324...</b> 的输入数据与 Ethplorer 代币转账记录后，受害者到 <b>e8F9</b> 的 UNI 首跳金额确认为 <b>999.3 UNI</b>。此前页面中的 <b>62.499 UNI</b> 为本轮人工解码失误，已回滚。</div>
+      <div class="evidence-badge verified">复核通过</div>
+      <div><b>原始法律与追踪文案在 UNI 项上目前仍成立</b><br>重新核对交易 <b>0x5ebc1324...</b> 的输入数据与 Ethplorer 代币转账记录后，受害者到 <b>e8F9</b> 的 UNI 首跳金额确认为 <b>999.3 UNI</b>。</div>
     </div>
   </div>
 </div>
@@ -241,6 +300,9 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#1c1708; border:1.5px solid #f59e0b;"></div><span style="font-size:11px; color:#8b949e;">待追踪 / 需行动</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#1a0a0a; border:1.5px solid #ef4444;"></div><span style="font-size:11px; color:#8b949e;">高风险 / 线索中断</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#161b22; border:1.5px solid #484f58;"></div><span style="font-size:11px; color:#8b949e;">不可追踪 (XMR等)</span></div>
+  <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline verified">已验证</span><span style="font-size:11px; color:#8b949e;">已被链上或标签样本证实</span></div>
+  <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline partial">部分验证</span><span style="font-size:11px; color:#8b949e;">有部分证据，但仍需补强</span></div>
+  <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline inferred">推断</span><span style="font-size:11px; color:#8b949e;">推断或旧报告口径，不能当硬结论</span></div>
 </div>
 
 <!-- ═══════════════════ VICTIM ═══════════════════ -->
@@ -268,6 +330,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <!-- ============ COLUMN 1: PATH 1 · bc2e 主力 91% ============ -->
   <div class="path-col path-col-1">
     <div class="col-title" style="color:#3b82f6;">路径 1 · 91% · $38.8M</div>
+    <div class="path-summary">
+      <div class="kicker">路径摘要</div>
+      <div class="headline">主力资金从受害者直达 bc2e，换成 DAI 后长期停放，再拆到 d642 / 9055 / ee73 并逐步进 TC。</div>
+      <div class="note">这是全案最核心的洗钱主干，链上证据最密、金额最大，也最适合当作整张图的主叙事。</div>
+    </div>
 
     <!-- First hop: bc2e -->
     <div class="bubble b-blue">
@@ -393,6 +460,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <!-- ============ COLUMN 2: PATH 2 · e8F9 ============ -->
   <div class="path-col path-col-2">
     <div class="col-title" style="color:#8b5cf6;">路径 2 · ~1.2% · ~$500K</div>
+    <div class="path-summary">
+      <div class="kicker">路径摘要</div>
+      <div class="headline">e8F9 处理了被盗的 USDT、UNI、LQTY、REP 和少量 ETH，其中一部分进 TC，另一部分至今仍停在冷钱包。</div>
+      <div class="note">这条路径金额不算最大，但最适合做“已验证且仍可追回”的展示，因为冷钱包残留和 token 余额都很直观。</div>
+    </div>
 
     <!-- First hop: e8F9 -->
     <div class="bubble b-blue">
@@ -410,10 +482,10 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <div style="font-size:12px; color:#c9d1d9; margin-bottom:6px; text-align:center; font-weight:700;">路径 2a · USDT+UNI → ~65 ETH → TC</div>
       <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse;">
         <tr style="color:#8b949e;"><td style="padding:2px 4px;">步骤</td><td>纽约时间</td><td>操作</td><td style="text-align:right;">金额</td></tr>
-        <tr><td style="padding:2px 4px;">A</td><td>11-10 00:58 EST</td><td>Approve USDT</td><td style="text-align:right; color:#8b949e;">—</td></tr>
-        <tr><td style="padding:2px 4px;">B</td><td>11-10 01:18 EST</td><td>Swap USDT</td><td style="text-align:right; color:#fcd34d;">80K USDT</td></tr>
-        <tr><td style="padding:2px 4px;">C</td><td>11-10 01:20 EST</td><td>Approve UNI</td><td style="text-align:right; color:#8b949e;">—</td></tr>
-        <tr><td style="padding:2px 4px;">D</td><td>11-10 01:21 EST</td><td>Swap UNI</td><td style="text-align:right; color:#fcd34d;">999.3 UNI</td></tr>
+        <tr><td style="padding:2px 4px;">A</td><td>11-10 00:58 EST</td><td>授权 USDT</td><td style="text-align:right; color:#8b949e;">—</td></tr>
+        <tr><td style="padding:2px 4px;">B</td><td>11-10 01:18 EST</td><td>兑换 USDT</td><td style="text-align:right; color:#fcd34d;">80K USDT</td></tr>
+        <tr><td style="padding:2px 4px;">C</td><td>11-10 01:20 EST</td><td>授权 UNI</td><td style="text-align:right; color:#8b949e;">—</td></tr>
+        <tr><td style="padding:2px 4px;">D</td><td>11-10 01:21 EST</td><td>兑换 UNI</td><td style="text-align:right; color:#fcd34d;">999.3 UNI</td></tr>
         <tr><td style="padding:2px 4px;">E</td><td>11-12 06:51 EST</td><td>DAI → ETH</td><td style="text-align:right; color:#fcd34d;">~65 ETH</td></tr>
         <tr style="border-top:1px solid #21262d;"><td style="padding:2px 4px;">F</td><td>11-12 ~EST</td><td>200 DAI → SideShift</td><td style="text-align:right; color:#fcd34d;">200 DAI</td></tr>
       </table>
@@ -428,7 +500,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
 
     <!-- 2b: LQTY → 0x1D43 → TC (VERIFIED 2026-03-30) -->
     <div class="bubble b-purple" style="border-color:#a855f7;">
-      <div class="tag">路径 2b · 557,140 LQTY → 717 ETH → TC 612 ETH · ✅已验证</div>
+      <div class="tag">路径 2b · 557,140 LQTY → 717 ETH → TC 612 ETH <span class="evidence-inline verified">已验证</span></div>
       <b>e8F9 → 0x1D43 (LQTY中转)</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr">0x1D43f19852FfA9ca5F2343E89f408BcbFA698a7E</div>
       <div style="font-size:11px; color:#8b949e;">nonce=21 · 残留 0.444 ETH</div>
@@ -437,12 +509,12 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
     <div class="section-box" style="background:#161b22;">
       <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse;">
         <tr style="color:#8b949e;"><td style="padding:2px 4px;">步骤</td><td>纽约时间</td><td>操作</td><td style="text-align:right;">金额</td></tr>
-        <tr><td style="padding:2px 4px;">A</td><td>2023-04-15 12:19 EDT</td><td>e8F9 → 0x1D43 gas</td><td style="text-align:right; color:#8b949e;">0.1 ETH</td></tr>
+        <tr><td style="padding:2px 4px;">A</td><td>2023-04-15 12:19 EDT</td><td>e8F9 → 0x1D43 补 gas</td><td style="text-align:right; color:#8b949e;">0.1 ETH</td></tr>
         <tr><td style="padding:2px 4px;">B</td><td>2023-04-15 12:20 EDT</td><td>e8F9 → 0x1D43 LQTY</td><td style="text-align:right; color:#fcd34d;">557,140 LQTY</td></tr>
-        <tr><td style="padding:2px 4px;">C</td><td>2023-04-15 12:20 EDT</td><td>12笔swap via Uniswap V3 + 1inch</td><td style="text-align:right; color:#fcd34d;">→ 717 ETH</td></tr>
+        <tr><td style="padding:2px 4px;">C</td><td>2023-04-15 12:20 EDT</td><td>12笔兑换（经 Uniswap V3 + 1inch）</td><td style="text-align:right; color:#fcd34d;">→ 717 ETH</td></tr>
         <tr><td style="padding:2px 4px;"></td><td colspan="2" style="color:#fca5a5; font-size:9px;">MEV bot sandwich损失 ~105 ETH</td><td></td></tr>
-        <tr style="border-top:1px solid #21262d;"><td style="padding:2px 4px;">D</td><td>2023-12-01 10:55 EST</td><td>6笔 × 100 ETH → TC Router</td><td style="text-align:right; color:#fcd34d;">600 ETH</td></tr>
-        <tr><td style="padding:2px 4px;">E</td><td>2024-06-09 18:38 EDT</td><td>12笔 × 1 ETH → TC Router</td><td style="text-align:right; color:#fcd34d;">12 ETH</td></tr>
+        <tr style="border-top:1px solid #21262d;"><td style="padding:2px 4px;">D</td><td>2023-12-01 10:55 EST</td><td>6笔 × 100 ETH → TC 路由</td><td style="text-align:right; color:#fcd34d;">600 ETH</td></tr>
+        <tr><td style="padding:2px 4px;">E</td><td>2024-06-09 18:38 EDT</td><td>12笔 × 1 ETH → TC 路由</td><td style="text-align:right; color:#fcd34d;">12 ETH</td></tr>
         <tr style="border-top:1px solid #a855f766;"><td colspan="2" style="color:#c084fc; font-weight:600;">合计存入TC</td><td style="color:#c084fc; font-weight:600;">612 ETH</td><td></td></tr>
       </table>
     </div>
@@ -455,7 +527,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
     <div class="arrow" style="margin-top:16px;">── 路径 2c ──</div>
     <!-- 2c: e8F9 冷钱包 -->
     <div class="bubble b-green" style="margin-top:4px;">
-      <div class="tag">路径 2c · 50K DAI · 冷钱包 · 可追回</div>
+      <div class="tag">路径 2c · 50K DAI · 冷钱包 · 可追回 <span class="evidence-inline verified">已验证</span></div>
       <b>e8F9冷钱包</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</div>
       <div style="font-size:11px; color:#4ade80;"><b>50,000 DAI 仍在 · nonce=0 · 从未转出 · 可追回</b></div>
@@ -466,6 +538,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <!-- ============ COLUMN 3: PATH 3 · BTC ============ -->
   <div class="path-col path-col-3">
     <div class="col-title" style="color:#6b7280;">路径 3 · 0.2% · ~$70K</div>
+    <div class="path-summary">
+      <div class="kicker">路径摘要</div>
+      <div class="headline">BTC 两个受害地址被快速合并后进入 ChangeNow，之后链上线索明显变弱。</div>
+      <div class="note">这一段更像“证据边界”的展示: 首跳和充币可证，但后续更依赖平台资料，不适合写得过满。</div>
+    </div>
 
     <!-- First hop: BTC -->
     <div class="bubble b-gray">
@@ -493,7 +570,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
     <div class="arrow">↓</div>
 
     <div class="bubble b-darkred">
-      <b style="color:#fca5a5; font-size:14px;">线索中断</b><br>
+      <b style="color:#fca5a5; font-size:14px;">线索中断 <span class="evidence-inline partial">部分验证</span></b><br>
       <div style="font-size:11px; color:#ccc;">BTC 链上追踪困难<br>ChangeNow 无 KYC<br><b style="color:#fbbf24;">⚠ 待 Deke 发保全函</b></div>
     </div>
   </div>
@@ -501,6 +578,11 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <!-- ============ COLUMN 4: PATH 4 · TRON ============ -->
   <div class="path-col path-col-4">
     <div class="col-title" style="color:#a855f7;">路径 4 · 1.5% · ~$639K</div>
+    <div class="path-summary">
+      <div class="kicker">路径摘要</div>
+      <div class="headline">TRON 路径进入 mKt2 后分流到 ChangeNow、SideShift、n.exchange 和 Gate，并衍生出被冻结与仍可追回的关键资产。</div>
+      <div class="note">这条线最适合拿来解释“平台协查为什么重要”，因为冻结、未冻结残留和交易所流向都集中出现在这里。</div>
+    </div>
 
     <!-- First hop: TRON mKt2 -->
     <div class="bubble b-purple">
@@ -637,32 +719,32 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">1</td><td style="color:#93c5fd;">0xa4ac5297c15765710d220684446bb91d6b7f13f3</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-09 18:52 / 06-09 20:41</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb→Layerswap→<b>0x40870f</b>→Compound→re-bridge Arb→MEXC</td></tr>
     <tr><td style="padding:3px 6px;">2</td><td style="color:#93c5fd;">0x0cba58b817a7a897127102405a70db3d7651a910</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-08 13:54 / 06-08 16:33</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xE44350</b>→Layerswap→<b>0xf24ab2</b>→Compound→re-bridge→0x4806fA→<b>MEXC</b></td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">3</td><td style="color:#93c5fd;">0xa58837a2859e8a6a7559608f76ba708ca01c189f</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-12 10:43 / 05-12 10:45</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>14</td><td style="font-size:9px; color:#4ade80;">✅ Arb→Layerswap→<b>0xa698b1</b>→Compound→re-bridge Arb + 0x122f→<b>MEXC 1</b></td></tr>
-    <tr><td style="padding:3px 6px;">4</td><td style="color:#93c5fd;">0x8a83d2e15dfb658cf79895df70a90e39239baa6d</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-16 07:01 / 05-16 07:05</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x5F6C8d</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">5</td><td style="color:#93c5fd;">0xde629b3f0fba668602f22b17cf6d590f1a8da0b7</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-28 11:20 / 05-28 11:27</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x5aF391</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr><td style="padding:3px 6px;">6</td><td style="color:#93c5fd;">0x2a88cfa63e2b0ebc68b1494403b3928ce3725f4b</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-14 18:06 / 05-14 18:09</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x29cb0A</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">7</td><td style="color:#93c5fd;">0x903966eda17cd7944a16d9e7cf7d7049b5646144</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-25 08:22 / 05-25 08:26</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x883363</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr><td style="padding:3px 6px;">8</td><td style="color:#93c5fd;">0x4eaa56bee732a636068d08b1362ec5371259c3af</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-13 16:43 / 05-13 16:46</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>13</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xbE7f87</b>→Layerswap 100% · <span style="color:#fbbf24;">残留~0.96ETH · Compound→CEX终点待验证</span></td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">9</td><td style="color:#93c5fd;">0x096f01765c705067c4a21fccd2ac2a0837ae99ad</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-15 06:59 / 07:03 / 05-16 06:52</td><td style="text-align:right; color:#fcd34d;"><b>300</b></td><td style="text-align:right;">~0.8</td><td>19</td><td style="font-size:9px; color:#fbbf24;">✅ 3次TC提取(非2次) · 15笔→Arb · 06-12再发2×20ETH</td></tr>
-    <tr><td style="padding:3px 6px;">10</td><td style="color:#93c5fd;">0xb4b954a0701a2305f86e2a7042618dabc5cfb477</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-14 10:09 / 05-14 10:20</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>14</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xBe4afE</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">11</td><td style="color:#93c5fd;">0x417809f3e5249a19f388a6ee148f37dc43e701c0</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-10 09:32 / 06-10 09:35</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xE62bcD</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr><td style="padding:3px 6px;">12</td><td style="color:#93c5fd;">0x2d466e477627b3c5abf9b1df94c34d8d700d8d21</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-30 14:29 / 05-30 14:34</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x65372B</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
+    <tr><td style="padding:3px 6px;">4</td><td style="color:#93c5fd;">0x8a83d2e15dfb658cf79895df70a90e39239baa6d</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-16 07:01 / 05-16 07:05</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x5F6C8d</b>→Layerswap→Compound→re-bridge→0x122F62→<b>MEXC</b></td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">5</td><td style="color:#93c5fd;">0xde629b3f0fba668602f22b17cf6d590f1a8da0b7</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-28 11:20 / 05-28 11:27</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x5aF391</b>→Layerswap→双轮TC→Compound→<b>MEXC</b></td></tr>
+    <tr><td style="padding:3px 6px;">6</td><td style="color:#93c5fd;">0x2a88cfa63e2b0ebc68b1494403b3928ce3725f4b</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-14 18:06 / 05-14 18:09</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x29cb0A</b>→Layerswap→Compound→re-bridge→<b>MEXC</b></td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">7</td><td style="color:#93c5fd;">0x903966eda17cd7944a16d9e7cf7d7049b5646144</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-25 08:22 / 05-25 08:26</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x883363</b>→Layerswap→Compound→re-bridge→0xc5bd43→<b>MEXC</b></td></tr>
+    <tr><td style="padding:3px 6px;">8</td><td style="color:#93c5fd;">0x4eaa56bee732a636068d08b1362ec5371259c3af</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-13 16:43 / 05-13 16:46</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>13</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xbE7f87</b>→Layerswap→Compound→re-bridge→0xc5bd43→<b>MEXC</b> · <span style="color:#fbbf24;">残留~0.96ETH</span></td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">9</td><td style="color:#93c5fd;">0x096f01765c705067c4a21fccd2ac2a0837ae99ad</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-15 06:59 / 07:03 / 05-16 06:52</td><td style="text-align:right; color:#fcd34d;"><b>300</b></td><td style="text-align:right;">~0.8</td><td>19</td><td style="font-size:9px; color:#fbbf24;">✅ 3次TC提取 · 300ETH · splitter <b>0x95D8Bf</b>→Layerswap→Compound→双路径→<b>MEXC</b></td></tr>
+    <tr><td style="padding:3px 6px;">10</td><td style="color:#93c5fd;">0xb4b954a0701a2305f86e2a7042618dabc5cfb477</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-14 10:09 / 05-14 10:20</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>14</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xBe4afE</b>→Layerswap→Compound→re-bridge→0xFaB9→<b>MEXC</b></td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">11</td><td style="color:#93c5fd;">0x417809f3e5249a19f388a6ee148f37dc43e701c0</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-10 09:32 / 06-10 09:35</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xE62bcD</b>→Layerswap→Compound→re-bridge→0xc5bd43→<b>MEXC</b></td></tr>
+    <tr><td style="padding:3px 6px;">12</td><td style="color:#93c5fd;">0x2d466e477627b3c5abf9b1df94c34d8d700d8d21</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-30 14:29 / 05-30 14:34</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x65372B</b>→Layerswap→Compound→re-bridge→0x4806fA→<b>MEXC</b></td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">13</td><td style="color:#93c5fd;">0xc58bdb9c2841506f006f27c41c1e34518bc8e95a</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-10 14:30 / 05-10 14:33</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;"><span style="color:#fca5a5;">0.002</span></td><td>14</td><td style="font-size:9px; color:#fca5a5;">✅ <b>2025-01-23还在活动!</b> 0.867ETH→Arb · dust清扫</td></tr>
-    <tr><td style="padding:3px 6px;">14</td><td style="color:#93c5fd;">0xad9894a0464f8ba578b128fd81bbb75084ba2a43</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-08 18:50 / 05-08 18:52</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x66bC66</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
+    <tr><td style="padding:3px 6px;">14</td><td style="color:#93c5fd;">0xad9894a0464f8ba578b128fd81bbb75084ba2a43</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">05-08 18:50 / 05-08 18:52</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x66bC66</b>→Layerswap→直发ETH主网→<b>Gate.io</b> (0x0D0707)</td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">15</td><td style="color:#93c5fd;">0x008fe4b2f0f268426ca383a9cb58a06fe0255540</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 18:05 / 04-29 18:08</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ → Arb → Layerswap → <b>Gate.io</b> (0x0D0707)</td></tr>
-    <tr><td style="padding:3px 6px;">16</td><td style="color:#93c5fd;">0xa60aa3658d5fae44a227e0e9bc971671df265783</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 05:19 / 04-29 08:03</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x3f844F</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
-    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">17</td><td style="color:#93c5fd;">0xe38acbb345105c1d29ecb4b6e732f4bd79284432</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-12 03:55 / 06-12 03:59</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xe710F4</b>→Layerswap 100% · <span style="color:#fbbf24;">Compound→CEX终点待验证</span></td></tr>
+    <tr><td style="padding:3px 6px;">16</td><td style="color:#93c5fd;">0xa60aa3658d5fae44a227e0e9bc971671df265783</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">04-29 05:19 / 04-29 08:03</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x3f844F</b>→Layerswap→直发ETH主网→<b>Gate.io</b> (0x752Cd0) · <span style="color:#8b949e;">少量→OKX</span></td></tr>
+    <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">17</td><td style="color:#93c5fd;">0xe38acbb345105c1d29ecb4b6e732f4bd79284432</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-12 03:55 / 06-12 03:59</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0xe710F4</b>→Layerswap→Compound→re-bridge→0xc5bd43→<b>MEXC</b></td></tr>
     <tr><td style="padding:3px 6px;">18</td><td style="color:#93c5fd;">0x9a8f33d554ef0bf4a89f64a501cec6567fbff454</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-11 14:50 / 06-11 14:53</td><td style="text-align:right; color:#fcd34d;">317</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ Arb splitter <b>0x083E77</b>→Layerswap→<b>0xb71dbd</b>→Compound→re-bridge→0xc5bd43→<b>0x122F62(MEXC)</b></td></tr>
-    <tr style="border-top:1px solid #c084fc;"><td colspan="4" style="padding:4px 6px; color:#c084fc; font-weight:700; font-family:-apple-system,sans-serif;">合计 18 个地址 · 2024年4月-2025年1月</td><td style="text-align:right; color:#fcd34d; font-weight:700;">3,817</td><td style="text-align:right; color:#fcd34d;">~14</td><td colspan="2" style="font-family:-apple-system,sans-serif; color:#8b949e;">全部 → Arbitrum · #13于2025-01仍活跃</td></tr>
+    <tr style="border-top:1px solid #c084fc;"><td colspan="4" style="padding:4px 6px; color:#c084fc; font-weight:700; font-family:-apple-system,sans-serif;">合计 18 个地址 · 2024年4月-2025年1月</td><td style="text-align:right; color:#fcd34d; font-weight:700;">3,817</td><td style="text-align:right; color:#fcd34d;">~14</td><td colspan="2" style="font-family:-apple-system,sans-serif; color:#8b949e;">14个→MEXC · 3个→Gate.io (#14,#15,#16) · #13于2025-01仍活跃</td></tr>
   </table>
 </div>
 
 <!-- TC 未识别提现 -->
 <div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:12px auto 0;">
-  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~100+ 个地址 · ~9,274 ETH · ~$18.5M）</div>
+  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未完成出口归因（当前余量口径 · ~9,274 ETH · 依页面历史估值约 ~$18.5M）</div>
   <div style="display:flex; gap:20px;">
     <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
-      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH，已追踪出口 4,217 ETH (31%)<br>
-      <b style="color:#fca5a5;">未识别：</b>~9,274 ETH 提现去向不明 (~69%)<br>
+      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH；其中一部分已能接到已识别后续路径<br>
+      <b style="color:#fca5a5;">当前更稳妥的理解：</b>~9,274 ETH 是页面当前按余量推出来的“<b>尚未与已识别出口路径建立对应关系</b>”部分，<b style="color:#fde68a;">不等于已确认全部提现</b><br>
       <b style="color:#fca5a5;">可能去向：</b><br>
       · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
       · FixedFloat 等即时兑换 → XMR<br>
@@ -673,7 +755,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <b style="color:#fbbf24;">追踪障碍：</b><br>
       · Tornado Cash混币后地址断联，需专业demix工具<br>
       · Tay/Tayvano仅识别11%，Chainalysis/TRM可能更高<br>
-      · 2024年4-6月集中提现，可能已全部流入交易所<br><br>
+      · 一部分很可能已提现并流入交易所，但也不能排除仍有少量尚未提取或尚未被本案对应起来<br><br>
       <b style="color:#4ade80;">建议行动：</b><br>
       · 委托Chainalysis或TRM Labs进行完整demix<br>
       · 向更多交易所发送协查函（附TC存入txhash）<br>
@@ -739,9 +821,15 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   </div>
 </div>
 
+<div style="background:#1b0d0d; border:1px solid #ef444466; border-radius:12px; padding:10px 14px; width:100%; max-width:1200px; margin:8px auto 0; font-size:11px; color:#fecaca; line-height:1.8;">
+  <b style="color:#fca5a5;">重点标注：</b><b style="color:#fde68a;">另有 ~9,274 ETH</b> 属于“<b>已存入 TC 但尚未与已识别出口路径建立对应关系</b>”的当前余量口径；按页面沿用的历史估值约为 <b>~$18.5M</b>。这<b>不等于已确认全部提现</b>，也<b>不在</b>下方 `MEXC ~$11M` 和 `Gate ~$5.8M` 两列已识别去向里。
+</div>
+<div style="background:#101826; border:1px solid #334155; border-radius:12px; padding:10px 14px; width:100%; max-width:1200px; margin:8px auto 0; font-size:11px; color:#cbd5e1; line-height:1.7;">
+  <b style="color:#93c5fd;">说明：</b>下面两列只表示“已识别的 18 个 TC 提现地址”里，目前能落到交易所边界的两类主要去向，<b style="color:#fca5a5;">不等于全案全部剩余资金</b>。其余资金还包括：<b>尚未完成出口归因的 TC 余量 ~9,274 ETH</b>、<b>FixedFloat → XMR</b>、<b>ChangeNow / SideShift / n.exchange</b> 等其他路径，以及交易所内部已不可见的后续流转。
+</div>
 <div style="display:flex; gap:16px; margin-top:8px; justify-content:center;">
-  <div class="arrow" style="flex:0 0 300px;">↓ ~$11M</div>
-  <div class="arrow" style="flex:0 0 300px;">↓ ~$5.8M</div>
+  <div class="arrow" style="flex:0 0 300px;">↓ 已识别去向：MEXC ~$11M</div>
+  <div class="arrow" style="flex:0 0 300px;">↓ 已识别去向：Gate ~$5.8M</div>
 </div>
 
 <!-- CEX -->
@@ -792,7 +880,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
         <b style="color:#4ade80; font-size:15px;">Tether 已冻结 ✅</b> <span class="wtype wtype-cex">交易所钱包</span><br>
         <div style="font-size:20px; font-weight:800;">$1,245,249 USDT</div>
         <div class="addr">TBzBuvAGejw1vgmFYE6owFZyZ8c2LGEb5Q</div>
-        <div style="font-size:11px; color:#8b949e;">2024-06-13 列入黑名单 · Claim in process</div>
+        <div style="font-size:11px; color:#8b949e;">2024-06-13 列入黑名单 · 保全推进中</div>
       </div>
       <div class="bubble b-blue" style="width:340px;">
         <b style="color:#93c5fd; font-size:15px;">~$2.7M → HTX</b> <span class="wtype wtype-cex">交易所</span><br>
@@ -936,16 +1024,17 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
 <div class="sum-row">
   <div class="sum b-green">
     <div class="n" style="color:#4ade80;">$1,245,249</div>
-    <div class="l">已冻结 (Tether TRON)<br>Claim in process</div>
+    <div class="l">已冻结（Tether TRON）<br>保全推进中</div>
   </div>
   <div class="sum" style="background:#1c1708; border:1.5px solid #f59e0b;">
-    <div class="n" style="color:#fcd34d;">~$880K+</div>
+    <div class="n" style="color:#fcd34d;">359+ ETH</div>
     <div class="l">链上已确认残留（已验证）<br>
     ETH主网: bc2e 5.957 · e8F9 0.782 · 0x4542 51.21 · 0x376a 74.43 · 0xB529 41.71 · 8C16 56.83 · 3a54 13.14 ETH<br>
     Arbitrum: 0x096f ~100 ETH · TC提现地址 18×~0.9 (~15 ETH)<br>
     <b style="color:#4ade80;">e8F9: 3,518 REP + 35,436 DAI (从未转出)</b><br>
     <b style="color:#4ade80;">0295: 148,364 USDC (可追回)</b><br>
-    <b style="color:#4ade80;">TMYBusk: ~8,371 USDT (TRON·未冻结)</b></div>
+    <b style="color:#4ade80;">TMYBusk: ~8,371 USDT (TRON·未冻结)</b><br>
+    <span style="color:#8b949e;">另有 ~192K 稳定币 + 3,518 REP，见下方分项</span></div>
   </div>
   <div class="sum b-blue">
     <div class="n" style="color:#60a5fa;">~15 ETH (~$30K)</div>
@@ -954,6 +1043,23 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <div class="sum b-purple">
     <div class="n" style="color:#a78bfa;">~70 ETH + 148K USDC</div>
     <div class="l">链上未动<br>8C16: 56.83 ETH · 3a54: 13.14 ETH<br>0295: <b style="color:#fcd34d;">148,364 USDC (未冻结·可追回)</b></div>
+  </div>
+</div>
+<div class="status-grid">
+  <div class="status-card green">
+    <div class="status-chip green">已确认可追回</div>
+    <h3 style="color:#b6f1d3;">已冻结 / 已控制</h3>
+    <p>Tether 已冻结 TBzBuv 上的 $1.245M USDT，FixedFloat 还扣押了约 $50K 的 XMR。这一块是当前最硬、最适合直接转化为法务动作的资产。</p>
+  </div>
+  <div class="status-card amber">
+    <div class="status-chip amber">优先行动</div>
+    <h3 style="color:#ffe1a8;">未冻结但还在链上</h3>
+    <p>0295 上仍有 148,364 USDC，e8F9 冷钱包仍有 50,000 DAI，TMYBusk 还残留约 8,371 USDT。这些资产最适合优先做冻结、保全和交易所配合。</p>
+  </div>
+  <div class="status-card red">
+    <div class="status-chip red">高风险</div>
+    <h3 style="color:#ffc0bb;">交易所内待查 / 已转 XMR</h3>
+    <p>MEXC / Gate / HTX / Bybit 这部分已经更多进入平台内部流转，或被兑换成 XMR。这一块更依赖交易所回函、法院命令和 KYC、设备、IP 资料，而不是单纯继续看链。</p>
   </div>
 </div>
 <div class="sum-row">
@@ -978,7 +1084,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
 <div class="appendix" id="appendix">
   <h2>附录：关键地址清单（链上已验证 · 2026-03-30）</h2>
   <div class="appendix-box" style="max-width:1200px;">
-    <table class="info-table">
+    <table class="info-table table-clean">
       <tr><th>角色</th><th>完整地址</th><th>类型</th><th>当前余额</th><th>Nonce</th><th>状态</th></tr>
       <tr><td>受害者</td><td class="mono">0x6be85603322df6DC66163eF5f82A9c6ffBC5e894</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>1.056 ETH</td><td>146</td><td>残留</td></tr>
       <tr><td>黑客中间 bc2e</td><td class="mono">0x24B93EED37e6FfE948A9bdF365d750B52AdCBC2e</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>5.957 ETH</td><td>16</td><td>残留</td></tr>
@@ -987,10 +1093,10 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <tr><td>DAI→ETH 主力</td><td class="mono">0xd64210ef74ea5fabbd07ce0d0274e33f7e2b0fd6</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>0.038 ETH + 8.8K DAI</td><td>117</td><td>基本清空</td></tr>
       <tr><td>DAI→ETH #2</td><td class="mono">0x90553e0077976be794f1f875582c8d76f5f2809b</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>1.228 ETH</td><td>8</td><td>残留</td></tr>
       <tr><td style="color:#c084fc;">ETH汇集→TC</td><td class="mono">0x454249291af33ad5681ed07dfd5165c1cb1aa625</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>51.21 ETH</td><td>104</td><td style="color:#86efac;">确认存TC</td></tr>
-      <tr><td>DAI→ETH #3</td><td class="mono">0xee73dcff8f9704223766303bcf9c9fc436e929ae</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>0.009 ETH</td><td>1</td><td>dust</td></tr>
-      <tr><td style="color:#86efac;">ETH中转→TC (via 9055)</td><td class="mono">0x376a02550be2a6a39803fb17afa550cab5b820ca</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>74.43 ETH</td><td>63</td><td style="color:#86efac;">确认存TC · 残留</td></tr>
-      <tr><td style="color:#86efac;">ETH中转→TC (via ee73)</td><td class="mono">0xB529ba5dae11cb5d452128129664def1d568ecbe</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>41.71 ETH</td><td>20</td><td style="color:#86efac;">确认存TC · 残留</td></tr>
-      <tr><td>TC 100 ETH Pool</td><td class="mono">0xA160cdAB225685dA1d56aa342Ad8841c3b53f291</td><td><span class="wtype wtype-contract">智能合约</span></td><td>—</td><td>—</td><td>混币池</td></tr>
+      <tr><td>DAI→ETH #3</td><td class="mono">0xee73dcff8f9704223766303bcf9c9fc436e929ae</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>0.009 ETH</td><td>1</td><td>极小余额</td></tr>
+      <tr><td style="color:#86efac;">ETH中转→TC（经 9055）</td><td class="mono">0x376a02550be2a6a39803fb17afa550cab5b820ca</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>74.43 ETH</td><td>63</td><td style="color:#86efac;">确认存TC · 残留</td></tr>
+      <tr><td style="color:#86efac;">ETH中转→TC（经 ee73）</td><td class="mono">0xB529ba5dae11cb5d452128129664def1d568ecbe</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>41.71 ETH</td><td>20</td><td style="color:#86efac;">确认存TC · 残留</td></tr>
+      <tr><td>TC 100 ETH 池</td><td class="mono">0xA160cdAB225685dA1d56aa342Ad8841c3b53f291</td><td><span class="wtype wtype-contract">智能合约</span></td><td>—</td><td>—</td><td>混币池</td></tr>
       <tr><td>Tether 冻结 (TRON)</td><td class="mono">TBzBuvAGejw1vgmFYE6owFZyZ8c2LGEb5Q</td><td><span class="wtype wtype-cex">交易所钱包</span></td><td>$1,245,249 USDT</td><td>—</td><td class="status-green">已冻结</td></tr>
       <tr><td style="color:#a78bfa;">ChangeNow提款 8C16</td><td class="mono">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>56.83 ETH</td><td>0</td><td>从未转出</td></tr>
       <tr><td style="color:#a78bfa;">SideShift+CN提款 3a54</td><td class="mono">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td><span class="wtype wtype-eoa">私钥钱包 EOA</span></td><td>13.14 ETH</td><td>5</td><td style="color:#fca5a5;">399K USDC→1inch→ETH→200ETH入TC(2025-10)</td></tr>
@@ -1006,13 +1112,13 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <tr><td style="color:#a78bfa;">Arb中转 0xcab22c</td><td class="mono">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0 (dust)</td><td>—</td><td>Arb · 300ETH分3路: 78→Gate + 22→HTX + 200→Stargate回ETH</td></tr>
       <tr><td style="color:#60a5fa;">Arb→Gate 0x731D</td><td class="mono">0x731D674920AE668246F4A6b447BA96f8FE491E82</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td style="color:#60a5fa;">78 ETH→Gate (0x0D0707) · <b>2025-02仍活跃!</b> ✅</td></tr>
       <tr><td style="color:#fbbf24;">Arb→HTX 0xdddc</td><td class="mono">0xdddcdEB18fAb5684aE528cb0c3192d62b44EeeE8</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td style="color:#fbbf24;">22 ETH→HTX (0xCe7Ec1, OKLink: "HTX.DepositAndWithdraw_1") ✅</td></tr>
-      <tr><td style="color:#fbbf24;">HTX Arb存款</td><td class="mono">0xCe7Ec11a5F306c6B896526149dB1a86c7d1531E2</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>—</td><td>—</td><td style="color:#fbbf24;">OKLink确认 "HTX.DepositAndWithdraw_1" ✅</td></tr>
+      <tr><td style="color:#fbbf24;">HTX Arb存款</td><td class="mono">0xCe7Ec11a5F306c6B896526149dB1a86c7d1531E2</td><td><span class="wtype wtype-cex">交易所热钱包</span></td><td>—</td><td>—</td><td style="color:#fbbf24;">OKLink确认 "HTX.DepositAndWithdraw_1" ✅</td></tr>
       <tr><td style="color:#a78bfa;">ETH中转 0xaeae</td><td class="mono">0xaeae1bed342a712c05cf835237eacec298453fa1</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>32</td><td>Stargate收200ETH → 100→Bybit + 100→Gate ✅ 100%追踪</td></tr>
-      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~100 ETH→Bybit Hot Wallet · <b>2025-08仍活跃!</b> ✅</td></tr>
+      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~100 ETH→Bybit 热钱包 · <b>2025-08仍活跃!</b> ✅</td></tr>
       <tr><td style="color:#60a5fa;">Gate中转 0x689b</td><td class="mono">0x689b3a6e3efa214b3d56b53fb1246ba8cff53b8e</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>27</td><td>0xaeae→此处100ETH→0x37ad→Gate ✅</td></tr>
-      <tr><td style="color:#60a5fa;">Gate入金 0x37ad</td><td class="mono">0x37ade0bbc5a1e9277c7d463c0a37857f1d8bfd31</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>16</td><td>~100 ETH(via 0x689b)→Gate Deposit (0x0D0707) ✅</td></tr>
-      <tr><td style="color:#fbbf24;">Bybit Hot Wallet</td><td class="mono">0xf89d7b9c864f589bbf53a82105107622b35eaa40</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>4,832 ETH</td><td>—</td><td style="color:#fbbf24;">Etherscan标签确认</td></tr>
-      <tr><td style="color:#60a5fa;">Gate Deposit</td><td class="mono">0x0D0707963952f2fBA59dD06f2b425ace40b492Fe</td><td><span class="wtype wtype-cex">CEX Deposit</span></td><td>10,385 ETH</td><td>—</td><td style="color:#60a5fa;">Etherscan标签确认 (Stargate路径+Arb路径双验证)</td></tr>
+      <tr><td style="color:#60a5fa;">Gate入金 0x37ad</td><td class="mono">0x37ade0bbc5a1e9277c7d463c0a37857f1d8bfd31</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>16</td><td>~100 ETH（经 0x689b）→ Gate 充值地址 (0x0D0707) ✅</td></tr>
+      <tr><td style="color:#fbbf24;">Bybit 热钱包</td><td class="mono">0xf89d7b9c864f589bbf53a82105107622b35eaa40</td><td><span class="wtype wtype-cex">交易所热钱包</span></td><td>4,832 ETH</td><td>—</td><td style="color:#fbbf24;">Etherscan标签确认</td></tr>
+      <tr><td style="color:#60a5fa;">Gate 充值地址</td><td class="mono">0x0D0707963952f2fBA59dD06f2b425ace40b492Fe</td><td><span class="wtype wtype-cex">交易所充值地址</span></td><td>10,385 ETH</td><td>—</td><td style="color:#60a5fa;">Etherscan标签确认（Stargate路径 + Arb路径双验证）</td></tr>
       <tr style="border-top:2px solid #22c55e; background:#0d1b0d66;"><td colspan="6" style="padding:6px 8px; color:#86efac; font-weight:700; font-size:12px;">▼ 新增已验证地址 (2026-03-30)</td></tr>
       <tr><td style="color:#86efac;">e8F9冷钱包</td><td class="mono">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="color:#4ade80;">50,000 DAI</td><td>0</td><td style="color:#4ade80;">nonce=0 从未转出 · 可追回</td></tr>
       <tr><td style="color:#86efac;">LQTY中转 0x1D43</td><td class="mono">0x1D43f19852FfA9ca5F2343E89f408BcbFA698a7E</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td>e8F9→LQTY→717 ETH→612 ETH入TC</td></tr>
@@ -1022,7 +1128,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <tr><td style="color:#c084fc;">Compound提款 #1</td><td class="mono">0x88c78fd6f622544c29b5e5c37a172b0dc2144163</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.004 ETH</td><td>1</td><td>Compound取199.8 ETH→Arb(TX 0xe19306)→<b>0x4806fA</b>(TX 0x9cbf29)</td></tr>
       <tr><td style="color:#c084fc;">Layerswap收款 #3</td><td class="mono">0xa698b10cd9c6923f5acd344f778ed4a355ae1106</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.009 ETH</td><td>210</td><td>#3(0xa588)路径 · 收~200 ETH Layerswap→Compound 2×99 ETH</td></tr>
       <tr><td style="color:#c084fc;">Compound提款 #3</td><td class="mono">0x184a18455f40741cf10f24fca1e0e24e75ec4cc5</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>—</td><td>~189 ETH→Arb→<b>0x4806fA</b> + 10 ETH→0xfab9(WETH) + 0.86→MEXC 1</td></tr>
-      <tr><td style="color:#fca5a5;">MEXC 1 (Etherscan标签)</td><td class="mono">0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>10.287 ETH</td><td>—</td><td style="color:#fca5a5;">Etherscan确认 "MEXC 1" · 收0x122f直接存款 ✅</td></tr>
+      <tr><td style="color:#fca5a5;">MEXC 1 (Etherscan标签)</td><td class="mono">0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88</td><td><span class="wtype wtype-cex">交易所热钱包</span></td><td>10.287 ETH</td><td>—</td><td style="color:#fca5a5;">Etherscan确认 "MEXC 1" · 收0x122f直接存款 ✅</td></tr>
       <tr><td style="color:#fca5a5;">Arb MEXC中转 0x4806</td><td class="mono">0x4806fadf4fb4589e21c4eeecc9f024bbd8f646e6</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.248 ETH</td><td>—</td><td style="color:#fca5a5;">收#1路径199.8ETH + #3路径~189ETH → 转0xf2532e(MEXC)</td></tr>
       <tr><td style="color:#fca5a5;">MEXC User (OKLink标签)</td><td class="mono">0xf2532eea2677108eac97a521497270132d4071a6</td><td><span class="wtype wtype-cex">CEX User</span></td><td>—</td><td>—</td><td style="color:#fca5a5;">OKLink确认 "MEXC. User" · 收0x4806的ETH → MEXC热钱包</td></tr>
     </table>
@@ -1045,7 +1151,7 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
 
   <!-- 可追回 -->
   <div style="background:#1c1708; border:2px solid #f59e0b; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$215K</div>
+    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$230K</div>
     <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
       <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">资产</td><td style="width:100px;">金额</td><td style="width:80px;">链</td><td style="width:80px;">形式</td><td>钱包地址</td><td style="width:120px;">状态</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDC</td><td style="color:#fcd34d; font-weight:700;">148,364</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td style="color:#fbbf24;">nonce=0 从未转出</td></tr>
@@ -1076,34 +1182,39 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   </div>
 
   <!-- 交易所/平台完整流水 -->
-  <div style="background:#0d1117; border:2px solid #6e7681; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#c9d1d9; margin-bottom:10px;">📊 交易所 / 混币平台完整流水 · ~$40M+ 流入</div>
-    <table style="width:100%; font-size:11px; color:#ccc; border-collapse:collapse;">
+  <div class="table-panel" style="margin-bottom:14px;">
+    <div class="table-panel-header">
+      <div>
+        <div class="table-panel-title">📊 交易所 / 混币平台完整流水 · ~$40M+ 流入</div>
+        <div class="table-panel-desc">这里按“平台、资金来源、平台后去向、当前状态”重排，方便你快速判断哪部分已经冻结、哪部分只到达交易所、哪部分已经进入 XMR 或其他不可追踪状态。</div>
+      </div>
+    </div>
+    <table class="table-clean" style="font-size:11px;">
       <tr style="color:#6e7681; font-size:10px;"><td style="padding:4px 8px; width:110px;">平台</td><td style="width:80px;">类型</td><td style="width:120px;">流入金额</td><td style="width:120px;">流入来源</td><td>提币去向</td><td style="width:130px;">当前状态</td></tr>
       <!-- MEXC -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">MEXC</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">$11M+</td><td>Arbitrum Layerswap<br>(TC→18地址→跨链)</td><td style="color:#fca5a5;">大部分 → <b>XMR (不可追踪)</b></td><td style="color:#8b949e;">冻结时仅剩 $11,476</td></tr>
-      <tr style="border-top:1px solid #21262d;"><td colspan="2" style="font-size:10px; color:#8b949e; padding:3px 8px;">账户1 UID 07333942 · 账户2 UID 96969020 · KYC: 乌克兰(疑伪造) · IP: 乌克兰</td><td style="font-size:10px; color:#8b949e;">部分ETH/USDT提现待查</td><td></td></tr>
+      <tr class="risk-row-high" style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">MEXC</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">$11M+</td><td>Arbitrum Layerswap<br>(TC→18地址→跨链)</td><td style="color:#fca5a5;">大部分 → <b>XMR (不可追踪)</b></td><td style="color:#ffb4ad;">高风险 · 资金大多已出表</td></tr>
+      <tr class="risk-row-high" style="border-top:1px solid #21262d;"><td colspan="2" style="font-size:10px; color:#8b949e; padding:3px 8px;">账户1 UID 07333942 · 账户2 UID 96969020 · KYC: 乌克兰(疑伪造) · IP: 乌克兰</td><td style="font-size:10px; color:#8b949e;">部分ETH/USDT提现待查</td><td></td></tr>
       <!-- Gate -->
-      <tr style="border-top:2px solid #3b82f644;"><td style="padding:5px 8px; color:#60a5fa; font-weight:700;" rowspan="2">Gate</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">~$6.3M</td><td>Arbitrum Layerswap<br>+ TC→Stargate→Gate<br>(ETH+Arb双路径 ~$475K)</td><td><span style="color:#4ade80;">$1.245M → TBzBuv → <b>Tether冻结 ✅</b></span><br><span style="color:#60a5fa;">$2.7M → TBzBuv+TMYBusk → HTX</span></td><td style="color:#fbbf24;">~$1.85M缺口<br>疑Gate内XMR提现</td></tr>
-      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">TRON路径: Gate → TBzBuv(冻结$1.25M) + TMYBusk(残留8,371 USDT) → TB7Mtn → HTX · TC路径: 300ETH→Stargate→Arb→Gate存款(0x0D0707) ~158 ETH</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #3b82f644;"><td style="padding:5px 8px; color:#60a5fa; font-weight:700;" rowspan="2">Gate <span class="evidence-inline partial">部分验证</span></td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">~$6.3M</td><td>Arbitrum Layerswap<br>+ TC→Stargate→Gate<br>(ETH+Arb双路径 ~$475K)</td><td><span style="color:#4ade80;">$1.245M → TBzBuv → <b>Tether冻结 ✅</b></span><br><span style="color:#60a5fa;">$2.7M → TBzBuv+TMYBusk → HTX</span></td><td style="color:#fbbf24;">中高风险 · 仍有可打点资产</td></tr>
+      <tr class="risk-row-watch" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">TRON路径: Gate → TBzBuv(冻结$1.25M) + TMYBusk(残留8,371 USDT) → TB7Mtn → HTX · TC路径: 300ETH→Stargate→Arb→Gate存款(0x0D0707) ~158 ETH</td></tr>
       <!-- HTX -->
-      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi)</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.78M<br>($2.74M+22ETH)</td><td>Gate TRON提现 $2.7M<br>+ TC→Stargate→Arb 22 ETH<br><span style="font-size:9px;">Arb存款: 0xCe7Ec1 (OKLink HTX标签)</span></td><td>内部交易/提现 · 去向待查</td><td style="color:#fca5a5;">配合极差(Europol批评)<br>需法院命令</td></tr>
+      <tr class="risk-row-high" style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi) <span class="evidence-inline partial">部分验证</span></td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.78M<br>($2.74M+22ETH)</td><td>Gate TRON提现 $2.7M<br>+ TC→Stargate→Arb 22 ETH<br><span style="font-size:9px;">Arb存款: 0xCe7Ec1 (OKLink HTX标签)</span></td><td>内部交易/提现 · 去向待查</td><td style="color:#ffb4ad;">高风险 · 需法院命令</td></tr>
       <!-- Bybit (NEW) -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$200K<br>(~100 ETH)</td><td>TC→Stargate→ETH主网<br>0xaeae→0x6d4f→Bybit</td><td style="color:#fca5a5;">多笔存入 · <b>2025-08仍活跃!</b></td><td style="color:#fbbf24;">Etherscan标签确认<br>0x6d4f→Bybit Hot Wallet ✅</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit <span class="evidence-inline verified">已验证</span></td><td>CEX 交易所</td><td style="color:#fcd34d;">~$200K<br>(~100 ETH)</td><td>TC→Stargate→ETH主网<br>0xaeae→0x6d4f→Bybit</td><td style="color:#fca5a5;">多笔存入 · <b>2025-08仍活跃!</b></td><td style="color:#fbbf24;">中风险 · 热钱包标签已证实</td></tr>
       <!-- WhiteBIT -->
-      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M<br><span style="color:#fca5a5; font-size:9px;">⚠来源待验证</span></td><td>原报告称LQTY路径<br><span style="color:#fca5a5;">已证伪: LQTY→TC非WhiteBIT</span></td><td>提币去向不明</td><td style="color:#fbbf24;">交易所未回复<br>⚠ 来源需重新确认</td></tr>
+      <tr class="risk-row-high" style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT <span class="evidence-inline inferred">推断</span></td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M<br><span style="color:#fca5a5; font-size:9px;">⚠来源待验证</span></td><td>原报告称LQTY路径<br><span style="color:#fca5a5;">已证伪: LQTY→TC非WhiteBIT</span></td><td>提币去向不明</td><td style="color:#ffb4ad;">高风险 · 来源需重建</td></tr>
       <!-- ChangeNow -->
-      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow</td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>BTC: 线索中断 · 无KYC<br>USDT → 提款至 <b>8C16</b> (56.83 ETH)</td><td style="color:#8b949e;">塞舌尔注册<br>⚠ 待Deke发保全函</td></tr>
-      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 另有96K USDC → 3a54 (ChangeNOW)</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow <span class="evidence-inline partial">部分验证</span></td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>BTC: 线索中断 · 无KYC<br>USDT → 提款至 <b>8C16</b> (56.83 ETH)</td><td style="color:#fbbf24;">中风险 · 有IP线索可打</td></tr>
+      <tr class="risk-row-watch" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 另有96K USDC → 3a54 (ChangeNOW)</td></tr>
       <!-- n.exchange -->
-      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">n.exchange</td><td>非托管兑换</td><td style="color:#fcd34d;">152,673 USDT</td><td>mKt2 TRON<br>(被盗后3小时)</td><td>提款至 <b>0295</b><br><span style="color:#4ade80;">148,364 USDC 仍在 · 可追回</span></td><td style="color:#4ade80;">nonce=0 从未转出</td></tr>
+      <tr class="risk-row-good" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">n.exchange <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">152,673 USDT</td><td>mKt2 TRON<br>(被盗后3小时)</td><td>提款至 <b>0295</b><br><span style="color:#4ade80;">148,364 USDC 仍在 · 可追回</span></td><td style="color:#86efac;">优先保全 · 仍在链上</td></tr>
       <!-- SideShift -->
-      <tr style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift</td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>提款至 <b>3a54</b> (59.3 ETH + 399K USDC)<br><span style="color:#fca5a5;">→ 1inch swap → 200 ETH → TC</span></td><td style="color:#fca5a5;">残留13.14 ETH<br>2025-10仍活跃!</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>提款至 <b>3a54</b> (59.3 ETH + 399K USDC)<br><span style="color:#fca5a5;">→ 1inch swap → 200 ETH → TC</span></td><td style="color:#fbbf24;">中风险 · 仍有少量残留</td></tr>
       <!-- FixedFloat -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~582 ETH<br>(~$742K)</td><td>0x376a直发<br>(23个来源地址 · 全部已确认)</td><td>→ <b>~5,100 XMR</b> (21笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#8b949e;">同一IP · 同一XMR地址<br>2小时21分钟完成</td></tr>
-      <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 全部23个完整42位来源地址已验证 · 来源: ae14→9055→1inch→0x376a→FixedFloat</td></tr>
+      <tr class="risk-row-high" style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~582 ETH<br>(~$742K)</td><td>0x376a直发<br>(23个来源地址 · 全部已确认)</td><td>→ <b>~5,100 XMR</b> (21笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#ffb4ad;">高风险 · 已大量出 XMR</td></tr>
+      <tr class="risk-row-high" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 全部23个完整42位来源地址已验证 · 来源: ae14→9055→1inch→0x376a→FixedFloat</td></tr>
       <!-- 合计 -->
-      <tr style="border-top:2px solid #c9d1d9;"><td colspan="2" style="padding:6px 8px; color:#c9d1d9; font-weight:800; font-size:12px;">合计 8 个平台</td><td style="color:#fcd34d; font-weight:800; font-size:12px;">~$40M+</td><td colspan="3" style="font-size:11px; color:#8b949e;">→ XMR不可追踪 ~$13M+ · 交易所内待查 ~$3.9M · 已冻结 $1.30M · 链上残留可追回 ~$420K</td></tr>
+      <tr style="border-top:2px solid #c9d1d9;"><td colspan="2" style="padding:6px 8px; color:#c9d1d9; font-weight:800; font-size:12px;">合计 8 个平台</td><td style="color:#fcd34d; font-weight:800; font-size:12px;">~$40M+</td><td colspan="3" style="font-size:11px; color:#8b949e;">→ XMR不可追踪 ~$13M+ · 交易所内待查 ~$3.9M · 已冻结 $1.30M · 链上残留 ~$720K（其中可直接主张追回 ~$230K）</td></tr>
     </table>
   </div>
 
@@ -1114,26 +1225,27 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
       <div style="font-size:11px; color:#86efac;">已冻结</div>
     </div>
     <div style="background:#1c1708; border:1.5px solid #f59e0b; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
-      <div style="font-size:22px; font-weight:900; color:#fbbf24;">$157K</div>
-      <div style="font-size:11px; color:#fcd34d;">未冻结可追回</div>
+      <div style="font-size:22px; font-weight:900; color:#fbbf24;">~$230K</div>
+      <div style="font-size:11px; color:#fcd34d;">未冻结可追回<br><span style="color:#8b949e;">当前余额口径</span></div>
     </div>
     <div style="background:#131a2e; border:1.5px solid #3b82f6; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#60a5fa;">~$720K</div>
-      <div style="font-size:11px; color:#93c5fd;">链上残留 (ETH+DAI+REP)</div>
+      <div style="font-size:11px; color:#93c5fd;">链上残留<br><span style="color:#8b949e;">包含上项，不可相加</span></div>
     </div>
     <div style="background:#0d1117; border:1.5px solid #6e7681; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#c9d1d9;">~$40M+</div>
-      <div style="font-size:11px; color:#8b949e;">流入8个平台</div>
+      <div style="font-size:11px; color:#8b949e;">历史累计流入8个平台<br><span style="color:#6e7681;">累计口径，不可与当前余额相加</span></div>
     </div>
     <div style="background:#1a0a0a; border:1.5px solid #ef4444; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#fca5a5;">~$3.9M</div>
-      <div style="font-size:11px; color:#fca5a5;">交易所内待查</div>
+      <div style="font-size:11px; color:#fca5a5;">交易所内待查<br><span style="color:#8b949e;">上面累计流入的子集</span></div>
     </div>
     <div style="background:#161b22; border:1.5px solid #484f58; border-radius:12px; padding:14px 20px; text-align:center; min-width:180px;">
       <div style="font-size:22px; font-weight:900; color:#8b949e;">~$13M+</div>
-      <div style="font-size:11px; color:#6e7681;">不可追踪 (XMR等)</div>
+      <div style="font-size:11px; color:#6e7681;">不可追踪 (XMR等)<br><span style="color:#6e7681;">上面累计流入的子集</span></div>
     </div>
   </div>
+  <div style="text-align:center; font-size:10px; color:#9fb3c8; margin-top:10px;">上面这组卡混合了“当前余额”和“历史累计流入”两种口径；默认不能横向相加。只有同一口径内的数字才适合比较。</div>
 </div>
 
 <div class="footer">沈波被盗案调查组 · 所有余额数据截至 2026-03-30 · 时间均为纽约时间 (EST/EDT)</div>
@@ -1147,29 +1259,64 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:18px; }
   <span id="zoomLabel">50%</span>
   <button onclick="setZoom(50)" style="font-size:11px; width:auto; padding:0 8px;">适中</button>
   <button onclick="setZoom(100)" style="font-size:11px; width:auto; padding:0 8px;">100%</button>
+  <button onclick="lockPage()" style="font-size:11px; width:auto; padding:0 8px;">重新锁定</button>
 </div>
 <script>
 // Password gate
 const PW_HASH = 'f7b4a746b9b631cc9bbc5b2d8dd2802329545c827fc68815f9d25763b8b79999';
+const PW_STORAGE_KEY = 'shenbo_fund_flow_unlocked_v1';
 async function sha256(msg) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+function markUnlocked() {
+  try { localStorage.setItem(PW_STORAGE_KEY, '1'); } catch (_) {}
+  try { sessionStorage.setItem(PW_STORAGE_KEY, '1'); } catch (_) {}
+}
+function clearUnlockedMark() {
+  try { localStorage.removeItem(PW_STORAGE_KEY); } catch (_) {}
+  try { sessionStorage.removeItem(PW_STORAGE_KEY); } catch (_) {}
+}
+function isUnlockedRemembered() {
+  try {
+    if (localStorage.getItem(PW_STORAGE_KEY) === '1') return true;
+  } catch (_) {}
+  try {
+    if (sessionStorage.getItem(PW_STORAGE_KEY) === '1') return true;
+  } catch (_) {}
+  return false;
+}
+function showMainContent() {
+  document.getElementById('pw-gate').style.display = 'none';
+  document.getElementById('main-content').classList.remove('content-hidden');
+  document.getElementById('zoom-ctrl').classList.remove('content-hidden');
+  setZoom(50);
 }
 async function checkPw() {
   const input = document.getElementById('pw-input').value;
   const hash = await sha256(input);
   if (hash === PW_HASH) {
-    document.getElementById('pw-gate').style.display = 'none';
-    document.getElementById('main-content').classList.remove('content-hidden');
-    document.getElementById('zoom-ctrl').classList.remove('content-hidden');
-    setZoom(50);
+    markUnlocked();
+    showMainContent();
   } else {
     document.getElementById('pw-err').classList.add('show');
     document.getElementById('pw-input').value = '';
     setTimeout(() => document.getElementById('pw-err').classList.remove('show'), 2000);
   }
 }
+function lockPage() {
+  clearUnlockedMark();
+  document.getElementById('main-content').classList.add('content-hidden');
+  document.getElementById('zoom-ctrl').classList.add('content-hidden');
+  document.getElementById('pw-gate').style.display = 'flex';
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-input').focus();
+}
 document.addEventListener('DOMContentLoaded', () => {
+  if (isUnlockedRemembered()) {
+    showMainContent();
+    return;
+  }
   document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
 });
 </script>
