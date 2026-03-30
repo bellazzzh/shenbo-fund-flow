@@ -567,16 +567,18 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
     <div style="display:flex; gap:20px; margin-top:8px;">
       <div style="flex:1; text-align:left; font-size:12px; color:#ccc; line-height:1.7;">
         <b style="color:#58a6ff;">跨链详情：</b><br>
-        · 总跨链: <b style="color:#fcd34d;">3,702 ETH</b> (3,717 - 15 残留)<br>
-        · 每次跨链: 20 ETH / 笔 · ~185 笔<br>
-        · 时间: 2024年4-6月集中操作
+        · 总跨链: <b style="color:#fcd34d;">3,802 ETH</b> (3,817 - 15 残留)<br>
+        · 每次跨链: 20 ETH / 笔 · ~190 笔<br>
+        · 时间: 2024年4月-2025年1月
       </div>
       <div style="flex:1; text-align:left; font-size:12px; color:#ccc; line-height:1.7;">
-        <b style="color:#58a6ff;">Arbitrum 洗钱流水线：</b><br>
-        · TC提现地址 → 桥接Arbitrum (10×20 ETH)<br>
-        · → 中间地址拆分 (~1 ETH/笔)<br>
-        · → <b style="color:#fbbf24;">Layerswap</b> (<span class="addr" style="font-size:9px;">0x2Fc617E933a52713247CE25730f6695920B3befe</span>)<br>
-        · → 充入 MEXC / Gate CEX账户
+        <b style="color:#58a6ff;">6步洗钱流水线 (全部已验证 ✅)：</b><br>
+        1. TC提现 → 10×20 ETH → Arb Delayed Inbox<br>
+        2. Arb splitter拆分 → ~200笔×1 ETH → <b style="color:#fbbf24;">Layerswap</b><br>
+        3. Layerswap跨链 → ETH主网收款地址 (每地址~200 TX)<br>
+        4. <b style="color:#c084fc;">Compound V3 WETH</b> 停放 (数天~1月)<br>
+        5. Compound提款 → <b>re-bridge回Arb</b> (10 ETH批量)<br>
+        6. Arb → <b style="color:#fca5a5;">0x4806fA → 0xf2532e (MEXC)</b>
       </div>
     </div>
   </div>
