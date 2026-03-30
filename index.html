@@ -838,7 +838,8 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       MEXC: $11M+ → 大部分转 XMR (不可追踪) · 冻结时仅剩 $11,476<br>
       Gate: ~$6.3M → $1.245M 被冻结 + $2.7M → HTX + TC→Stargate新路径 ~$475K<br>
       HTX: ~$2.74M → 配合极差(Europol批评) · 需法院命令<br>
-      <b style="color:#fcd34d;">Bybit: ~$150K (~75 ETH) → TC→Stargate→Arb→ETH→Bybit热钱包</b><br>
+      <b style="color:#fcd34d;">Bybit: ~$200K (~100 ETH) → TC→Stargate→ETH→Bybit热钱包 (2025-08仍活跃)</b><br>
+      HTX: ~$2.74M + 22 ETH (TC→Stargate→Arb→HTX存款, OKLink标签)<br>
       WhiteBIT: ~$1M → 来源待验证 · 交易所未回复<br>
       ChangeNow: 4.13 BTC + 100K USDT · 提款至8C16 (56.8 ETH)<br>
       n.exchange: 152,673 USDT · 提款至0295 (148K USDC)<br>
@@ -877,10 +878,14 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <tr style="border-top:2px solid #f59e0b; background:#1c170866;"><td colspan="6" style="padding:6px 8px; color:#fbbf24; font-weight:700; font-size:12px;">▼ TC出金→交易所路径 (2024-09 新发现)</td></tr>
       <tr><td style="color:#a78bfa;">TC出金中转 0x7A21</td><td class="mono">0x7A2102d5b82c4d27c8ef0b828a8563a7e937a1f3</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td>TC→此处→0xe74b</td></tr>
       <tr><td style="color:#a78bfa;">Stargate中转 0xe74b</td><td class="mono">0xe74b43d4ae5aaaf8b88600bda0d7d884f7f6bbeb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.001 ETH</td><td>5</td><td>300ETH→Stargate→Arb</td></tr>
-      <tr><td style="color:#a78bfa;">Arb中转 0xcab22c</td><td class="mono">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0 (dust)</td><td>—</td><td>Arb · 300ETH全部分配完毕</td></tr>
-      <tr><td style="color:#a78bfa;">ETH中转 0xaeae</td><td class="mono">0xaeae1bed342a712c05cf835237eacec298453fa1</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>32</td><td>~75 ETH→Bybit + ~80 ETH→Gate</td></tr>
-      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~75 ETH→Bybit Hot Wallet</td></tr>
-      <tr><td style="color:#60a5fa;">Gate入金 0x37ad</td><td class="mono">0x37ade0bbc5a1e9277c7d463c0a37857f1d8bfd31</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>16</td><td>~80 ETH→Gate Deposit</td></tr>
+      <tr><td style="color:#a78bfa;">Arb中转 0xcab22c</td><td class="mono">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0 (dust)</td><td>—</td><td>Arb · 300ETH分3路: 78→Gate + 22→HTX + 200→Stargate回ETH</td></tr>
+      <tr><td style="color:#60a5fa;">Arb→Gate 0x731D</td><td class="mono">0x731D674920AE668246F4A6b447BA96f8FE491E82</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td style="color:#60a5fa;">78 ETH→Gate (0x0D0707) · <b>2025-02仍活跃!</b> ✅</td></tr>
+      <tr><td style="color:#fbbf24;">Arb→HTX 0xdddc</td><td class="mono">0xdddcdEB18fAb5684aE528cb0c3192d62b44EeeE8</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>—</td><td style="color:#fbbf24;">22 ETH→HTX (0xCe7Ec1, OKLink: "HTX.DepositAndWithdraw_1") ✅</td></tr>
+      <tr><td style="color:#fbbf24;">HTX Arb存款</td><td class="mono">0xCe7Ec11a5F306c6B896526149dB1a86c7d1531E2</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>—</td><td>—</td><td style="color:#fbbf24;">OKLink确认 "HTX.DepositAndWithdraw_1" ✅</td></tr>
+      <tr><td style="color:#a78bfa;">ETH中转 0xaeae</td><td class="mono">0xaeae1bed342a712c05cf835237eacec298453fa1</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>32</td><td>Stargate收200ETH → 100→Bybit + 100→Gate ✅ 100%追踪</td></tr>
+      <tr><td style="color:#fbbf24;">Bybit入金 0x6d4f</td><td class="mono">0x6d4fcd8079f596f88962443477f4b1ded7cffee2</td><td><span class="wtype wtype-eoa">EOA</span></td><td>0.018 ETH</td><td>18</td><td style="color:#fca5a5;">~100 ETH→Bybit Hot Wallet · <b>2025-08仍活跃!</b> ✅</td></tr>
+      <tr><td style="color:#60a5fa;">Gate中转 0x689b</td><td class="mono">0x689b3a6e3efa214b3d56b53fb1246ba8cff53b8e</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>27</td><td>0xaeae→此处100ETH→0x37ad→Gate ✅</td></tr>
+      <tr><td style="color:#60a5fa;">Gate入金 0x37ad</td><td class="mono">0x37ade0bbc5a1e9277c7d463c0a37857f1d8bfd31</td><td><span class="wtype wtype-eoa">EOA</span></td><td>≈0</td><td>16</td><td>~100 ETH(via 0x689b)→Gate Deposit (0x0D0707) ✅</td></tr>
       <tr><td style="color:#fbbf24;">Bybit Hot Wallet</td><td class="mono">0xf89d7b9c864f589bbf53a82105107622b35eaa40</td><td><span class="wtype wtype-cex">CEX Hot Wallet</span></td><td>4,832 ETH</td><td>—</td><td style="color:#fbbf24;">Etherscan标签确认</td></tr>
       <tr><td style="color:#60a5fa;">Gate Deposit</td><td class="mono">0x0D0707963952f2fBA59dD06f2b425ace40b492Fe</td><td><span class="wtype wtype-cex">CEX Deposit</span></td><td>10,385 ETH</td><td>—</td><td style="color:#60a5fa;">Etherscan标签确认 (Stargate路径+Arb路径双验证)</td></tr>
       <tr style="border-top:2px solid #22c55e; background:#0d1b0d66;"><td colspan="6" style="padding:6px 8px; color:#86efac; font-weight:700; font-size:12px;">▼ 新增已验证地址 (2026-03-30)</td></tr>
@@ -957,9 +962,9 @@ h1 { text-align:center; font-size:32px; letter-spacing:2px; padding-top:30px; }
       <tr style="border-top:2px solid #3b82f644;"><td style="padding:5px 8px; color:#60a5fa; font-weight:700;" rowspan="2">Gate</td><td rowspan="2">CEX 交易所</td><td style="color:#fcd34d; font-weight:700;">~$6.3M</td><td>Arbitrum Layerswap<br>+ TC→Stargate→Gate<br>(ETH+Arb双路径 ~$475K)</td><td><span style="color:#4ade80;">$1.245M → TBzBuv → <b>Tether冻结 ✅</b></span><br><span style="color:#60a5fa;">$2.7M → TBzBuv+TMYBusk → HTX</span></td><td style="color:#fbbf24;">~$1.85M缺口<br>疑Gate内XMR提现</td></tr>
       <tr style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">TRON路径: Gate → TBzBuv(冻结$1.25M) + TMYBusk(残留8,371 USDT) → TB7Mtn → HTX · TC路径: 300ETH→Stargate→Arb→Gate存款(0x0D0707) ~158 ETH</td></tr>
       <!-- HTX -->
-      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi)</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.74M</td><td>Gate TRON提现<br>+ TC→Stargate→Arb (22 ETH)</td><td>内部交易/提现 · 去向待查</td><td style="color:#fca5a5;">配合极差(Europol批评)<br>需法院命令</td></tr>
+      <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">HTX (Huobi)</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$2.78M<br>($2.74M+22ETH)</td><td>Gate TRON提现 $2.7M<br>+ TC→Stargate→Arb 22 ETH<br><span style="font-size:9px;">Arb存款: 0xCe7Ec1 (OKLink HTX标签)</span></td><td>内部交易/提现 · 去向待查</td><td style="color:#fca5a5;">配合极差(Europol批评)<br>需法院命令</td></tr>
       <!-- Bybit (NEW) -->
-      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$150K<br>(~75 ETH)</td><td>TC→Stargate跨链<br>ETH→Arb→ETH→Bybit</td><td style="color:#fca5a5;">交易所内 · 可能已提现</td><td style="color:#fbbf24;">待冻结请求<br>Etherscan标签确认</td></tr>
+      <tr style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;">Bybit</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$200K<br>(~100 ETH)</td><td>TC→Stargate→ETH主网<br>0xaeae→0x6d4f→Bybit</td><td style="color:#fca5a5;">多笔存入 · <b>2025-08仍活跃!</b></td><td style="color:#fbbf24;">Etherscan标签确认<br>0x6d4f→Bybit Hot Wallet ✅</td></tr>
       <!-- WhiteBIT -->
       <tr style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT</td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M<br><span style="color:#fca5a5; font-size:9px;">⚠来源待验证</span></td><td>原报告称LQTY路径<br><span style="color:#fca5a5;">已证伪: LQTY→TC非WhiteBIT</span></td><td>提币去向不明</td><td style="color:#fbbf24;">交易所未回复<br>⚠ 来源需重新确认</td></tr>
       <!-- ChangeNow -->
