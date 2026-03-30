@@ -700,9 +700,10 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
       <div style="flex:1; text-align:left;">
         <div style="font-size:13px; font-weight:700; color:#c084fc; margin-bottom:6px;">Demix 结果 (Tay/Tayvano)</div>
         <div style="font-size:12px; color:#ccc; line-height:1.8;">
-          已识别提现: <b style="color:#4ade80;">18 个地址 · 3,717 ETH</b><br>
-          未识别提现: <b style="color:#fca5a5;">~29,700 ETH · 150+ 个地址</b><br>
-          识别率: <span style="color:#fcd34d;">约 11%</span>
+          已识别提现: <b style="color:#4ade80;">18 个地址 · 3,817 ETH</b><br>
+          未识别提现: <b style="color:#fca5a5;">~9,674 ETH · 地址数不明</b><br>
+          识别率: <span style="color:#fcd34d;">~28%</span><br>
+          <span style="color:#8b949e; font-size:10px;">注: Tay原始报告按池维度统计为11%，此处按黑客存入维度计算</span>
         </div>
       </div>
     </div>
@@ -740,11 +741,11 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
 <!-- TC 未识别提现 -->
 <div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:12px auto 0;">
-  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未完成出口归因（当前余量口径 · ~9,274 ETH · 依页面历史估值约 ~$18.5M）</div>
-  <div style="display:flex; gap:20px;">
-    <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
-      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH；其中一部分已能接到已识别后续路径<br>
-      <b style="color:#fca5a5;">当前更稳妥的理解：</b>~9,274 ETH 是页面当前按余量推出来的“<b>尚未与已识别出口路径建立对应关系</b>”部分，<b style="color:#fde68a;">不等于已确认全部提现</b><br>
+  <div style=”font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;”>⚠ Tornado Cash 未识别提现（~9,674 ETH · ~$19M）</div>
+  <div style=”display:flex; gap:20px;”>
+    <div style=”flex:1; font-size:11px; color:#ccc; line-height:1.8;”>
+      <b style=”color:#fca5a5;”>规模：</b>总存入 ~13,491 ETH，已识别 3,817 ETH (18个地址)，未识别 ~9,674 ETH<br>
+      <b style=”color:#fca5a5;”>说明：</b>这部分已从TC提现但尚未与已识别出口路径建立对应关系<br>
       <b style="color:#fca5a5;">可能去向：</b><br>
       · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
       · FixedFloat 等即时兑换 → XMR<br>
@@ -754,7 +755,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
       <b style="color:#fbbf24;">追踪障碍：</b><br>
       · Tornado Cash混币后地址断联，需专业demix工具<br>
-      · Tay/Tayvano仅识别11%，Chainalysis/TRM可能更高<br>
+      · Tay/Tayvano已识别~28%（18个地址），Chainalysis/TRM可能更高<br>
       · 一部分很可能已提现并流入交易所，但也不能排除仍有少量尚未提取或尚未被本案对应起来<br><br>
       <b style="color:#4ade80;">建议行动：</b><br>
       · 委托Chainalysis或TRM Labs进行完整demix<br>
@@ -822,10 +823,10 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 </div>
 
 <div style="background:#1b0d0d; border:1px solid #ef444466; border-radius:12px; padding:10px 14px; width:100%; max-width:1200px; margin:8px auto 0; font-size:11px; color:#fecaca; line-height:1.8;">
-  <b style="color:#fca5a5;">重点标注：</b><b style="color:#fde68a;">另有 ~9,274 ETH</b> 属于“<b>已存入 TC 但尚未与已识别出口路径建立对应关系</b>”的当前余量口径；按页面沿用的历史估值约为 <b>~$18.5M</b>。这<b>不等于已确认全部提现</b>，也<b>不在</b>下方 `MEXC ~$11M` 和 `Gate ~$5.8M` 两列已识别去向里。
+  <b style="color:#fca5a5;">重点标注：</b><b style="color:#fde68a;">另有 ~9,674 ETH</b> 属于“<b>已存入 TC 但尚未与已识别出口路径建立对应关系</b>”的当前余量口径；按页面沿用的历史估值约为 <b>~$18.5M</b>。这<b>不等于已确认全部提现</b>，也<b>不在</b>下方 `MEXC ~$11M` 和 `Gate ~$5.8M` 两列已识别去向里。
 </div>
 <div style="background:#101826; border:1px solid #334155; border-radius:12px; padding:10px 14px; width:100%; max-width:1200px; margin:8px auto 0; font-size:11px; color:#cbd5e1; line-height:1.7;">
-  <b style="color:#93c5fd;">说明：</b>下面两列只表示“已识别的 18 个 TC 提现地址”里，目前能落到交易所边界的两类主要去向，<b style="color:#fca5a5;">不等于全案全部剩余资金</b>。其余资金还包括：<b>尚未完成出口归因的 TC 余量 ~9,274 ETH</b>、<b>FixedFloat → XMR</b>、<b>ChangeNow / SideShift / n.exchange</b> 等其他路径，以及交易所内部已不可见的后续流转。
+  <b style="color:#93c5fd;">说明：</b>下面两列只表示“已识别的 18 个 TC 提现地址”里，目前能落到交易所边界的两类主要去向，<b style="color:#fca5a5;">不等于全案全部剩余资金</b>。其余资金还包括：<b>尚未完成出口归因的 TC 余量 ~9,674 ETH</b>、<b>FixedFloat → XMR</b>、<b>ChangeNow / SideShift / n.exchange</b> 等其他路径，以及交易所内部已不可见的后续流转。
 </div>
 <div style="display:flex; gap:16px; margin-top:8px; justify-content:center;">
   <div class="arrow" style="flex:0 0 300px;">↓ 已识别去向：MEXC ~$11M</div>
