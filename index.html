@@ -147,7 +147,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 .hero-panel { max-width:1500px; margin:0 auto 22px; padding:30px 32px; border:1px solid rgba(124,199,255,0.16); border-radius:28px; background:linear-gradient(160deg, rgba(17,35,58,0.95), rgba(8,18,31,0.95)); box-shadow:var(--shadow); }
 .hero-kicker { text-align:center; color:#b8dcff; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800; }
 .hero-summary { max-width:1150px; margin:18px auto 0; color:#d4e4ef; font-size:14px; line-height:1.9; text-align:center; }
-.hero-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; margin-top:20px; }
+.hero-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-top:20px; }
 .hero-card { border-radius:20px; padding:18px 18px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); min-height:112px; box-shadow:var(--shadow); }
 .hero-card .eyebrow { font-size:10px; letter-spacing:1.4px; text-transform:uppercase; color:#c0d3e6; margin-bottom:10px; font-weight:700; }
 .hero-card .value { font-size:24px; font-weight:900; line-height:1.1; }
@@ -156,6 +156,8 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 .hero-card.green { background:linear-gradient(160deg, rgba(6,78,59,0.3), rgba(13,40,24,0.88)); }
 .hero-card.amber { background:linear-gradient(160deg, rgba(120,53,15,0.3), rgba(28,23,8,0.88)); }
 .hero-card.blue { background:linear-gradient(160deg, rgba(30,58,138,0.26), rgba(19,26,46,0.88)); }
+.hero-card.purple { background:linear-gradient(160deg, rgba(88,28,135,0.24), rgba(26,16,46,0.9)); }
+.hero-card.gray { background:linear-gradient(160deg, rgba(55,65,81,0.3), rgba(17,24,39,0.9)); }
 .legend-wrap { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:12px auto 22px; max-width:1280px; padding:14px 18px; border:1px solid rgba(124,199,255,0.14); border-radius:18px; background:rgba(10,22,36,0.58); box-shadow:var(--shadow); }
 .verify-panel { max-width:1500px; margin:0 auto 24px; padding:18px 20px; border:1px solid rgba(94,230,168,0.22); border-radius:20px; background:linear-gradient(160deg, rgba(8,53,37,0.24), rgba(8,18,31,0.94)); box-shadow:var(--shadow); }
 .verify-title { text-align:center; font-size:13px; letter-spacing:1.6px; text-transform:uppercase; color:#b6f1d3; font-weight:900; margin-bottom:14px; }
@@ -257,7 +259,27 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   <div class="hero-card green">
     <div class="eyebrow">已冻结 / 已保全</div>
     <div class="value" style="color:var(--green);">$1.30M</div>
-    <div class="desc">TRON USDT 已冻结，另有多笔链上残留资产处于可主张追回状态。</div>
+    <div class="desc">Tether 冻结约 $1.245M，另有 FixedFloat 扣押的 XMR 约 ~$50K。</div>
+  </div>
+  <div class="hero-card blue">
+    <div class="eyebrow">链上可见未冻结</div>
+    <div class="value" style="color:var(--blue);">~$720K</div>
+    <div class="desc">当前仍在链上可见，包括 ETH、USDC、DAI、USDT、REP 等残留资产。</div>
+  </div>
+  <div class="hero-card amber">
+    <div class="eyebrow">已识别平台去向</div>
+    <div class="value" style="color:var(--amber);">~$3.9M</div>
+    <div class="desc">已明确流入交易所，但平台内后续仍需回函、法令或 KYC 协查补全。</div>
+  </div>
+  <div class="hero-card purple">
+    <div class="eyebrow">未识别出口 / 待 Demix</div>
+    <div class="value" style="color:var(--purple);">~9,674 ETH</div>
+    <div class="desc">Tornado Cash 未归因出口的主要余量，页面当前估值约 ~$19M。</div>
+  </div>
+  <div class="hero-card gray">
+    <div class="eyebrow">已疑似转 XMR</div>
+    <div class="value" style="color:#d1d5db;">~$13M+</div>
+    <div class="desc">已进入门罗币或同类不可追踪阶段，当前链上基本无法继续追踪。</div>
   </div>
 </div>
 </div>
