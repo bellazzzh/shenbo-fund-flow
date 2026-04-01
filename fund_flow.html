@@ -111,7 +111,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 /* Four-column grid */
 .grid-4col {
   display:grid;
-  grid-template-columns: 34% 23% 18% 23%;
+  grid-template-columns: 2fr 1.4fr 1fr 1.4fr;
   gap:16px;
   margin:0 auto;
   width:100%;
@@ -250,7 +250,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   <div class="hero-card blue">
     <div class="eyebrow">仍可追索（未冻结）</div>
     <div class="value" style="color:var(--blue);">~$4.6M</div>
-    <div class="desc">链上可见约 ~$720K，另有约 ~$3.9M 已识别流入平台、仍可继续协查追索。</div>
+    <div class="desc">链上可见约 ~$695K，另有约 ~$3.9M 已识别流入平台、仍可继续协查追索。</div>
   </div>
   <div class="hero-card purple">
     <div class="eyebrow">未识别出口 / 待 Demix</div>
@@ -271,6 +271,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 </div>
 
 <div class="quick-nav">
+  <a href="#priority-leads">优先线索</a>
   <a href="#entry">案件入口</a>
   <a href="#first-hop">第一跳分流</a>
   <a href="#tornado">Tornado / Demix</a>
@@ -285,13 +286,47 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:linear-gradient(135deg,#cc0000,#991100);"></div><span style="font-size:11px; color:#8b949e;">受害者钱包</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#131a2e; border:1.5px solid #3b82f6;"></div><span style="font-size:11px; color:#8b949e;">黑客地址 / 交易所</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#1a1035; border:1.5px solid #8b5cf6;"></div><span style="font-size:11px; color:#8b949e;">Tornado Cash 混币</span></div>
-  <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#0d2818; border:1.5px solid #22c55e;"></div><span style="font-size:11px; color:#8b949e;">已冻结 / 可追回</span></div>
+  <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#0d2818; border:1.5px solid #22c55e;"></div><span style="font-size:11px; color:#8b949e;">已冻结 / 已保全</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#1c1708; border:1.5px solid #f59e0b;"></div><span style="font-size:11px; color:#8b949e;">待追踪 / 需行动</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#1a0a0a; border:1.5px solid #ef4444;"></div><span style="font-size:11px; color:#8b949e;">高风险 / 线索中断</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><div style="width:16px; height:16px; border-radius:4px; background:#161b22; border:1.5px solid #484f58;"></div><span style="font-size:11px; color:#8b949e;">不可追踪 (XMR等)</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline verified">已验证</span><span style="font-size:11px; color:#8b949e;">已被链上或标签样本证实</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline partial">部分验证</span><span style="font-size:11px; color:#8b949e;">有部分证据，但仍需补强</span></div>
   <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline inferred">推断</span><span style="font-size:11px; color:#8b949e;">推断或旧报告口径，不能当硬结论</span></div>
+</div>
+
+<div class="section-box" id="priority-leads" style="max-width:1200px; margin:16px auto 0; border:1px solid rgba(183,157,255,0.34); background:linear-gradient(165deg, rgba(24,18,43,0.96), rgba(10,21,34,0.98));">
+  <div style="font-size:13px; font-weight:900; color:#e9d5ff; letter-spacing:0.8px; text-align:center; margin-bottom:10px;">重点交易所边界线索 · 法庭口径</div>
+  <div class="row" style="align-items:stretch;">
+    <div class="bubble b-green" style="flex:1 1 250px; min-width:240px; text-align:left;">
+      <div class="tag">优先 1 · n.exchange / 0295</div>
+      <div style="font-size:11px; color:#dbeafe;">确认事实：`e291 -> 0295` 在 2022-11-10 08:39:59 UTC 转入 `148,364.766577 USDC`；当前链上仍见 `148,364.77 USDC / 0 ETH / nonce=0`。</div>
+      <div style="font-size:10px; color:#d6e3ee; margin-top:6px;">样本级证据：TRON 侧仅可确认 `TPrMJ...` 承接 `152,673 USDT` 进入 `n.exchange` 平台边界，尚不能独立闭到 `0295`。</div>
+      <div style="font-size:10px; color:#8b949e; margin-top:6px;">平台标签支持：截至 `2026-04-01`，`1bAc` 的 Etherscan 页面仍显示 `n.exchange: Hot Wallet`，More Info 仍显示 `Funded By = e291`。</div>
+      <div style="font-size:10px; color:#fca5a5; margin-top:6px;">平台确认缺口：`TPrMJ...` 到 `e291 -> 0295` 的订单级闭环仍待 `n.exchange` 记录。</div>
+    </div>
+    <div class="bubble b-blue" style="flex:1 1 250px; min-width:240px; text-align:left;">
+      <div class="tag">优先 2 · SideShift / 3a54</div>
+      <div style="font-size:11px; color:#dbeafe;">确认事实：最近可确认外发为 `2025-10-06 11:20/11:21 UTC` 的 `2×100 ETH -> TC`；`13.14 ETH` 仅属旧快照。</div>
+      <div style="font-size:10px; color:#d6e3ee; margin-top:6px;">样本级证据：`2af2 -> 3a54` 的 `7` 笔 USDC = `303,118.292899`，`3` 笔 ETH = `59.31922843`。</div>
+      <div style="font-size:10px; color:#8b949e; margin-top:6px;">平台标签支持：截至 `2026-04-01`，`2af2` 的 Etherscan 页面仍显示 `SideShift: Hot Wallet`；`0x48c04...a7fF` 的 Etherscan 页面仍显示 `ChangeNOW`，More Info 仍显示 `Funded By = ChangeNOW 19`。</div>
+      <div style="font-size:10px; color:#fca5a5; margin-top:6px;">平台确认缺口：额外 `96,337.482103 USDC` 只到 `ChangeNow` 标签支持，仍未拿到订单级闭环。</div>
+    </div>
+    <div class="bubble b-purple" style="flex:1 1 250px; min-width:240px; text-align:left;">
+      <div class="tag">优先 3 · ChangeNow / 8C16</div>
+      <div style="font-size:11px; color:#dbeafe;">确认事实：`8C16` 当前链上可见 `56.834 ETH`，且 `nonce=0`。</div>
+      <div style="font-size:10px; color:#d6e3ee; margin-top:6px;">样本级证据：本地材料把 `4.13 BTC` 与 `100,000 USDT` 两笔 `ChangeNow` 订单都指向 `8C16`。</div>
+      <div style="font-size:10px; color:#8b949e; margin-top:6px;">平台标签支持：当前未见足以单独闭环到 `8C16` 的公开平台标签。</div>
+      <div style="font-size:10px; color:#fca5a5; margin-top:6px;">平台确认缺口：BTC 出平台后的公开链路仍中断，`ChangeNow` 订单级回函仍待补齐。</div>
+    </div>
+    <div class="bubble b-gray" style="flex:1 1 250px; min-width:240px; text-align:left;">
+      <div class="tag">次优先 · Gate / Bybit</div>
+      <div style="font-size:11px; color:#dbeafe;">确认事实：`#15` 已链上重放至 `0x0D0707...92Fe`；`#16` 已直见至少 `27×3 ETH`（约 `81 ETH`）进入 `0x752Cd0...e7b1F`。</div>
+      <div style="font-size:10px; color:#d6e3ee; margin-top:6px;">样本级证据：`0xaeae -> 0x6d4f -> 0xf89d...aa40` 的 `Bybit` 热钱包样本约 `99.735 ETH`，仍可复核。</div>
+      <div style="font-size:10px; color:#8b949e; margin-top:6px;">平台标签支持：截至 `2026-04-01`，`0x0D0707...92Fe` 仍可作 `Gate Deposit` 标签样本，`0xf89d...aa40` 仍可作 `Bybit: Hot Wallet` 标签样本。</div>
+      <div style="font-size:10px; color:#fca5a5; margin-top:6px;">平台确认缺口：二者都还缺平台内后续流水，不能写成完整平台闭环。</div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════ VICTIM ═══════════════════ -->
@@ -567,14 +602,14 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
       <div style="font-size:12px; color:#c9d1d9; margin-bottom:6px; text-align:center; font-weight:700;">mKt2 洗币明细</div>
       <table style="width:100%; font-size:9px; color:#ccc; border-collapse:collapse;">
         <tr style="color:#8b949e;"><td style="padding:2px 3px;">#</td><td>时间</td><td>金额</td><td>去向</td></tr>
-        <tr><td style="padding:2px 3px;">1</td><td>11/10 03:06</td><td style="color:#fcd34d;">30K</td><td>SideShift→3a54</td></tr>
-        <tr><td style="padding:2px 3px;">2</td><td>11/10 03:13</td><td style="color:#fcd34d;">152K</td><td>n.exchange→0295</td></tr>
-        <tr><td style="padding:2px 3px;">3</td><td>11/10 03:17</td><td style="color:#fcd34d;">80K</td><td>SideShift→3a54</td></tr>
-        <tr><td style="padding:2px 3px;">4</td><td>11/10 03:20</td><td style="color:#fcd34d;">100K</td><td>ChangeNow→8C16</td></tr>
+        <tr><td style="padding:2px 3px;">1</td><td>11/10 03:06</td><td style="color:#fcd34d;">30K</td><td>SideShift样本→3a54</td></tr>
+        <tr><td style="padding:2px 3px;">2</td><td>11/10 03:13</td><td style="color:#fcd34d;">152K</td><td>n.exchange边界 / 0295线索</td></tr>
+        <tr><td style="padding:2px 3px;">3</td><td>11/10 03:17</td><td style="color:#fcd34d;">80K</td><td>SideShift样本→3a54</td></tr>
+        <tr><td style="padding:2px 3px;">4</td><td>11/10 03:20</td><td style="color:#fcd34d;">100K</td><td>ChangeNow样本→8C16</td></tr>
         <tr style="border-top:1px solid #21262d; color:#8b949e;"><td colspan="4" style="padding:3px; font-size:8px;">── 间隔2天 ──</td></tr>
-        <tr><td style="padding:2px 3px;">5-9</td><td>11/12 06:59~09:44</td><td style="color:#fcd34d;">200K</td><td>SideShift→3a54</td></tr>
-        <tr><td style="padding:2px 3px;">10</td><td>11/12 09:46</td><td style="color:#fcd34d;">40K</td><td>SideShift→3a54 (ETH)</td></tr>
-        <tr><td style="padding:2px 3px;">11</td><td>11/13 03:12</td><td style="color:#fcd34d;">36K</td><td>SideShift→3a54 (ETH)</td></tr>
+        <tr><td style="padding:2px 3px;">5-9</td><td>11/12 06:59~09:44</td><td style="color:#fcd34d;">200K</td><td>SideShift样本→3a54</td></tr>
+        <tr><td style="padding:2px 3px;">10</td><td>11/12 09:46</td><td style="color:#fcd34d;">40K</td><td>SideShift样本→3a54 (ETH)</td></tr>
+        <tr><td style="padding:2px 3px;">11</td><td>11/13 03:12</td><td style="color:#fcd34d;">36K</td><td>SideShift样本→3a54 (ETH)</td></tr>
         <tr style="border-top:1px solid #a855f766;"><td colspan="2" style="color:#c4b5fd; font-weight:600;">合计 11笔</td><td style="color:#c4b5fd; font-weight:600;">639K</td><td style="color:#c4b5fd;">全部洗完</td></tr>
       </table>
       <div style="font-size:8px; color:#8b949e; margin-top:4px;">另200 USDT → SunSwap → 3,657 TRX (gas)</div>
@@ -583,25 +618,28 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
     <!-- 3 ETH destinations stacked -->
     <div class="bubble b-blue" style="margin-bottom:8px;">
-      <b>8C16 · ChangeNow提款</b> <span class="wtype wtype-eoa">EOA</span><br>
+      <b>8C16 · ChangeNow 样本端点</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr" style="font-size:9px;">0x4435d504a8fdF308A6302b2fD4155F9053638C16</div>
-      <div style="font-size:11px; color:#ccc;">收到 <b style="color:#fcd34d;">56.834 ETH</b> (~$73K)</div>
+      <div style="font-size:11px; color:#ccc;">确认事实：当前链上可见 <b style="color:#fcd34d;">56.834 ETH</b> · <b style="color:#fcd34d;">nonce=0</b></div>
+      <div style="font-size:10px; color:#d6e3ee;">样本级证据：本地材料把 <b>4.13 BTC</b> 与 <b>100,000 USDT</b> 两笔 ChangeNow 订单都指向 8C16</div>
+      <div style="font-size:10px; color:#8b949e;">平台标签支持：当前未见足以单独闭环到 8C16 的公开平台标签</div>
+      <div style="font-size:10px; color:#fca5a5;">平台确认缺口：BTC 出平台后的公开链路仍中断，订单级回函仍待 ChangeNow / 执法补齐</div>
     </div>
     <div class="bubble b-blue" style="margin-bottom:8px;">
-      <b>3a54 · SideShift 样本提款地址</b> <span class="wtype wtype-eoa">EOA</span><br>
+      <b>3a54 · SideShift 样本端点</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr" style="font-size:9px;">0x038220C193973be6DBF5790b0291c62B32B23a54</div>
-      <div style="font-size:11px; color:#ccc;">链上已对出：SideShift 热钱包 2af2 -> 3a54 的 7 笔 USDC = 303,118.29、3 笔 ETH = 59.319228</div>
-      <div style="font-size:10px; color:#8b949e;">另有 1 笔 96,337.48 USDC 来自 0x48c04...a7ff，来源仍待确认</div>
-      <div style="font-size:10px; color:#fca5a5;"><b>2024-01-11:</b> 399K USDC → 1inch swap → 153.82 ETH</div>
-      <div style="font-size:10px; color:#fca5a5;"><b>2025-10-06:</b> 200 ETH → TC (2笔×100 ETH · 间隔48秒)</div>
-      <div style="font-size:10px; color:#fbbf24;">最近可确认外发：2025-10-06 11:20/11:21 UTC</div>
+      <div style="font-size:11px; color:#ccc;">确认事实：最近可确认外发为 <b style="color:#fcd34d;">2025-10-06 11:20/11:21 UTC</b> 的 <b style="color:#fcd34d;">2×100 ETH → TC</b>；13.14 ETH 仅属旧快照</div>
+      <div style="font-size:10px; color:#d6e3ee;">样本级证据：<b>2af2 -> 3a54</b> 的 7 笔 USDC = 303,118.29、3 笔 ETH = 59.319228</div>
+      <div style="font-size:10px; color:#8b949e;">平台标签支持：截至 2026-04-01，2af2 的 Etherscan 页面仍显示 SideShift: Hot Wallet；0x48c04...a7fF 的 Etherscan 页面仍显示 ChangeNOW，More Info: Funded By = ChangeNOW 19</div>
+      <div style="font-size:10px; color:#fca5a5;">平台确认缺口：另有 96,337.48 USDC 只到 ChangeNow 标签支持，仍待订单级闭环</div>
     </div>
     <div class="bubble b-green" style="margin-bottom:8px;">
-      <b>0295 · 148K USDC 收款地址</b> <span class="wtype wtype-eoa">EOA</span><br>
+      <b>0295 · 148K USDC 保全线索</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr" style="font-size:9px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</div>
-      <div style="font-size:11px; color:#ccc;">2022-11-10 08:39:59 UTC 由 0xe291...d342 转入 148,364.77 USDC</div>
-      <div style="font-size:10px; color:#4ade80;"><b>148,364.77 USDC 仍在链上 · 当前未见 Circle 黑名单</b></div>
-      <div style="font-size:10px; color:#8b949e;">0 ETH · nonce=0（未见 ETH 主网主动交易）· e291 平台归属仍待 n.exchange 正式确认</div>
+      <div style="font-size:11px; color:#ccc;">确认事实：2022-11-10 08:39:59 UTC 由 <b>0xe291...d342</b> 转入 <b style="color:#fcd34d;">148,364.77 USDC</b>；当前仍见 <b style="color:#fcd34d;">148,364.77 USDC / 0 ETH / nonce=0</b></div>
+      <div style="font-size:10px; color:#d6e3ee;">样本级证据：TRON 侧仅可确认 <b>TPrMJ...</b> 承接 <b>152,673 USDT</b> 进入 n.exchange 平台边界，尚不能独立闭到 0295</div>
+      <div style="font-size:10px; color:#8b949e;">平台标签支持：截至 2026-04-01，0x1bAc...f3Da 的 Etherscan 页面仍显示 n.exchange: Hot Wallet；Funded By = 0xe291...d342</div>
+      <div style="font-size:10px; color:#fca5a5;">平台确认缺口：TPrMJ... 到 e291→0295 的订单级闭环仍待 n.exchange 正式确认</div>
     </div>
   </div>
 </div>
@@ -711,11 +749,11 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
 <!-- TC 未识别提现 -->
 <div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:12px auto 0;">
-  <div style=”font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;”>⚠ Tornado Cash 未识别提现（~9,791 ETH · ~$20.3M）</div>
-  <div style=”display:flex; gap:20px;”>
-    <div style=”flex:1; font-size:11px; color:#ccc; line-height:1.8;”>
-      <b style=”color:#fca5a5;”>规模：</b>总存入 ~13,491 ETH，已识别 3,700 ETH (18个地址)，未识别 ~9,791 ETH<br>
-      <b style=”color:#fca5a5;”>说明：</b>这部分已从TC提现但尚未与已识别出口路径建立对应关系<br>
+  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~9,791 ETH · ~$20.3M）</div>
+  <div style="display:flex; gap:20px;">
+    <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
+      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH，已识别 3,700 ETH (18个地址)，未识别 ~9,791 ETH<br>
+      <b style="color:#fca5a5;">说明：</b>这部分已从TC提现但尚未与已识别出口路径建立对应关系<br>
       <b style="color:#fca5a5;">可能去向：</b><br>
       · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
       · FixedFloat 等即时兑换 → XMR<br>
@@ -1002,27 +1040,27 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     <div class="l">已冻结（Tether TRON）<br>保全推进中</div>
   </div>
   <div class="sum" style="background:#1c1708; border:1.5px solid #f59e0b;">
-    <div class="n" style="color:#fcd34d;">259+ ETH</div>
-    <div class="l">链上已确认残留（已验证）<br>
-    ETH主网: bc2e 5.957 · e8F9 0.782 · 0x4542 51.21 · 0x376a 74.43 · 0xB529 41.71 · 8C16 56.83 · 3a54 13.14 ETH<br>
+    <div class="n" style="color:#fcd34d;">246+ ETH</div>
+    <div class="l">链上已确认残留（不含 3a54 旧快照）<br>
+    ETH主网: bc2e 5.957 · e8F9 0.782 · 0x4542 51.21 · 0x376a 74.43 · 0xB529 41.71 · 8C16 56.83 ETH<br>
     TC提现18地址合计: ~15.21 ETH（含 0x096f 当前约 0.868 ETH）<br>
     <b style="color:#4ade80;">e8F9: 3,518 REP + 35,436 DAI (从未转出)</b><br>
     <b style="color:#4ade80;">0295: 148,364 USDC（仍在链上）</b><br>
     <b style="color:#4ade80;">TMYBusk: ~8,371 USDT (TRON·未冻结)</b><br>
-    <span style="color:#8b949e;">另有 ~192K 稳定币 + 3,518 REP，见下方分项</span></div>
+    <span style="color:#8b949e;">另有 ~192K 稳定币 + 3,518 REP，见下方分项；3a54 的 13.14 ETH 仅属旧快照</span></div>
   </div>
   <div class="sum b-blue">
     <div class="n" style="color:#60a5fa;">~15.21 ETH (~$31K)</div>
     <div class="l">TC 提现地址残留<br>18个地址合计 · 其中 0x096f 约 0.868 ETH</div>
   </div>
   <div class="sum b-purple">
-    <div class="n" style="color:#a78bfa;">~70 ETH + 148K USDC</div>
-    <div class="l">链上未动<br>8C16: 56.83 ETH · 3a54: 13.14 ETH<br>0295: <b style="color:#fcd34d;">148,364 USDC（仍在链上 · 优先申请冻结）</b></div>
+    <div class="n" style="color:#a78bfa;">56.83 ETH + 148K USDC</div>
+    <div class="l">当前链上未动（按已复核现状）<br>8C16: 56.83 ETH<br>0295: <b style="color:#fcd34d;">148,364 USDC（仍在链上 · 优先保全）</b><br><span style="color:#8b949e;">3a54: 13.14 ETH 仅为旧快照，不计入当前残留</span></div>
   </div>
 </div>
 <div class="status-grid">
   <div class="status-card green">
-    <div class="status-chip green">已确认可追回</div>
+    <div class="status-chip green">已冻结 / 已保全</div>
     <h3 style="color:#b6f1d3;">已冻结 / 已控制</h3>
   </div>
   <div class="status-card amber">
@@ -1039,14 +1077,14 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     <div class="n" style="color:#fca5a5;">~$40M+ 已流入 8 个交易所/平台</div>
     <div class="l" style="text-align:left; max-width:650px; margin:6px auto 0;">
       MEXC: $11M+ → 大部分后续疑似转 XMR（精确数量待 MEXC 记录） · 冻结时仅剩 $11,476<br>
-      Gate: ~$6.3M → $1.245M 被冻结 + $2.7M → HTX + TC→Stargate新路径 ~$475K<br>
+      Gate: ~$6.3M → $1.245M 被冻结 + $2.7M → HTX + TC→Stargate新路径 ~$475K · deposit-edge 样本已补到 #15→0x0D0707 与 #16→0x752Cd0<br>
       HTX: ~$2.74M → 配合极差(Europol批评) · 需法院命令<br>
       <b style="color:#fcd34d;">Bybit: ~100 ETH 样本路径可复核 → TC→Stargate→ETH→Bybit热钱包（金额折算需按时间点确认）</b><br>
       HTX: ~$2.74M + 22 ETH (TC→Stargate→Arb→HTX存款, OKLink标签)<br>
       WhiteBIT: ~$1M → 来源待验证 · 交易所未回复<br>
-      ChangeNow: 4.13 BTC + 100K USDT · 提款至8C16 (56.8 ETH)<br>
-      n.exchange: 152,673 USDT · 提款至0295 (148K USDC)<br>
-      SideShift: 386K USDT → 3a54 (59 ETH + 399K USDC → 200ETH入TC)<br>
+      ChangeNow: 确认事实 = 8C16 当前仍见 56.834 ETH / nonce=0 · 样本级证据 = 4.13 BTC + 100K USDT 指向 8C16 · 3a54 其余 96.3K USDC 仅到 ChangeNOW 标签支持（截至 2026-04-01 仍见 0x48c04 页面标签）<br>
+      n.exchange: 确认事实 = ETH 侧已见 e291→0295 (148,364.77 USDC) · 样本级证据 = TPrMJ 承接 152,673 USDT 入平台边界 · 标签支持 = 截至 2026-04-01 仍见 1bAc / Funded By e291 · 订单闭环待回函<br>
+      SideShift: 确认事实 = 3a54 最近可确认外发为 2025-10-06 的 2×100 ETH→TC · 样本级证据 = 2af2→3a54 已重建 303,118.29 USDC + 59.319228 ETH · 标签支持 = 截至 2026-04-01 仍见 2af2 = SideShift: Hot Wallet · 额外 96.3K USDC 不并入同强度样本<br>
       FixedFloat: ~582 ETH → ~5,100 XMR (21笔完成 + 2笔冻结)
     </div>
   </div>
@@ -1056,7 +1094,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 <div class="appendix" id="appendix">
   <h2>附录：所涉及的所有地址、合约（链上已验证 · 2026-04-01）</h2>
   <div class="appendix-box" style="max-width:1200px;">
-    <div class="appendix-note">这里把本页涉及的地址集中成索引表，优先按 <b>受害者地址</b>、<b>黑客地址</b>、<b>私钥钱包</b>、<b>合约地址</b>、<b>交易所地址</b> 和 <b>协议 / 桥接</b> 打 tag；同时把 <b>Gate / Bybit / MEXC / HTX / ChangeNow / SideShift / n.exchange / Compound / Layerswap / Stargate / Tornado Cash / FixedFloat</b> 这些归属也一起标出来。<br>核验状态口径：<span class="evidence-inline verified">已验证</span> 表示该行地址身份与页面对应链路可由链上或公开标签直接重建；<span class="evidence-inline partial">部分验证</span> 表示地址已识别，但平台归属或后续链路仍待补证；<span class="evidence-inline pending">需要确认</span> 仅在目前仍主要依赖旧材料或平台回函时使用。</div>
+    <div class="appendix-note">这里把本页涉及的地址集中成索引表，优先按 <b>受害者地址</b>、<b>黑客地址</b>、<b>私钥钱包</b>、<b>合约地址</b>、<b>交易所地址</b> 和 <b>协议 / 桥接</b> 打 tag；同时把 <b>Gate / Bybit / MEXC / HTX / ChangeNow / SideShift / n.exchange / Compound / Layerswap / Stargate / Tornado Cash / FixedFloat</b> 这些归属也一起标出来。<br>核验状态口径：<span class="evidence-inline verified">已验证</span> 表示该行地址身份与页面对应链路可由链上或公开标签直接重建；<span class="evidence-inline partial">部分验证</span> 表示地址已识别，但平台归属或后续链路仍待补证；<span class="evidence-inline pending">需要确认</span> 仅在目前仍主要依赖旧材料或平台回函时使用。说明列尽量按“<b>确认事实 / 样本级证据 / 平台标签支持 / 平台确认缺口</b>”顺序写；若某一层当前不存在，则明确写无或直接省略。</div>
 
     <div class="appendix-sub">一. 核心地址总表 <small>主路径、交易所、协议、桥接</small></div>
     <table class="table-clean" style="font-size:11px;">
@@ -1074,17 +1112,19 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
       <tr><td class="mono">0xee73dcff8f9704223766303bcf9c9fc436e929ae</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>ee73 DAI→ETH 第三地址</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>后续导向 0xB529 / TC</td></tr>
       <tr><td class="mono">0x376a02550be2a6a39803fb17afa550cab5b820ca</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-protocol">Tornado Cash</span></div></td><td>0x376a TC 存入中转</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>经 9055 路径进入 TC</td></tr>
       <tr><td class="mono">0xB529ba5dae11cb5d452128129664def1d568ecbe</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-protocol">Tornado Cash</span></div></td><td>0xB529 TC 存入中转</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>经 ee73 路径进入 TC</td></tr>
-      <tr><td class="mono">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-exchange">ChangeNow</span></div></td><td>8C16 ChangeNow 提款地址</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 BTC / TRON 经过 ChangeNow 的提款</td></tr>
-      <tr><td class="mono">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-exchange">SideShift</span></div></td><td>3a54 SideShift 样本提款地址</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>链上已对出 59.319 ETH + 303,118.29 USDC；另有 96,337.48 USDC 来源待确认</td></tr>
-      <tr><td class="mono">0xcDd37Ada79F589c15bD4f8fD2083dc88E34A2af2</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">SideShift</span></div></td><td>SideShift: Hot Wallet（公开标签）</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>Etherscan 公开标注为 SideShift: Hot Wallet；向 3a54 直发 7 笔 USDC 与 3 笔 ETH 样本</td></tr>
-      <tr><td class="mono">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>0295（收自 0xe291...d342）</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>2022-11-10 08:39:59 UTC 收到 148,364.77 USDC；公开标签链支持 e291 属于 n.exchange 体系</td></tr>
+      <tr><td class="mono">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-exchange">ChangeNow</span></div></td><td>8C16 ChangeNow 样本端点</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>确认事实：当前链上可见 56.834 ETH、nonce=0；样本级证据：本地材料把 4.13 BTC 与 100,000 USDT 两笔 ChangeNow 订单都指向 8C16；平台标签支持：当前未见足以独立闭环到 8C16 的公开标签；平台确认缺口：BTC 出平台后的公开链路仍中断，订单级回函待补</td></tr>
+      <tr><td class="mono">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span><span class="tag-pill tag-exchange">SideShift</span></div></td><td>3a54 SideShift 样本端点</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>确认事实：最近可确认外发为 2025-10-06 11:20/11:21 UTC 的 2×100 ETH → TC；样本级证据：2af2 → 3a54 的 59.319 ETH + 303,118.29 USDC；平台标签支持：截至 2026-04-01，2af2 的 Etherscan 页面仍显示 SideShift: Hot Wallet，0x48c04...a7fF 的 Etherscan 页面仍显示 ChangeNOW 且 More Info = Funded By ChangeNOW 19；平台确认缺口：额外 96,337.48 USDC 仍无订单级闭环</td></tr>
+      <tr><td class="mono">0xcDd37Ada79F589c15bD4f8fD2083dc88E34A2af2</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">SideShift</span></div></td><td>SideShift: Hot Wallet（公开标签）</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>确认事实：向 3a54 直发 7 笔 USDC 与 3 笔 ETH；样本级证据：这些金额与时间可对回 mKt2 的多笔 TRON 出平台样本；平台标签支持：截至 2026-04-01，Etherscan 仍公开标注为 SideShift: Hot Wallet；平台确认缺口：平台内订单号 / 账户资料仍待回函</td></tr>
+      <tr><td class="mono">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>0295（收自 0xe291...d342）</td><td>EOA</td><td><span class="evidence-inline pending">需要确认</span></td><td>确认事实：2022-11-10 08:39:59 UTC 收到 148,364.77 USDC，当前仍见 148,364.77 USDC / 0 ETH / nonce=0；样本级证据：TRON 侧仅见 TPrMJ 承接 152,673 USDT 入 n.exchange 平台边界；平台标签支持：e291 / 1bAc 构成 n.exchange 集群支持；平台确认缺口：仍缺订单级闭环把 TPrMJ 与 e291 / 0295 一一对应</td></tr>
+      <tr><td class="mono">0xE291cc3e5b9e0C9b37c9FBDd549aBf3B5c0ad342</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">n.exchange</span></div></td><td>e291（0295 付款方 / 1bAc 的 Funded By）</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>确认事实：链上直见向 0295 转出 148,364.766577 USDC；样本级证据：当前只能与 TPrMJ 的 TRON 平台边界并列观察，尚无独立订单闭环；平台标签支持：截至 2026-04-01，1bAc 页面 More Info 仍显示 Funded By = e291；平台确认缺口：仍缺 n.exchange 记录把 TPrMJ / e291 / 0295 串为单笔订单</td></tr>
+      <tr><td class="mono">0x48c04ed5691981C42154C6167398f95e8f38a7fF</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">ChangeNow</span></div></td><td>ChangeNOW（公开标签）</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>确认事实：向 3a54 转入 96,337.482103 USDC；样本级证据：当前只构成 3a54 的余量层，不与 2af2 样本合并；平台标签支持：截至 2026-04-01，Etherscan 页面仍显示 ChangeNOW，More Info 仍显示 Funded By = ChangeNOW 19；平台确认缺口：仍无订单级记录把该余量闭到具体 ChangeNow 换汇单</td></tr>
       <tr><td class="mono">0x1D43f19852FfA9ca5F2343E89f408BcbFA698a7E</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>0x1D43 LQTY 中转</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>e8F9 -> LQTY -> ETH -> TC 路径</td></tr>
       <tr><td class="mono">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>e8F9 冷钱包</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>50,000 DAI 休眠可追回</td></tr>
       <tr><td class="mono">TPp3vdsrNqxzSP5fiyjNVd9hp9uNc9mKt2</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-hacker">黑客地址</span><span class="tag-pill tag-private">私钥钱包</span></div></td><td>mKt2 TRON 中转</td><td>TRON</td><td><span class="evidence-inline verified">已验证</span></td><td>639,000 USDT 首跳中转</td></tr>
       <tr><td class="mono">39R7sdAUWfL6JE37BWorfHFb5sgjMLNZqz</td><td>BTC</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">ChangeNow</span></div></td><td>ChangeNow BTC 充币地址</td><td>BTC</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 4.13 BTC</td></tr>
       <tr><td class="mono">TRDzxwMSoRyzgCqg8ejTqq9bhUtAAEDcBv</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">ChangeNow</span></div></td><td>ChangeNow TRON 充币地址</td><td>TRON</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 100,000 USDT</td></tr>
-      <tr><td class="mono">TPrMJcmPVuGitekhff6y9mBDyqpjGCcchy</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">n.exchange</span></div></td><td>n.exchange TRON 充币地址</td><td>TRON</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 mKt2 的 152,673 USDT 入平台边界</td></tr>
-      <tr><td class="mono">0x1bAc08001D761C303901d5E32273a24c07D3f3Da</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">n.exchange</span></div></td><td>n.exchange: Hot Wallet（公开标签）</td><td>EOA</td><td><span class="evidence-inline partial">部分验证</span></td><td>Etherscan 公开标注为 n.exchange: Hot Wallet；其 Funded By 为 0xe291...d342</td></tr>
+      <tr><td class="mono">TPrMJcmPVuGitekhff6y9mBDyqpjGCcchy</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">n.exchange</span></div></td><td>n.exchange TRON 充币地址</td><td>TRON</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 mKt2 的 152,673 USDT 入平台边界；到 e291 / 0295 的订单闭环仍待确认</td></tr>
+      <tr><td class="mono">0x1bAc08001D761C303901d5E32273a24c07D3f3Da</td><td>ETH 主网</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">n.exchange</span></div></td><td>n.exchange: Hot Wallet（公开标签）</td><td>EOA</td><td><span class="evidence-inline verified">已验证</span></td><td>确认事实：当前页面只把其作为 e291 集群边界参考，不单独主张其与 0295 构成已闭环提款；样本级证据：暂无可独立闭到 0295 的公开样本；平台标签支持：截至 2026-04-01，Etherscan 仍公开标注为 n.exchange: Hot Wallet，More Info 仍显示 Funded By = 0xe291...d342；平台确认缺口：仍缺平台记录把 TPrMJ / e291 / 0295 串成单笔订单</td></tr>
       <tr><td class="mono">TBzBuvAGejw1vgmFYE6owFZyZ8c2LGEb5Q</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">Gate</span><span class="tag-pill tag-exchange">Tether冻结</span></div></td><td>TBzBuv 冻结地址</td><td>TRON</td><td><span class="evidence-inline verified">已验证</span></td><td>1,245,249 USDT 已被冻结</td></tr>
       <tr><td class="mono">TMYBuskAXEtScBBcK6s9BfAfKHmW8p5pYn</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">Gate</span></div></td><td>TMYBusk Gate 路径地址</td><td>TRON</td><td><span class="evidence-inline partial">部分验证</span></td><td>残留约 8,371 USDT</td></tr>
       <tr><td class="mono">TB7MtnkN1NVWJwaANbeh7K4JyCVXFvWd3a</td><td>TRON</td><td><div class="tag-list"><span class="tag-pill tag-exchange">交易所地址</span><span class="tag-pill tag-exchange">HTX</span></div></td><td>TB7Mtn HTX 前置中转</td><td>TRON</td><td><span class="evidence-inline partial">部分验证</span></td><td>承接 Gate 提现后流向 HTX</td></tr>
@@ -1207,12 +1247,12 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     </table>
   </div>
 
-  <!-- 可追回 -->
+  <!-- 可主张追索 -->
   <div style="background:#1c1708; border:2px solid #f59e0b; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可追回 · ~$230K</div>
+    <div style="font-size:15px; font-weight:800; color:#fbbf24; margin-bottom:10px;">⚠ 未冻结 · 可主张追索 · ~$230K</div>
     <table style="width:100%; font-size:12px; color:#ccc; border-collapse:collapse;">
       <tr style="color:#6e7681; font-size:11px;"><td style="padding:4px 8px; width:160px;">资产</td><td style="width:100px;">金额</td><td style="width:80px;">链</td><td style="width:80px;">形式</td><td>钱包地址</td><td style="width:120px;">状态</td></tr>
-      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDC</td><td style="color:#fcd34d; font-weight:700;">148,364</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td style="color:#fbbf24;">nonce=0 从未转出</td></tr>
+      <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">USDC</td><td style="color:#fcd34d; font-weight:700;">148,364</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x84B57231E5e0c4353A7FA6f8e3b6d49953310295</td><td style="color:#fbbf24;">优先保全线索 · nonce=0</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">DAI</td><td style="color:#fcd34d; font-weight:700;">50,000</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0x0dB8f544100A6Dcf217e6eA149c42c1E979caD5f</td><td style="color:#fbbf24;">e8F9冷钱包 · nonce=0 从未转出</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">DAI</td><td style="color:#fcd34d;">8,803</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0xd64210ef74ea5fabbd07ce0d0274e33f7e2b0fd6</td><td style="color:#fbbf24;">0xd642 · 未卖出被盗DAI</td></tr>
       <tr style="border-top:1px solid #f59e0b44;"><td style="padding:4px 8px; color:#fbbf24; font-weight:600;">WETH</td><td style="color:#fcd34d; font-weight:700;">~8.0 (~$16K)</td><td>ETH 主网</td><td>ERC-20</td><td class="addr" style="font-size:10px;">0xfab9ef4cb6f9ff770c143401b763963cfa4e3bb2</td><td style="color:#fbbf24;">主网已见 0x184a→fab9 10.05 ETH，随后 wrap 成约 11 WETH；Arb 同地址后续把 579 ETH 打入 0x122f</td></tr>
@@ -1222,17 +1262,17 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
   <!-- 链上残留 (黑客钱包) -->
   <div style="background:#131a2e; border:2px solid #3b82f6; border-radius:14px; padding:16px 20px; margin-bottom:14px;">
-    <div style="font-size:15px; font-weight:800; color:#60a5fa; margin-bottom:10px;">🔵 链上残留 (黑客钱包) · ~$720K</div>
+    <div style="font-size:15px; font-weight:800; color:#60a5fa; margin-bottom:10px;">🔵 链上残留 (黑客钱包) · ~$695K</div>
     <table style="width:100%; font-size:11px; color:#ccc; border-collapse:collapse;">
       <tr style="color:#6e7681; font-size:10px;"><td style="padding:3px 6px; width:180px;">钱包简称</td><td style="width:80px;">余额</td><td style="width:70px;">链</td><td style="width:70px;">形式</td><td>完整地址</td><td style="width:140px;">状态</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x4542 (TC存入中转)</td><td style="color:#fcd34d;">51.21 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x454249291af33ad5681ed07dfd5165c1cb1aa625</td><td style="font-size:10px;">nonce=104 · 已停止</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x376a (via 9055→TC)</td><td style="color:#fcd34d;">74.43 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x376a02550be2a6a39803fb17afa550cab5b820ca</td><td style="font-size:10px;">nonce=63 · 已停止</td></tr>
-      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">8C16 (ChangeNow提款)</td><td style="color:#fcd34d;">56.83 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td style="font-size:10px;">nonce=0 · 休眠1235天</td></tr>
+      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">8C16 (ChangeNow样本端点)</td><td style="color:#fcd34d;">56.83 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4435d504a8fdF308A6302b2fD4155F9053638C16</td><td style="font-size:10px;">nonce=0 · 未见后续外发</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0xB529 (via ee73→TC)</td><td style="color:#fcd34d;">41.71 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0xB529ba5dae11cb5d452128129664def1d568ecbe</td><td style="font-size:10px;">nonce=20 · 已停止</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x096f (#9 提现地址)</td><td style="color:#fcd34d;">0.868 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x096f01765c705067c4a21fccd2ac2a0837ae99ad</td><td style="font-size:10px;">已重算余额 · Arbitrum 同地址另有约 0.10 ETH</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px; color:#8b949e;">0xcab22c (TC→Stargate)</td><td style="color:#8b949e;">≈0 ETH</td><td>Arbitrum</td><td>EOA</td><td class="addr" style="font-size:9px;">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td style="font-size:10px;">TC出金中转 · 300ETH全部转出</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px; color:#4ade80;">0xfab9 (WETH停放)</td><td style="color:#fcd34d;">~8 WETH ($16K)</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0xfab9ef4cb6f9ff770c143401b763963cfa4e3bb2</td><td style="font-size:10px; color:#4ade80;">主网已见 0x184a→fab9 10.05 ETH；Arb 同地址后续向 0x122f 连续打出 438 笔、579 ETH</td></tr>
-      <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">3a54 (SideShift提款)</td><td style="color:#fcd34d;">13.14 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td style="font-size:10px; color:#fca5a5;">最近可确认外发：2025-10-06 11:20/11:21 UTC</td></tr>
+      <tr style="border-top:1px solid #3b82f644; color:#8b949e;"><td style="padding:3px 6px;">3a54 (SideShift样本端点)</td><td style="color:#8b949e;">13.14 ETH 旧快照</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px; color:#8b949e;">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td style="font-size:10px; color:#fca5a5;">不计入当前残留 · 最近可确认外发：2025-10-06 11:20/11:21 UTC</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">bc2e (第一跳中转)</td><td style="color:#fcd34d;">5.957 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x24B93EED37e6FfE948A9bdF365d750B52AdCBC2e</td><td style="font-size:10px;">nonce=16 · 已清空</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">e8F9 (第一跳中转)</td><td style="color:#fcd34d;">0.78 ETH<br>+ 35,436 DAI<br>+ 3,518 REP</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4aC9CA41EFE0eA19b8f3493a91d8a5F706e1e8F9</td><td style="font-size:10px; color:#4ade80;">DAI+REP从未转出</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">TC提现18地址合计</td><td style="color:#fcd34d;">15.21 ETH</td><td>ETH 主网</td><td>EOA ×18</td><td style="font-size:10px; color:#8b949e;">见上方18地址表</td><td style="font-size:10px;">已重算 · 含 0x096f 的 0.868 ETH</td></tr>
@@ -1262,12 +1302,12 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
       <!-- WhiteBIT -->
       <tr class="risk-row-high" style="border-top:2px solid #f59e0b44;"><td style="padding:5px 8px; color:#fbbf24; font-weight:700;">WhiteBIT <span class="evidence-inline inferred">推断</span></td><td>CEX 交易所</td><td style="color:#fcd34d;">~$1M<br><span style="color:#fca5a5; font-size:9px;">⚠来源待验证</span></td><td>原报告称LQTY路径<br><span style="color:#fca5a5;">已证伪: LQTY→TC非WhiteBIT</span></td><td>提币去向不明</td><td style="color:#ffb4ad;">高风险 · 来源需重建</td></tr>
       <!-- ChangeNow -->
-      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow <span class="evidence-inline partial">部分验证</span></td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>原始材料已支持交易ID / IP / 充提地址<br>BTC 出平台后链上线索中断</td><td style="color:#fbbf24;">中风险 · 有IP线索可打</td></tr>
-      <tr class="risk-row-watch" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 3a54 其余约 96.3K USDC 来源仍需平台后台记录确认</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;" rowspan="2">ChangeNow <span class="evidence-inline partial">部分验证</span></td><td rowspan="2">非托管兑换<br>(无KYC)</td><td style="color:#fcd34d;">4.13 BTC (~$70K)<br>+ 100K USDT</td><td>受害者BTC两地址<br>+ mKt2 TRON</td><td>本地材料已支持交易ID / IP / 充提地址<br><span style="color:#4ade80;">最强样本端点：8C16 = 56.834 ETH</span><br><span style="color:#8b949e;">BTC 出平台后链上线索仍中断</span></td><td style="color:#fbbf24;">中风险 · 有IP线索可打</td></tr>
+      <tr class="risk-row-watch" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 193.19.205.190 (NordVPN · 与盗窃同一VPN) · 交易ID: e7dda4d60b9522 · 截至 2026-04-01，0x48c04...a7fF 的 Etherscan 页面仍显示 ChangeNOW，且 More Info 仍显示 Funded By = ChangeNOW 19；因此 3a54 其余约 96.3K USDC 目前仍只到标签支持</td></tr>
       <!-- n.exchange -->
-      <tr class="risk-row-good" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">n.exchange <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">152,673 USDT</td><td>mKt2 TRON<br>(被盗后3小时)</td><td>链上已见 <b>0xe291...d342 → 0295</b><br><span style="color:#4ade80;">2022-11-10 08:39:59 UTC 转入 148,364.77 USDC</span><br><span style="color:#8b949e;">Etherscan 公开标签链：0x1bAc...f3Da = n.exchange: Hot Wallet，Funded By = e291</span></td><td style="color:#86efac;">优先保全 · 订单级确认待平台回函</td></tr>
+      <tr class="risk-row-good" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">n.exchange <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">152,673 USDT</td><td>mKt2 TRON → TPrMJ...<br>(被盗后3小时)</td><td>链上已见 <b>0xe291...d342 → 0295</b><br><span style="color:#4ade80;">2022-11-10 08:39:59 UTC 转入 148,364.77 USDC</span><br><span style="color:#8b949e;">截至 2026-04-01，公开标签链仍见：0x1bAc...f3Da = n.exchange: Hot Wallet；More Info: Funded By = e291</span></td><td style="color:#86efac;">优先保全 · 订单级确认待平台回函</td></tr>
       <!-- SideShift -->
-      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>链上已对出 <b>2af2 → 3a54</b><br><span style="color:#4ade80;">7 笔 USDC = 303,118.29 + 3 笔 ETH = 59.319228</span><br><span style="color:#8b949e;">另有 96,337.48 USDC 来源待确认</span><br><span style="color:#fca5a5;">→ 1inch swap → 200 ETH → TC</span></td><td style="color:#fbbf24;">中风险 · 样本已重建</td></tr>
+      <tr class="risk-row-watch" style="border-top:2px solid #8b5cf644;"><td style="padding:5px 8px; color:#a78bfa; font-weight:700;">SideShift <span class="evidence-inline partial">部分验证</span></td><td>非托管兑换</td><td style="color:#fcd34d;">386,126 USDT<br>+ 200 DAI</td><td>mKt2 TRON + e8F9<br>(7笔 · 分3天)</td><td>链上已对出 <b>2af2 → 3a54</b><br><span style="color:#4ade80;">7 笔 USDC = 303,118.29 + 3 笔 ETH = 59.319228</span><br><span style="color:#8b949e;">截至 2026-04-01，Etherscan 仍示 2af2 = SideShift: Hot Wallet；另有 96,337.48 USDC 仅到 ChangeNow 标签支持</span><br><span style="color:#fca5a5;">后续链上活动：1inch swap → 200 ETH → TC</span></td><td style="color:#fbbf24;">中风险 · 样本已重建</td></tr>
       <!-- FixedFloat -->
       <tr class="risk-row-high" style="border-top:2px solid #ef444466;"><td style="padding:5px 8px; color:#fca5a5; font-weight:700;" rowspan="2">FixedFloat</td><td rowspan="2">即时兑换</td><td style="color:#fcd34d;">~582 ETH<br>(~$742K)</td><td>0x376a直发<br>(23个来源地址 · 全部已确认)</td><td>→ <b>~5,100 XMR</b> (21笔完成 · 不可追踪)<br>→ ~439 XMR (2笔 <span style="color:#4ade80;">❄ 冻结</span>)</td><td style="color:#ffb4ad;">高风险 · 已大量出 XMR</td></tr>
       <tr class="risk-row-high" style="border-top:1px solid #21262d;"><td colspan="4" style="font-size:10px; color:#8b949e; padding:3px 8px;">IP: 212.58.103.221 · 全部 ETH→XMR · 订单19+20被FixedFloat冻结 · 全部23个完整42位来源地址已验证 · 来源: ae14→9055→1inch→0x376a→FixedFloat</td></tr>
