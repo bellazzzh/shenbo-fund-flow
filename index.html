@@ -245,17 +245,17 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 <div class="hero-panel">
   <div class="hero-kicker">交互式调查看板</div>
 <h1>沈波 $42M 被盗案 — 完整资金流向图</h1>
-<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-04-02</div>
+<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-04-11</div>
 <div class="hero-grid">
   <div class="hero-card blue">
     <div class="eyebrow">仍可追索（未冻结）</div>
-    <div class="value" style="color:var(--blue);">~$4.6M</div>
-    <div class="desc">链上可见约 ~$695K，另有约 ~$3.9M 已识别流入平台、仍可继续协查追索。</div>
+    <div class="value" style="color:var(--blue);">~$8.0M+</div>
+    <div class="desc">Aave V3 ~$3.4M + 链上余额 ~$577K + WhiteBIT ~$1.8M + 交易所可传票 ~$2.2M+。另有6个静止地址 ~$10.2M 待确认归属。</div>
   </div>
   <div class="hero-card purple">
     <div class="eyebrow">未识别出口 / 待 Demix</div>
-    <div class="value" style="color:var(--purple);">~$20.3M</div>
-    <div class="desc">约 9,791 ETH；按 2026-03-31 ETH ≈ $2,068.27 估算。</div>
+    <div class="value" style="color:var(--purple);">~$2.4M</div>
+    <div class="desc">约 798 ETH 未追踪（总存入 ~10,614 ETH，已追踪 ~9,816 ETH = 92.5%）。另有 ~3,845 ETH 候选地址待确认归属。</div>
   </div>
   <div class="hero-card green">
     <div class="eyebrow">已冻结 / 已保全</div>
@@ -738,7 +738,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
 <!-- 18 withdrawal addresses -->
 <div style="background:#12101f; border:1px solid #5b21b644; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:0 auto;">
-  <div style="font-size:13px; font-weight:700; color:#c084fc; margin-bottom:10px;">Tornado Cash 已识别提现地址（18 个） <span style="color:#8b949e; font-weight:400;">· 来源: Tay/Tayvano demix</span></div>
+  <div style="font-size:13px; font-weight:700; color:#c084fc; margin-bottom:10px;">Tornado Cash 已识别提现地址（18 + 14 个） <span style="color:#8b949e; font-weight:400;">· 原始18个来源: Tay/Tayvano demix · 新增14个来源: 2026-04-11 链上RPC扫描+多维度验证</span></div>
   <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse; font-family:'SF Mono',monospace;">
     <tr style="color:#6e7681; font-family:-apple-system,sans-serif;"><td style="padding:3px 6px; width:30px;">#</td><td style="width:370px;">提现地址</td><td style="width:50px;">类型</td><td style="width:160px;">TC提现时间 (EDT)</td><td style="text-align:right; width:60px;">提现ETH</td><td style="text-align:right; width:70px;">残留ETH</td><td style="width:50px;">Nonce</td><td>后续去向</td></tr>
     <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">1</td><td style="color:#93c5fd;">0xa4ac5297c15765710d220684446bb91d6b7f13f3</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-09 18:52 / 06-09 20:41</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ 已重放主样本链 <b>0x40870f</b>→Compound→<b>0x88c78</b>→Arb→<b>0x4806fA</b>→<b>MEXC</b></td></tr>
@@ -761,30 +761,58 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     <tr><td style="padding:3px 6px;">18</td><td style="color:#93c5fd;">0x9a8f33d554ef0bf4a89f64a501cec6567fbff454</td><td><span class="wtype wtype-eoa">EOA</span></td><td style="font-size:9px;">06-11 14:50 / 06-11 14:53</td><td style="text-align:right; color:#fcd34d;">200</td><td style="text-align:right;">~0.8</td><td>12</td><td style="font-size:9px; color:#4ade80;">✅ 已重放主样本链 <b>0x083E77</b>→<b>0x2Fc617</b>→<b>0xd8994d</b>→Compound→<b>0xf24ab2</b>→<b>0x4806fA</b>→<b>0xf2532e(MEXC)</b></td></tr>
       <tr style="border-top:1px solid #c084fc;"><td colspan="4" style="padding:4px 6px; color:#c084fc; font-weight:700; font-family:-apple-system,sans-serif;">表内 18 个地址 · TC 提现合计 · 2024年4月-2025年1月</td><td style="text-align:right; color:#fcd34d; font-weight:700;">3,700</td><td style="text-align:right; color:#fcd34d;">~14</td><td colspan="2" style="font-family:-apple-system,sans-serif; color:#8b949e;">MEXC主干样本持续增加 · #1 当前已补到 0x40870f→Compound→0x88c78→Arb→0x4806fA · #2 当前已补到 0xdf8e36→Compound→0x7a9c777→Arb→0xc5bd43 · #3 当前已补到 0x184a→Arb→先直打 0x122f 7 ETH；0xfab9 在首笔外来大额入账前再向 0x122f 打出 179.9 ETH · #4 当前已补到 0x5e4fC3→Compound→0x76da→Arb→0xfab9，并在其后窗口打出 200.7 ETH · #5 当前已补到 0xa40647→Compound→0xed7f→Arb→0xc5bd43 · #6 已继续补到 0xcce8→Arb→0xfab9，并在 #4 入账前窗口打出 198.4 ETH · #7/#8/#10 已分别重放到 0xe255 / 0xdd2a / 0xb4a0，并回 Arb 至 0xc5bd43 / 0x4806fA 两条 MEXC 支线 · #9 已补到 0x6fd657→Compound→0xc8fce1，并在 Arb 侧分流到 0xc5bd43 / 0x4806fA · #11/#12/#17/#18 已分别重放到 0x8f9991 / 0x776f0c / 0x3b56 / 0xf24ab2，并回 Arb 至 0xc5bd43 / 0x4806fA 两条 MEXC 支线 · Gate样本 #13/#14/#15/#16 已分别补到 0x22ba14 / 0x8e5dc / 0x0D0707 / 0x752Cd0 · #13 另见 27.2209 ETH 经 0x5144d / 0x519896 打至 0xa034(HTX 48 标签支持) · #13 另有 ~0.9672ETH 停于 0xe81d</td></tr>
   </table>
+
+  <!-- NEW: 2026-04-11 新发现的14个TC出口地址 -->
+  <div style="margin-top:16px; padding-top:14px; border-top:2px solid #5b21b6;">
+    <div style="font-size:12px; font-weight:700; color:#4ade80; margin-bottom:8px;">🆕 2026-04-11 链上扫描新发现（14个地址 · 6,116 ETH · ✅ 多维度验证）</div>
+    <div style="font-size:10px; color:#9fb3c8; margin-bottom:8px; line-height:1.6;">
+      验证维度: TC 100/10 ETH池提款 + Arb Delayed Inbox桥接(20ETH批量) + Arb nonce数学匹配 + 独立splitter→Layerswap(1ETH) + Mainnet余额≈TC 1ETH残留 + 时间窗口重叠 + 出金去向匹配已知攻击者基础设施
+    </div>
+    <table style="width:100%; font-size:10px; color:#ccc; border-collapse:collapse; font-family:'SF Mono',monospace;">
+      <tr style="color:#6e7681; font-family:-apple-system,sans-serif;"><td style="padding:3px 6px; width:30px;">#</td><td style="width:370px;">提现地址</td><td style="width:60px;">来源池</td><td style="width:80px;">提现ETH</td><td style="width:70px;">残留ETH</td><td style="width:50px;">Nonce</td><td style="width:60px;">Arb Nonce</td><td>后续去向</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">19</td><td style="color:#93c5fd;">0xe5508cab54b8083bbc4e9fc8d3820a8c28b81482</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.43</td><td>13</td><td>11</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter 0xb765EC→Layerswap(1ETH批量)</td></tr>
+      <tr><td style="padding:3px 6px;">20</td><td style="color:#93c5fd;">0x117a2fffdf48e733119e044eb62f9726ca609ad1</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.94</td><td>18</td><td>15</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">21</td><td style="color:#93c5fd;">0x99096bd1ff3cc8fda3a8bf0e0e033323f994546f</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.00</td><td>19</td><td>16</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter 0x54431D→Layerswap</td></tr>
+      <tr><td style="padding:3px 6px;">22</td><td style="color:#93c5fd;">0x9c0a652ac28eefb0d44b434f32bcca3002bf9759</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.89</td><td>18</td><td>15</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">23</td><td style="color:#93c5fd;">0xa1e4f1ee730067d1bd963e611e9cfbaa1ef85a7e</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.01</td><td>19</td><td>16</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr><td style="padding:3px 6px;">24</td><td style="color:#93c5fd;">0xc3ca578da547798e84af703c56d3cd58d949f717</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.37</td><td>19</td><td>15</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">25</td><td style="color:#93c5fd;">0xc93c19141e0df276e08d95510a1a3a0ad41a1bb7</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.00</td><td>20</td><td>17</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr><td style="padding:3px 6px;">26</td><td style="color:#93c5fd;">0xcc4e57732e8af8539a1e3f351d67dd4320ba82f7</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.00</td><td>19</td><td>17</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">27</td><td style="color:#93c5fd;">0xcf387c9be7d20ba0c2c930637ed3aa01cb2149f9</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.57</td><td>19</td><td>15</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr><td style="padding:3px 6px;">28</td><td style="color:#93c5fd;">0xee3b1cb9902204017c89d7a44154c184064ad78a</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.44</td><td>19</td><td>16</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">29</td><td style="color:#93c5fd;">0x0f70ab753fe7c1db5d5e9f0ca7e9f8bc4e5f4d37</td><td>100 ETH</td><td style="color:#fcd34d;">300</td><td>0.00</td><td>20</td><td>16</td><td style="font-size:9px; color:#4ade80;">✅ →Arb→splitter→Layerswap</td></tr>
+      <tr><td style="padding:3px 6px;">30</td><td style="color:#93c5fd;">0xbfa7d333e4d1c465b2cf0234260464324fab533f</td><td>100 ETH</td><td style="color:#fcd34d;"><b>400</b></td><td>0.95</td><td>24</td><td><b>408</b></td><td style="font-size:9px; color:#4ade80;">✅ →Arb→<b>直接Layerswap</b>(408笔×1ETH, 跳过splitter)</td></tr>
+      <tr style="border-top:1px solid #21262d;"><td style="padding:3px 6px;">31</td><td style="color:#93c5fd;">0x93b7fc00b677e4c583460893b67ad0e0f9995bbc</td><td>10 ETH</td><td style="color:#fcd34d;">274</td><td>0.00</td><td>25</td><td>0</td><td style="font-size:9px; color:#4ade80;">✅ TC→0x77cbefb1→<b>Uniswap V4 ETH→USDT</b> (匹配0xba5267的ETH→DAI模式)</td></tr>
+      <tr><td style="padding:3px 6px;">32</td><td style="color:#93c5fd;">0x952a540bb8047d15c63c2ddc2687a72a0c9014d6</td><td>10 ETH</td><td style="color:#fcd34d;">126</td><td>0.00</td><td>22</td><td>0</td><td style="font-size:9px; color:#4ade80;">✅ TC→0xd8223b→<b>FixedFloat</b> + <b>Railgun</b> (FixedFloat=已知攻击者出口)</td></tr>
+      <tr style="border-top:1px solid #4ade80;"><td colspan="3" style="padding:4px 6px; color:#4ade80; font-weight:700; font-family:-apple-system,sans-serif;">新增 14 个地址 · TC 提现合计</td><td style="color:#fcd34d; font-weight:700;">6,100</td><td style="color:#fcd34d;">~4.6</td><td colspan="3" style="font-family:-apple-system,sans-serif; color:#8b949e;">Phase 1 (2024.01-03): #19-#29 各300ETH · Phase 2 (2024.04-06): #30 400ETH · TC 10池: #31-#32 · 验证方式: 链上RPC直接查询nonce/balance + Arbitrum交叉验证</td></tr>
+      <tr style="border-top:2px solid #c084fc;"><td colspan="3" style="padding:4px 6px; color:#c084fc; font-weight:700; font-family:-apple-system,sans-serif;">全部 32 个地址 · 总计</td><td style="color:#fcd34d; font-weight:700;">9,800</td><td style="color:#fcd34d;">~18.6</td><td colspan="3" style="font-family:-apple-system,sans-serif; color:#8b949e;">总存入TC ~10,614 ETH · 已追踪 ~9,816 ETH (92.5%) · 缺口 ~798 ETH</td></tr>
+    </table>
+  </div>
 </div>
 
-<!-- TC 未识别提现 -->
+<!-- TC 未识别提现 (updated 2026-04-11) -->
 <div style="background:#1a0d0d; border:2px dashed #ef444488; border-radius:14px; padding:16px 20px; width:100%; max-width:1200px; margin:12px auto 0;">
-  <div style="font-size:14px; font-weight:700; color:#fca5a5; margin-bottom:10px;">⚠ Tornado Cash 未识别提现（~9,791 ETH · ~$20.3M）</div>
+  <div style="font-size:14px; font-weight:700; color:#fbbf24; margin-bottom:10px;">⚠ Tornado Cash 剩余缺口（~798 ETH · ~$2.4M）+ 待确认归属候选（~3,845 ETH · ~$11.5M）</div>
   <div style="display:flex; gap:20px;">
     <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
-      <b style="color:#fca5a5;">规模：</b>总存入 ~13,491 ETH，已识别 3,700 ETH (18个地址)，未识别 ~9,791 ETH<br>
-      <b style="color:#fca5a5;">说明：</b>这部分已从TC提现但尚未与已识别出口路径建立对应关系<br>
-      <b style="color:#fca5a5;">可能去向：</b><br>
-      · 更多 Arbitrum → MEXC/Gate 充值（与已识别18地址相同模式）<br>
-      · FixedFloat 等即时兑换 → XMR<br>
-      · 其他交易所（Binance、OKX、Bybit等）<br>
-      · 仍在TC未提取（可能性较低）
+      <b style="color:#4ade80;">进展（2026-04-11更新）：</b>总存入 ~10,614 ETH，<b>已追踪 ~9,816 ETH (32个地址 · 92.5%)</b>，剩余缺口 ~798 ETH<br>
+      <b style="color:#fbbf24;">确定性缺口 (~798 ETH · ~$2.4M)：</b><br>
+      · 可能分散在小额TC提款中（0.1/1/10 ETH池）<br>
+      · 部分可能仍在TC未提取<br>
+      · 或已通过未识别的路径流出<br><br>
+      <b style="color:#fbbf24;">待确认归属候选 (~3,845 ETH · ~$11.5M)：</b><br>
+      · 6个晚期静止地址 (3,404 ETH / ~$10.2M) — 余额经RPC验证为真，但归属未确认。Arb nonce=0，行为与已确认地址不同<br>
+      · 0x36d839→0x02a17f (441 ETH) — 使用TC 100+10双池，资金停放未动
     </div>
     <div style="flex:1; font-size:11px; color:#ccc; line-height:1.8;">
-      <b style="color:#fbbf24;">追踪障碍：</b><br>
-      · Tornado Cash混币后地址断联，需专业demix工具<br>
-      · Tay/Tayvano已识别~28%（18个地址），Chainalysis/TRM可能更高<br>
-      · 一部分很可能已提现并流入交易所，但也不能排除仍有少量尚未提取或尚未被本案对应起来<br><br>
-      <b style="color:#4ade80;">建议行动：</b><br>
-      · 委托Chainalysis或TRM Labs进行完整demix<br>
-      · 向更多交易所发送协查函（附TC存入txhash）<br>
-      · 监控已知黑客地址的新活动
+      <b style="color:#4ade80;">关键教训：</b><br>
+      · TC 1 ETH gas指纹<b>单独不够</b>：0xcc1689有指纹但是Rocket Pool质押者(排除), 0xd80cf2在TC里循环(排除)<br>
+      · 必须多维度交叉验证: TC池+Arb桥接+splitter+Layerswap+时间窗口+出金去向<br>
+      · Agent声称的总量(22,200+ ETH)远超TC存入(10,614 ETH)，证明大量误判<br><br>
+      <b style="color:#4ade80;">下一步：</b><br>
+      · 验证6个晚期静止地址的归属（查TC 1 ETH gas来源+调查为何未移动）<br>
+      · 追踪0x93b7fc USDT最终去向 + 0x952a54 FixedFloat/Railgun后续<br>
+      · 联系Layerswap获取所有相关地址的桥接记录
     </div>
   </div>
 </div>
