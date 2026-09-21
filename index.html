@@ -205,6 +205,28 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 .risk-row-high td { background:rgba(255,123,114,0.05); }
 .risk-row-watch td { background:rgba(255,204,110,0.04); }
 .risk-row-good td { background:rgba(94,230,168,0.04); }
+.tier-panel { max-width:1500px; margin:0 auto 24px; padding:24px 26px; border:1px solid rgba(94,230,168,0.3); border-radius:22px; background:linear-gradient(160deg, rgba(10,32,30,0.9), rgba(8,18,31,0.96)); box-shadow:var(--shadow); }
+.tier-h { font-size:20px; font-weight:900; text-align:center; color:#eaf6ff; }
+.tier-note { font-size:12px; color:var(--muted); text-align:center; margin:6px 0 18px; line-height:1.7; }
+.tier-sub { font-size:14px; font-weight:900; color:#e6f1fa; margin:22px 0 10px; letter-spacing:0.5px; }
+.tier-grid { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:12px; }
+.tier-card { border-radius:16px; padding:14px 14px; border:1px solid rgba(255,255,255,0.1); font-size:12px; line-height:1.7; color:#d8e6ef; }
+.tier-card h4 { font-size:13px; margin-bottom:4px; }
+.tier-card .why { font-size:11px; color:#aebfd0; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.tier-card ul { padding-left:16px; }
+.tier-card li { margin-bottom:3px; }
+.tier-card code { font-family:'SF Mono','Menlo',monospace; font-size:10.5px; color:#cfe6ff; }
+.t1 { background:rgba(127,29,29,0.28); border-color:rgba(255,123,114,0.45); } .t1 h4 { color:#ffb4ad; }
+.t2 { background:rgba(120,53,15,0.26); border-color:rgba(255,204,110,0.45); } .t2 h4 { color:#ffd88f; }
+.t3 { background:rgba(88,28,135,0.22); border-color:rgba(183,157,255,0.4); } .t3 h4 { color:#d6c6ff; }
+.t4 { background:rgba(6,78,59,0.24); border-color:rgba(94,230,168,0.4); } .t4 h4 { color:#9ff0c9; }
+.t5 { background:rgba(55,65,81,0.3); border-color:rgba(160,172,190,0.35); } .t5 h4 { color:#d1d9e2; }
+.lines-table td, .lines-table th { font-size:12px; vertical-align:top; line-height:1.6; }
+.lines-table td:first-child { white-space:nowrap; font-weight:800; color:#eaf6ff; }
+.lvl { display:inline-block; font-size:10px; font-weight:900; padding:1px 7px; border-radius:999px; margin-right:4px; }
+.lvl1 { background:rgba(255,123,114,0.18); color:#ffb4ad; } .lvl2 { background:rgba(255,204,110,0.18); color:#ffd88f; } .lvl3 { background:rgba(183,157,255,0.18); color:#d6c6ff; }
+@media (max-width: 1200px) { .tier-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .tier-grid { grid-template-columns:1fr; } .tier-panel { padding:16px 14px; } .lines-table td:first-child { white-space:normal; } }
 @media (max-width: 1200px) {
   .hero-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .grid-4col { grid-template-columns:1fr 1fr; }
@@ -252,42 +274,38 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 <div class="hero-panel">
   <div class="hero-kicker">交互式调查看板</div>
 <h1>沈波 $42M 被盗案 — 完整资金流向图</h1>
-<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-04-11</div>
+<div class="sub">所有时间为纽约时间 (EST/EDT) · 数据来源: Dr. Wu / Tay / MistTrack / 链上RPC验证 / Etherscan验证 · 最后更新 2026-09-21</div>
 <div class="hero-grid">
   <div class="hero-card blue">
-    <div class="eyebrow">仍可追索（未冻结）</div>
-    <div class="value" style="color:var(--blue);">~$8.0M+</div>
-    <div class="desc">Aave V3 ~$3.4M + 链上余额 ~$577K + WhiteBIT ~$1.8M + 交易所可传票 ~$2.2M+。另有6个静止地址 ~$10.2M 待确认归属。</div>
-  </div>
-  <div class="hero-card purple">
-    <div class="eyebrow">未识别出口 / 待 Demix</div>
-    <div class="value" style="color:var(--purple);">~$2.4M</div>
-    <div class="desc">约 798 ETH 未追踪（总存入 ~10,614 ETH，已追踪 ~9,816 ETH = 92.5%）。另有 ~3,845 ETH 候选地址待确认归属。</div>
+    <div class="eyebrow">链上还在 · 已复核</div>
+    <div class="value" style="color:var(--blue);">~$0.9M</div>
+    <div class="desc">244.2 ETH + 242,605 稳定币（USDC/DAI），分布在 10 个地址。2026-09-21 逐个链上复核，全部属第①②层。</div>
   </div>
   <div class="hero-card green">
     <div class="eyebrow">已冻结 / 已保全</div>
     <div class="value" style="color:var(--green);">$1.30M</div>
     <div class="desc">Tether 冻结约 $1.245M，另有 FixedFloat 扣押的 XMR 约 ~$50K。</div>
   </div>
+  <div class="hero-card amber">
+    <div class="eyebrow">在交易所里 · 要靠传票</div>
+    <div class="value" style="color:var(--amber);">~$4.0M+</div>
+    <div class="desc">WhiteBIT ~$1.8M + 其他交易所可传票 ~$2.2M+。沿用原报告数字，本轮未重新核实金额。</div>
+  </div>
   <div class="hero-card gray">
     <div class="eyebrow">已转 XMR / 基本不可追</div>
     <div class="value" style="color:#d1d5db;">~$13M+</div>
     <div class="desc">已进入门罗币或同类不可追踪阶段，当前链上基本无法继续追踪。</div>
   </div>
-  <div class="hero-card info">
-    <div class="eyebrow">本页功能</div>
-    <div class="value">把可追回资产、未识别缺口和关键平台边界放在同一页。</div>
-    <div class="mini-list">
-      <div class="mini-item"><b>看钱还在哪：</b> 当前还能追、已冻结、已失联分别有多少。</div>
-      <div class="mini-item"><b>看重点边界：</b> n.exchange、SideShift、ChangeNow、Gate 等优先线索。</div>
-      <div class="mini-item"><b>看完整路径：</b> 从受害者地址到混币、跨链、交易所入口的链路。</div>
-      <div class="mini-item"><b>查地址和证据：</b> 关键地址附录、标签归属、已验证 / 部分验证状态。</div>
-    </div>
+  <div class="hero-card purple">
+    <div class="eyebrow">未证实 · 不计入以上金额</div>
+    <div class="value" style="color:var(--purple);">第③层</div>
+    <div class="desc">Arbitrum 上 Aave ~$3.4M · 6 个静止地址 ~$10.2M · 4 月扫描的 14 个地址 6,116 ETH · TC 去向不明 ~798 ETH。归属都没有独立证实。</div>
   </div>
 </div>
 </div>
 
 <div class="quick-nav">
+  <a href="#tiers" style="border-color:rgba(94,230,168,0.55);">一页看懂</a>
   <a href="#priority-leads">优先线索</a>
   <a href="#entry">案件入口</a>
   <a href="#first-hop">第一跳分流</a>
@@ -312,6 +330,65 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   <div style="display:flex; align-items:center; gap:6px;"><span class="evidence-inline inferred">推断</span><span style="font-size:11px; color:#8b949e;">推断或旧报告口径，不能当硬结论</span></div>
 </div>
 
+<div class="tier-panel" id="tiers">
+  <div class="tier-h">一页看懂：钱去了哪，哪些是黑客的</div>
+  <div class="tier-note">2026-09-21 整理。每个地址按证据强弱分成五层。能拿上法庭的是①②；③是按行为模式推断的，没独立证实，不计入可追回金额。<br>余额数字 = 当日链上复核；路径 = 原页面记录（来源 Dr. Wu 专家报告 / Tay demix / 早先链上核对），本轮未逐跳重核。</div>
+
+  <div class="tier-sub">一、四条线：每笔钱走到哪</div>
+  <table class="table-clean lines-table">
+    <tr><th>线</th><th>被盗</th><th>走向</th><th>终点</th></tr>
+    <tr><td>线 1 · 91%</td><td>38.2M USDC</td><td>bc2e → 9 分钟内换成 38.1M DAI → ae14 放近 2 年 → 分三路：29.1M → d642 → 0x4542；4M → 0x9055 → 0x376a；5M → 0xee73 → 0xB529</td><td>换成 ETH 存进 TC 混币；0x376a 另有 582 ETH 经 FixedFloat 换成门罗币</td></tr>
+    <tr><td>线 1b</td><td>1,606 ETH</td><td>bc2e 放近 2 年 → 2024-09 分 16 笔</td><td>TC 1,600 ETH</td></tr>
+    <tr><td>线 2 · ~1%</td><td>USDT / UNI / LQTY / REP 约 $50 万</td><td>e8F9 → 换成 ETH；LQTY 经 0x1D43 换成 717 ETH</td><td>TC ~677 ETH；50,000 DAI 进冷钱包一直没动</td></tr>
+    <tr><td>线 3</td><td>4.13 BTC</td><td>ChangeNow 兑换</td><td>链上断了，要 ChangeNow 回函</td></tr>
+    <tr><td>线 4 · TRON</td><td>639K USDT</td><td>mKt2 → 3 天洗进三家兑换平台</td><td>SideShift → 3a54；n.exchange → 0295（148K USDC 还在）；ChangeNow → 8C16（56.8 ETH 还在）</td></tr>
+    <tr><td>TC 之后</td><td>存入 ~10,600 ETH</td><td>① Tay 报告 18 个提现地址 ~3,700 ETH → Arbitrum → Layerswap → MEXC（$11M+，大部分疑转门罗币）/ Gate（$5.8M：$1.245M 被 Tether 冻结，$2.7M 转 HTX，$1.85M 去向不明）<br>② 4 月扫描的 14 个地址 ~6,100 ETH，同样路子，<b>未独立核实</b><br>③ ~800 ETH 去向不明</td><td>基本只能追到交易所门口，往下要交易所回函</td></tr>
+  </table>
+
+  <div class="tier-sub">二、五层：哪些是黑客的，哪些不是</div>
+  <div class="tier-grid">
+    <div class="tier-card t1"><h4>① 铁定是他的</h4><div class="why">没经过混币，从受害者钱包一跳一跳直接连下来</div><ul>
+      <li>第一跳：<code>bc2e</code> <code>e8F9</code>（ETH）、<code>mKt2</code>（TRON）</li>
+      <li>中转：<code>ae14</code> <code>d642</code> <code>0x9055</code> <code>0xee73</code> <code>0x1D43</code></li>
+      <li>存 TC 的地址：<code>0x4542</code> <code>0x376a</code> <code>0xB529</code></li>
+      <li>e8F9 冷钱包 <code>0x0dB8</code></li>
+      <li>FixedFloat 23 笔门罗币兑换（同一 IP、同一收款地址）</li></ul></div>
+    <div class="tier-card t2"><h4>② 很可能是他的</h4><div class="why">有专家报告或交易所记录支撑，还差平台正式出具记录</div><ul>
+      <li><code>0295</code> <code>8C16</code> <code>3a54</code>：兑换平台的提款地址，Dr. Wu 报告认定为被告控制</li>
+      <li>Tay 报告 18 个 TC 提现地址，及其进入的 MEXC / Gate 账户</li>
+      <li>身份线索：Trust Wallet 越南 IPv6 + 越南语；NordVPN（巴拿马）；MEXC 实名乌克兰（疑伪造）</li></ul></div>
+    <div class="tier-card t3"><h4>③ 看着像他的</h4><div class="why">混币之后按行为模式推断，没独立证实</div><ul>
+      <li>4 月扫描的 14 个提现地址（6,116 ETH），含 <code>0x93b7fc</code> <code>0x952a54</code></li>
+      <li>Arbitrum 上 Aave ~$3.4M（<code>0x965fDCcE</code>）</li>
+      <li>6 个一直没动的地址（~$10.2M）</li>
+      <li><code>0x36d839</code> → <code>0x02a17f</code>（441 ETH）</li></ul></div>
+    <div class="tier-card t4"><h4>④ 确定不是他的</h4><div class="why">已查过、已排除</div><ul>
+      <li>以太坊主网 Aave 上 5 个地址（~$10.5M）：<code>0x785bcb5a</code> <code>0x28fd675f</code> <code>0x3ba4fd51</code> <code>0x01f5daf7</code> <code>0x4046879e</code>。它们从 TC 提走的量，比黑客同期存进去的还多，数学上对不上</li>
+      <li><code>0xcc1689</code>：Rocket Pool 质押的普通用户</li>
+      <li><code>0xd80cf2</code>：在 TC 里来回存取</li></ul></div>
+    <div class="tier-card t5"><h4>⑤ 公共设施</h4><div class="why">图上会出现，但不是任何人的钱包，谁都在用</div><ul>
+      <li>Tornado Cash 资金池、Arbitrum 跨链桥</li>
+      <li>Layerswap、1inch、Uniswap、MEV 机器人</li>
+      <li>各交易所热钱包（MEXC / Gate / Binance / Bybit 等）</li></ul></div>
+  </div>
+
+  <div class="tier-sub">三、钱现在还在哪（2026-09-21 链上复核，自 4 月以来都没动）</div>
+  <table class="table-clean lines-table">
+    <tr><th>地址</th><th>层</th><th>余额</th><th>说明</th></tr>
+    <tr><td><code>0x84B5…0295</code></td><td><span class="lvl lvl2">②</span></td><td>148,364.77 USDC</td><td>n.exchange 提款，nonce=0，从没转出 · 优先保全</td></tr>
+    <tr><td><code>0x4435…8C16</code></td><td><span class="lvl lvl2">②</span></td><td>56.83 ETH</td><td>ChangeNow 提款，nonce=0，从没转出</td></tr>
+    <tr><td><code>0x0dB8…caD5f</code></td><td><span class="lvl lvl1">①</span></td><td>50,000 DAI</td><td>e8F9 冷钱包，nonce=0，从没转出</td></tr>
+    <tr><td><code>0x376a…820ca</code></td><td><span class="lvl lvl1">①</span></td><td>74.43 ETH</td><td>存 TC 的地址</td></tr>
+    <tr><td><code>0x4542…aa625</code></td><td><span class="lvl lvl1">①</span></td><td>51.21 ETH</td><td>存 TC 的地址</td></tr>
+    <tr><td><code>0xB529…8ecbe</code></td><td><span class="lvl lvl1">①</span></td><td>41.71 ETH</td><td>存 TC 的地址</td></tr>
+    <tr><td><code>0x4aC9…e8F9</code></td><td><span class="lvl lvl1">①</span></td><td>35,436.50 DAI + 0.78 ETH</td><td>第一跳中转</td></tr>
+    <tr><td><code>0x0382…3a54</code></td><td><span class="lvl lvl2">②</span></td><td>13.14 ETH</td><td>SideShift 提款；原页面写"旧快照"，实际仍在</td></tr>
+    <tr><td><code>0xd642…0fd6</code></td><td><span class="lvl lvl1">①</span></td><td>8,802.77 DAI</td><td>没卖掉的被盗 DAI</td></tr>
+    <tr><td><code>0x24B9…BC2e</code></td><td><span class="lvl lvl1">①</span></td><td>5.96 ETH</td><td>第一跳中转</td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>244.2 ETH + 242,605 稳定币</b></td><td>约 $0.9M（ETH 按 $2,719）。另有 TRON 上 TMYBusk ~8,371 USDT，本轮未复核</td></tr>
+  </table>
+</div>
+
 <div class="section-box" id="priority-leads" style="max-width:1200px; margin:16px auto 0; border:1px solid rgba(183,157,255,0.34); background:linear-gradient(165deg, rgba(24,18,43,0.96), rgba(10,21,34,0.98));">
   <div style="font-size:13px; font-weight:900; color:#e9d5ff; letter-spacing:0.8px; text-align:center; margin-bottom:10px;">重点交易所边界线索 · 法庭口径</div>
   <div class="row" style="align-items:stretch;">
@@ -325,7 +402,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     </div>
     <div class="bubble b-blue" style="flex:1 1 250px; min-width:240px; text-align:left;">
       <div class="tag">优先 2 · SideShift / 3a54</div>
-      <div style="font-size:11px; color:#dbeafe;">确认事实：最近可确认外发为 `2025-10-06 11:20/11:21 UTC` 的 `2×100 ETH -> TC`；`13.14 ETH` 仅属旧快照。</div>
+      <div style="font-size:11px; color:#dbeafe;">确认事实：最近可确认外发为 `2025-10-06 11:20/11:21 UTC` 的 `2×100 ETH -> TC`；`13.14 ETH` 仍在该地址（2026-09-21 链上复核，nonce=2）。</div>
       <div style="font-size:10px; color:#d6e3ee; margin-top:6px;">样本级证据：《Shen-Report-v2》与《MWE_Bo Shen_Chiachih Wu Expert Declaration》均可对回 `2af2 -> 3a54` 的 `7` 组 `USDT→USDC` 与 `3` 组 `USDT/TRX→ETH` 匹配，共 `303,118.292899 USDC + 59.31922843 ETH`。</div>
       <div style="font-size:10px; color:#cbd5e1; margin-top:6px;">书面补强：《MWE_Bo Shen_Chiachih Wu Expert Declaration》将 `2af2` 写为 `SideShift AI comingled hot wallet`，并写明图表中的 `Withdrawals from SideShift AI` 全部由 `3a54` 接收；同文并把 `8C16 / 3a54` 归为被告控制的 `self-hosted wallets`。</div>
       <div style="font-size:10px; color:#8b949e; margin-top:6px;">平台标签支持：截至 `2026-04-02`，`2af2` 的 `OP Mainnet Etherscan` 页面仍显示 `SideShift: Hot Wallet`；`0x48c04...a7fF` 的 Etherscan 页面仍显示 `ChangeNOW`，More Info 仍显示 `Funded By = ChangeNOW 19`。</div>
@@ -659,7 +736,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
     <div class="bubble b-blue" style="margin-bottom:8px;">
       <b>3a54 · SideShift 样本端点</b> <span class="wtype wtype-eoa">EOA</span><br>
       <div class="addr" style="font-size:9px;">0x038220C193973be6DBF5790b0291c62B32B23a54</div>
-      <div style="font-size:11px; color:#ccc;">确认事实：最近可确认外发为 <b style="color:#fcd34d;">2025-10-06 11:20/11:21 UTC</b> 的 <b style="color:#fcd34d;">2×100 ETH → TC</b>；13.14 ETH 仅属旧快照</div>
+      <div style="font-size:11px; color:#ccc;">确认事实：最近可确认外发为 <b style="color:#fcd34d;">2025-10-06 11:20/11:21 UTC</b> 的 <b style="color:#fcd34d;">2×100 ETH → TC</b>；13.14 ETH 仍在该地址（2026-09-21 链上复核）</div>
       <div style="font-size:10px; color:#d6e3ee;">样本级证据：<b>《Shen-Report-v2》与《MWE_Bo Shen_Chiachih Wu Expert Declaration》</b> 均可对回 <b>2af2 -> 3a54</b> 的 7 组 USDT→USDC 与 3 组 USDT/TRX→ETH，共 303,118.29 USDC + 59.319228 ETH</div>
       <div style="font-size:10px; color:#cbd5e1;">书面补强：<b>《MWE_Bo Shen_Chiachih Wu Expert Declaration》</b> 将 <b>2af2</b> 写为 <b>SideShift AI comingled hot wallet</b>，并写明图表中的 <b>Withdrawals from SideShift AI</b> 全部由 <b>3a54</b> 接收；同文并把 <b>8C16 / 3a54</b> 归为被告控制的 <b>self-hosted wallets</b></div>
       <div style="font-size:10px; color:#8b949e;">平台标签支持：截至 2026-04-02，2af2 的 <b>OP Mainnet Etherscan</b> 页面仍显示 SideShift: Hot Wallet；0x48c04...a7fF 的 Etherscan 页面仍显示 ChangeNOW，More Info: Funded By = ChangeNOW 19</div>
@@ -748,7 +825,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
   <!-- NEW: 2026-04-11 新发现的14个TC出口地址 -->
   <div style="margin-top:16px; padding-top:14px; border-top:2px solid #5b21b6;">
-    <div style="font-size:12px; font-weight:700; color:#4ade80; margin-bottom:8px;">🆕 2026-04-11 链上扫描新发现（14个地址 · 6,116 ETH · ✅ 多维度验证）</div>
+    <div style="font-size:12px; font-weight:700; color:#4ade80; margin-bottom:8px;">⚠ 2026-04-11 扫描候选（14个地址 · 6,116 ETH · 属第③层：按行为模式推断，未独立核实，不计入可追回金额）</div>
     <div style="font-size:10px; color:#9fb3c8; margin-bottom:8px; line-height:1.6;">
       验证维度: TC 100/10 ETH池提款 + Arb Delayed Inbox桥接(20ETH批量) + Arb nonce数学匹配 + 独立splitter→Layerswap(1ETH) + Mainnet余额≈TC 1ETH残留 + 时间窗口重叠 + 出金去向匹配已知攻击者基础设施
     </div>
@@ -1037,13 +1114,13 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   </div>
   <div class="sum" style="background:#1c1708; border:1.5px solid #f59e0b;">
     <div class="n" style="color:#fcd34d;">246+ ETH</div>
-    <div class="l">链上已确认残留（不含 3a54 旧快照）<br>
+    <div class="l">链上已确认残留（含 3a54 13.14 ETH，2026-09-21 复核）<br>
     ETH主网: bc2e 5.957 · e8F9 0.782 · 0x4542 51.21 · 0x376a 74.43 · 0xB529 41.71 · 8C16 56.83 ETH<br>
     TC提现18地址合计: ~15.21 ETH（含 0x096f 当前约 0.868 ETH）<br>
     <b style="color:#4ade80;">e8F9: 3,518 REP + 35,436 DAI (从未转出)</b><br>
     <b style="color:#4ade80;">0295: 148,364 USDC（仍在链上）</b><br>
     <b style="color:#4ade80;">TMYBusk: ~8,371 USDT (TRON·未冻结)</b><br>
-    <span style="color:#8b949e;">另有 ~192K 稳定币 + 3,518 REP，见下方分项；3a54 的 13.14 ETH 仅属旧快照</span></div>
+    <span style="color:#8b949e;">另有 ~192K 稳定币 + 3,518 REP，见下方分项；3a54 另有 13.14 ETH 仍在</span></div>
   </div>
   <div class="sum b-blue">
     <div class="n" style="color:#60a5fa;">~15.21 ETH (~$31K)</div>
@@ -1051,7 +1128,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
   </div>
   <div class="sum b-purple">
     <div class="n" style="color:#a78bfa;">56.83 ETH + 148K USDC</div>
-    <div class="l">当前链上未动（按已复核现状）<br>8C16: 56.83 ETH<br>0295: <b style="color:#fcd34d;">148,364 USDC（仍在链上 · 优先保全）</b><br><span style="color:#8b949e;">3a54: 13.14 ETH 仅为旧快照，不计入当前残留</span></div>
+    <div class="l">当前链上未动（按已复核现状）<br>8C16: 56.83 ETH<br>0295: <b style="color:#fcd34d;">148,364 USDC（仍在链上 · 优先保全）</b><br><span style="color:#8b949e;">3a54: 13.14 ETH 仍在（2026-09-21 复核）</span></div>
   </div>
 </div>
 <div class="status-grid">
@@ -1298,7 +1375,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">0x096f (#9 提现地址)</td><td style="color:#fcd34d;">0.868 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x096f01765c705067c4a21fccd2ac2a0837ae99ad</td><td style="font-size:10px;">已重算余额 · Arbitrum 同地址另有约 0.10 ETH</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px; color:#8b949e;">0xcab22c (TC→Stargate)</td><td style="color:#8b949e;">≈0 ETH</td><td>Arbitrum</td><td>EOA</td><td class="addr" style="font-size:9px;">0xcab22c836edbd0c0f3d48b11c2d84d3ea96d18bb</td><td style="font-size:10px;">TC出金中转 · 300ETH全部转出</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px; color:#4ade80;">0xfab9 (WETH停放)</td><td style="color:#fcd34d;">~8 WETH ($16K)</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0xfab9ef4cb6f9ff770c143401b763963cfa4e3bb2</td><td style="font-size:10px; color:#4ade80;">主网已见 0x184a→fab9 10.05 ETH；Arb 同地址向 0x122f 共打出 438 笔、579 ETH，可按时间窗拆成 #3 197笔/179.9、#6 134笔/198.4、#4 107笔/200.7 ETH</td></tr>
-      <tr style="border-top:1px solid #3b82f644; color:#8b949e;"><td style="padding:3px 6px;">3a54 (SideShift样本端点)</td><td style="color:#8b949e;">13.14 ETH 旧快照</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px; color:#8b949e;">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td style="font-size:10px; color:#fca5a5;">不计入当前残留 · 最近可确认外发：2025-10-06 11:20/11:21 UTC</td></tr>
+      <tr style="border-top:1px solid #3b82f644; color:#8b949e;"><td style="padding:3px 6px;">3a54 (SideShift样本端点)</td><td style="color:#fcd34d;">13.14 ETH（仍在）</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px; color:#8b949e;">0x038220C193973be6DBF5790b0291c62B32B23a54</td><td style="font-size:10px; color:#fca5a5;">2026-09-21 复核仍在 · 最近外发：2025-10-06 11:20/11:21 UTC</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">bc2e (第一跳中转)</td><td style="color:#fcd34d;">5.957 ETH</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x24B93EED37e6FfE948A9bdF365d750B52AdCBC2e</td><td style="font-size:10px;">nonce=16 · 已清空</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">e8F9 (第一跳中转)</td><td style="color:#fcd34d;">0.78 ETH<br>+ 35,436 DAI<br>+ 3,518 REP</td><td>ETH 主网</td><td>EOA</td><td class="addr" style="font-size:9px;">0x4aC9CA41EFE0eA19b8f3493a91d8a5F706e1e8F9</td><td style="font-size:10px; color:#4ade80;">DAI+REP从未转出</td></tr>
       <tr style="border-top:1px solid #3b82f644;"><td style="padding:3px 6px;">TC提现18地址合计</td><td style="color:#fcd34d;">15.21 ETH</td><td>ETH 主网</td><td>EOA ×18</td><td style="font-size:10px; color:#8b949e;">见上方18地址表</td><td style="font-size:10px;">已重算 · 含 0x096f 的 0.868 ETH</td></tr>
