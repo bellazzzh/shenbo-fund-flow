@@ -7,19 +7,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <style>
-/* Password gate */
-#pw-gate { position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0b0e14; z-index:99999; display:flex; align-items:center; justify-content:center; }
-#pw-gate .pw-box { text-align:center; }
-#pw-gate h2 { color:#c9d1d9; font-size:36px; margin-bottom:28px; letter-spacing:2px; }
-#pw-gate input { background:#161b22; border:2px solid #30363d; border-radius:14px; padding:18px 30px; color:#fff; font-size:28px; text-align:center; letter-spacing:6px; width:320px; outline:none; }
-#pw-gate input:focus { border-color:#58a6ff; }
-#pw-gate .pw-btn { margin-top:20px; background:#21262d; border:1px solid #30363d; border-radius:10px; padding:14px 44px; color:#c9d1d9; font-size:20px; cursor:pointer; }
-#pw-gate .pw-btn:hover { background:#30363d; border-color:#58a6ff; }
-#pw-gate .pw-err { color:#f85149; font-size:16px; margin-top:12px; visibility:hidden; }
-#pw-gate .pw-err.show { visibility:visible; }
-.content-hidden { display:none !important; }
-</style>
-<style>
 :root {
   --bg:#07111c;
   --bg-2:#0d1b2c;
@@ -254,18 +241,7 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 </head>
 <body>
 
-<div id="pw-gate">
-  <div class="pw-box">
-    <h2>🔒 输入访问密码</h2>
-    <input type="password" id="pw-input" placeholder="······" maxlength="10" autofocus>
-    <br>
-    <button class="pw-btn" onclick="checkPw()">进入</button>
-    <div class="pw-err" id="pw-err">密码错误</div>
-    <div style="color:#8b949e; font-size:13px; margin-top:12px;">首次输入后，这台浏览器会记住已解锁状态。</div>
-  </div>
-</div>
-
-<div id="main-content" class="content-hidden">
+<div id="main-content">
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-brand">沈波案件图谱</div>
@@ -1411,74 +1387,14 @@ h1 { text-align:center; font-size:38px; letter-spacing:1px; padding-top:10px; fo
 
 </div><!-- end main-content -->
 
-<div id="zoom-ctrl" class="content-hidden">
+<div id="zoom-ctrl">
   <button onclick="setZoom(zoomLevel - 10)">−</button>
   <input type="range" min="15" max="150" value="50" id="zoomSlider" oninput="setZoom(this.value)">
   <button onclick="setZoom(zoomLevel + 10)">+</button>
   <span id="zoomLabel">50%</span>
   <button onclick="setZoom(50)" style="font-size:11px; width:auto; padding:0 8px;">适中</button>
   <button onclick="setZoom(100)" style="font-size:11px; width:auto; padding:0 8px;">100%</button>
-  <button onclick="lockPage()" style="font-size:11px; width:auto; padding:0 8px;">重新锁定</button>
 </div>
-<script>
-// Password gate
-const PW_HASH = 'f7b4a746b9b631cc9bbc5b2d8dd2802329545c827fc68815f9d25763b8b79999';
-const PW_STORAGE_KEY = 'shenbo_fund_flow_unlocked_v1';
-async function sha256(msg) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
-}
-function markUnlocked() {
-  try { localStorage.setItem(PW_STORAGE_KEY, '1'); } catch (_) {}
-  try { sessionStorage.setItem(PW_STORAGE_KEY, '1'); } catch (_) {}
-}
-function clearUnlockedMark() {
-  try { localStorage.removeItem(PW_STORAGE_KEY); } catch (_) {}
-  try { sessionStorage.removeItem(PW_STORAGE_KEY); } catch (_) {}
-}
-function isUnlockedRemembered() {
-  try {
-    if (localStorage.getItem(PW_STORAGE_KEY) === '1') return true;
-  } catch (_) {}
-  try {
-    if (sessionStorage.getItem(PW_STORAGE_KEY) === '1') return true;
-  } catch (_) {}
-  return false;
-}
-function showMainContent() {
-  document.getElementById('pw-gate').style.display = 'none';
-  document.getElementById('main-content').classList.remove('content-hidden');
-  document.getElementById('zoom-ctrl').classList.remove('content-hidden');
-  setZoom(50);
-}
-async function checkPw() {
-  const input = document.getElementById('pw-input').value;
-  const hash = await sha256(input);
-  if (hash === PW_HASH) {
-    markUnlocked();
-    showMainContent();
-  } else {
-    document.getElementById('pw-err').classList.add('show');
-    document.getElementById('pw-input').value = '';
-    setTimeout(() => document.getElementById('pw-err').classList.remove('show'), 2000);
-  }
-}
-function lockPage() {
-  clearUnlockedMark();
-  document.getElementById('main-content').classList.add('content-hidden');
-  document.getElementById('zoom-ctrl').classList.add('content-hidden');
-  document.getElementById('pw-gate').style.display = 'flex';
-  document.getElementById('pw-input').value = '';
-  document.getElementById('pw-input').focus();
-}
-document.addEventListener('DOMContentLoaded', () => {
-  if (isUnlockedRemembered()) {
-    showMainContent();
-    return;
-  }
-  document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
-});
-</script>
 <script>
 let zoomLevel = 50;
 function setZoom(v) {
@@ -1488,8 +1404,7 @@ function setZoom(v) {
   document.getElementById('zoomSlider').value = zoomLevel;
   document.getElementById('zoomLabel').textContent = zoomLevel + '%';
 }
-// Don't apply zoom until password is entered — otherwise it shrinks the password gate
-if (!document.getElementById('pw-gate')) setZoom(50);
+setZoom(50);
 document.addEventListener('wheel', function(e) {
   if (e.ctrlKey || e.metaKey) {
     e.preventDefault();
